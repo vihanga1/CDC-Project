@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CDC | Stories of Change</title>
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260421" />
+    <link rel="icon" href="assets/img/favicon.png" />
+    <script
+      src="https://kit.fontawesome.com/2a6b3c3f27.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div
+      id="page-loader"
+      role="progressbar"
+      aria-label="Loading page content"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
+      <div class="loader-inner">
+        <div class="loader-spinner"></div>
+        <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+        <p class="loader-label">Loading...</p>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">
+            <img src="assets/img/logo.png" alt="CDC logo" class="brand-logo" />
+          </span>
+        </a>
+        <button
+          class="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          aria-label="Open navigation menu"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <nav
+          id="site-navigation"
+          class="site-nav"
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          <div class="nav-drawer-header">
+            <a href="index.html" class="nav-drawer-logo">
+              <img
+                src="assets/img/logo.png"
+                alt="CDC logo"
+                class="brand-logo"
+              />
+            </a>
+            <button
+              class="nav-drawer-close"
+              type="button"
+              aria-label="Close navigation menu"
+            >
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="nav-drawer-body">
+            <ul class="nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="projects.html" class="nav-link">Projects</a></li>
+              <li class="nav-item-dropdown">
+                <button
+                  class="nav-link nav-dropdown-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  What We Do
+                  <i
+                    class="fa-solid fa-chevron-down nav-caret"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="services.html" class="nav-dropdown-link"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a href="products.html" class="nav-dropdown-link"
+                      >Products</a
+                    >
+                  </li>
+                  <li>
+                    <a href="training.html" class="nav-dropdown-link"
+                      >Training</a
+                    >
+                  </li>
+                  <li>
+                    <a href="eco-tourism.html" class="nav-dropdown-link"
+                      >Eco Tourism</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item-dropdown">
+                <button
+                  class="nav-link nav-dropdown-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  Resources
+                  <i
+                    class="fa-solid fa-chevron-down nav-caret"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="model-farm.html" class="nav-dropdown-link"
+                      >Model Farm</a
+                    >
+                  </li>
+                  <li>
+                    <a href="production-unit.html" class="nav-dropdown-link"
+                      >Production Unit</a
+                    >
+                  </li>
+                  <li>
+                    <a href="training-center.html" class="nav-dropdown-link"
+                      >Training Center</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+    <div id="swipe-open-zone" aria-hidden="true"></div>
+
+    <main>
+      <!-- Page Hero -->
+      <section class="page-hero" aria-labelledby="stories-heading">
+        <div class="container">
+          <div class="page-hero-inner section-reveal">
+            <p class="eyebrow">Featured impact</p>
+            <h1 id="stories-heading">Stories of Change</h1>
+            <p class="page-hero-intro">
+              Behind every programme is a person, a family, a turning point.
+              These are stories of how lives begin to change when opportunity
+              meets support.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stories List -->
+      <section
+        class="stories-section content-section section-reveal"
+        aria-labelledby="stories-list-label"
+      >
+        <div class="container">
+          <h2 id="stories-list-label" class="sr-only">All stories</h2>
+
+          <div class="stories-list">
+
+            <article class="story-card stagger-card" style="--stagger: 0">
+              <div class="story-card-image">
+                <img
+                  src="assets/img/training_w.jpg"
+                  alt="Women participating in a skills training workshop"
+                />
+              </div>
+              <div class="story-card-body">
+                <p class="eyebrow story-tag">Women&rsquo;s livelihood</p>
+                <h3>From learning a skill to leading others</h3>
+                <p>
+                  After joining our training programme, she started with a
+                  small idea. Today she earns her own income and helps other
+                  women in her village do the same. What began as a single
+                  workshop has grown into a network of confidence and
+                  self-reliance.
+                </p>
+              </div>
+            </article>
+
+            <article class="story-card stagger-card" style="--stagger: 1">
+              <div class="story-card-image">
+                <img
+                  src="assets/img/gallery/image_9.jpg"
+                  alt="Sustainable farming and organic agriculture"
+                />
+              </div>
+              <div class="story-card-body">
+                <p class="eyebrow story-tag">Sustainable agriculture</p>
+                <h3>A family farm, transformed by knowledge</h3>
+                <p>
+                  A smallholder family adopted organic practices through
+                  CDC&rsquo;s model farm programme. Their yield improved and
+                  their soil recovered. Now they share what they learned with
+                  neighbouring farmers in the same valley.
+                </p>
+              </div>
+            </article>
+
+            <article class="story-card stagger-card" style="--stagger: 2">
+              <div class="story-card-image">
+                <img
+                  src="assets/img/eco-tour-family.jpg"
+                  alt="A local family hosting eco tourism visitors in Sri Lanka"
+                />
+              </div>
+              <div class="story-card-body">
+                <p class="eyebrow story-tag">Eco tourism</p>
+                <h3>Opening their home, building an income</h3>
+                <p>
+                  When CDC introduced community-based eco tourism to their
+                  village, one family decided to open their home to visitors.
+                  The connections they&rsquo;ve made since have brought both
+                  income and a renewed pride in their land and culture.
+                </p>
+              </div>
+            </article>
+
+            <article class="story-card stagger-card" style="--stagger: 3">
+              <div class="story-card-image">
+                <img
+                  src="assets/img/gallery/image_6.jpg"
+                  alt="Community gathering in a rural Sri Lankan village"
+                />
+              </div>
+              <div class="story-card-body">
+                <p class="eyebrow story-tag">Community development</p>
+                <h3>When a village decides to act together</h3>
+                <p>
+                  It started with a community meeting and a shared concern
+                  about water access. With CDC&rsquo;s support, the village
+                  mapped their resources, formed a committee, and built a
+                  solution they now maintain themselves.
+                </p>
+              </div>
+            </article>
+
+            <article class="story-card stagger-card" style="--stagger: 4">
+              <div class="story-card-image">
+                <img
+                  src="assets/img/food-and-bav.jpg"
+                  alt="Traditional Sri Lankan food and community-made products"
+                />
+              </div>
+              <div class="story-card-body">
+                <p class="eyebrow story-tag">Local enterprise</p>
+                <h3>Tradition on a table, turned into a livelihood</h3>
+                <p>
+                  A group of women began preserving traditional recipes as
+                  part of CDC&rsquo;s food production training. Their products
+                  now reach markets across the region, keeping local flavours
+                  alive while building genuine economic independence.
+                </p>
+              </div>
+            </article>
+
+            <article class="story-card stagger-card" style="--stagger: 5">
+              <div class="story-card-image">
+                <img
+                  src="assets/img/into-forest.jpg"
+                  alt="Forest conservation and biodiversity work in Sri Lanka"
+                />
+              </div>
+              <div class="story-card-body">
+                <p class="eyebrow story-tag">Conservation</p>
+                <h3>Protecting the forest, protecting the future</h3>
+                <p>
+                  A community that once cleared land to survive is now one of
+                  the most active stewards of their forest. Through CDC&rsquo;s
+                  conservation programme, they found that protecting nature
+                  and building livelihoods are not opposing goals.
+                </p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section
+        class="eco-cta-section content-section section-reveal"
+        aria-labelledby="stories-cta-title"
+      >
+        <div class="container">
+          <div class="eco-cta-inner" data-reveal-group>
+            <p class="eco-cta-eyebrow" data-reveal="up">Be part of the story</p>
+            <h2
+              id="stories-cta-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Every contribution writes a new chapter
+            </h2>
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              Whether you give, volunteer, or partner with us &mdash; your
+              involvement helps communities grow stronger and more resilient.
+            </p>
+            <div
+              class="eco-cta-actions"
+              data-reveal="up"
+              style="--reveal-delay: 0.24s"
+            >
+              <a href="contact.html" class="button primary">Get Involved</a>
+              <a href="projects.html" class="button eco-cta-ghost"
+                >See Our Projects</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link">
+            <img
+              src="assets/img/logo.png"
+              alt="CDC logo"
+              class="brand-logo footer-logo"
+            />
+          </a>
+          <p class="footer-tagline">
+            Building resilient communities through sustainable agriculture,
+            training, and eco tourism.
+          </p>
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="Follow us on Facebook"
+              ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Follow us on Instagram"
+              ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Follow us on X"
+              ><i class="fa-brands fa-x-twitter" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Connect on LinkedIn"
+              ><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Explore navigation">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="services.html">What We Do</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Get Involved</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Donate</a></li>
+            <li><a href="contact.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+        <address class="footer-col footer-contact">
+          <h3 class="footer-col-title">Contact</h3>
+          <ul class="footer-links">
+            <li>Haylesewatte, Attapitiya</li>
+            <li>Ussapitiya, Sri Lanka</li>
+            <li><a href="mailto:info@heleala.org">info@heleala.org</a></li>
+            <li><a href="tel:+94718110710">+94 71 811 0710</a></li>
+          </ul>
+        </address>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p class="footer-copy">
+            &copy; 2026 <a href="https://darkroom.lk/" class="darkroom" target="_blank">Darkroom</a> (Pvt) Ltd. All rights reserved.
+          </p>
+          <ul class="footer-legal">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+    <script src="assets/js/main.js?v=20260421"></script>
+  </body>
+</html>

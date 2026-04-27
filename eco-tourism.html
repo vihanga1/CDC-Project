@@ -1,0 +1,569 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CDC | Eco Tourism</title>
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260421" />
+    <link rel="icon" href="assets/img/favicon.png" />
+    <script
+      src="https://kit.fontawesome.com/2a6b3c3f27.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div
+      id="page-loader"
+      role="progressbar"
+      aria-label="Loading page content"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
+      <div class="loader-inner">
+        <div class="loader-spinner"></div>
+        <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+        <p class="loader-label">Loading...</p>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">
+            <img src="assets/img/logo.png" alt="CDC logo" class="brand-logo" />
+          </span>
+        </a>
+        <button
+          class="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          aria-label="Open navigation menu"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <nav
+          id="site-navigation"
+          class="site-nav"
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          <div class="nav-drawer-header">
+            <a href="index.html" class="nav-drawer-logo">
+              <img
+                src="assets/img/logo.png"
+                alt="CDC logo"
+                class="brand-logo"
+              />
+            </a>
+            <button
+              class="nav-drawer-close"
+              type="button"
+              aria-label="Close navigation menu"
+            >
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="nav-drawer-body">
+            <ul class="nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="projects.html" class="nav-link">Projects</a></li>
+              <li class="nav-item-dropdown">
+                <button
+                  class="nav-link nav-dropdown-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  What We Do
+                  <i
+                    class="fa-solid fa-chevron-down nav-caret"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="services.html" class="nav-dropdown-link"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a href="products.html" class="nav-dropdown-link"
+                      >Products</a
+                    >
+                  </li>
+                  <li>
+                    <a href="training.html" class="nav-dropdown-link"
+                      >Training</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="eco-tourism.html"
+                      class="nav-dropdown-link"
+                      aria-current="page"
+                      >Eco Tourism</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item-dropdown">
+                <button
+                  class="nav-link nav-dropdown-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  Resources
+                  <i
+                    class="fa-solid fa-chevron-down nav-caret"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="model-farm.html" class="nav-dropdown-link"
+                      >Model Farm</a
+                    >
+                  </li>
+                  <li>
+                    <a href="production-unit.html" class="nav-dropdown-link"
+                      >Production Unit</a
+                    >
+                  </li>
+                  <li>
+                    <a href="training-center.html" class="nav-dropdown-link"
+                      >Training Center</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+    <div id="swipe-open-zone" aria-hidden="true"></div>
+
+    <main>
+      <!-- ── 1. HERO ────────────────────────────────────────────────── -->
+      <section class="eco-hero" aria-labelledby="eco-hero-title">
+        <div class="eco-hero-media">
+          <img
+            src="assets/img/eco-tourism.jpg"
+            alt=""
+            class="eco-hero-bg"
+            aria-hidden="true"
+            fetchpriority="high"
+          />
+          <div class="eco-hero-overlay" aria-hidden="true"></div>
+        </div>
+
+        <div class="container eco-hero-content">
+          <p class="eco-hero-eyebrow">
+            Community-based eco tourism &middot; Sri Lanka
+          </p>
+          <h1 id="eco-hero-title" class="eco-hero-title">
+            <span class="eco-title-line">Where Nature</span>
+            <span class="eco-title-line">Meets Community</span>
+          </h1>
+          <p class="eco-hero-body">
+            Slow down. Walk through living forests, share meals in village
+            homes, and discover Sri Lanka through the hands and hearts of the
+            communities who protect it.
+          </p>
+          <a href="contact.html" class="button primary eco-hero-cta"
+            >Plan Your Visit</a
+          >
+        </div>
+
+        <div class="eco-scroll-indicator" aria-hidden="true">
+          <span class="eco-scroll-line"></span>
+        </div>
+      </section>
+
+      <!-- ── 2. MARQUEE STRIP ────────────────────────────────────────── -->
+      <div class="eco-marquee" aria-hidden="true">
+        <div class="eco-marquee-track">
+          <span class="eco-marquee-item">Nature Trails</span
+          ><span class="eco-marquee-sep">&#183;</span>
+          <span class="eco-marquee-item">Village Life</span
+          ><span class="eco-marquee-sep">&#183;</span>
+          <span class="eco-marquee-item">Traditional Food</span
+          ><span class="eco-marquee-sep">&#183;</span>
+          <span class="eco-marquee-item">Forest Conservation</span
+          ><span class="eco-marquee-sep">&#183;</span>
+          <span class="eco-marquee-item">Rural Culture</span
+          ><span class="eco-marquee-sep">&#183;</span>
+          <span class="eco-marquee-item">Community Travel</span
+          ><span class="eco-marquee-sep">&#183;</span>
+          <span class="eco-marquee-item">Biodiversity</span
+          ><span class="eco-marquee-sep">&#183;</span>
+          <span class="eco-marquee-item">Slow Living</span
+          ><span class="eco-marquee-sep">&#183;</span>
+          <span class="eco-marquee-item">Nature Trails</span
+          ><span class="eco-marquee-sep">&#183;</span>
+          <span class="eco-marquee-item">Village Life</span
+          ><span class="eco-marquee-sep">&#183;</span>
+          <span class="eco-marquee-item">Traditional Food</span
+          ><span class="eco-marquee-sep">&#183;</span>
+          <span class="eco-marquee-item">Forest Conservation</span
+          ><span class="eco-marquee-sep">&#183;</span>
+          <span class="eco-marquee-item">Rural Culture</span
+          ><span class="eco-marquee-sep">&#183;</span>
+          <span class="eco-marquee-item">Community Travel</span
+          ><span class="eco-marquee-sep">&#183;</span>
+          <span class="eco-marquee-item">Biodiversity</span
+          ><span class="eco-marquee-sep">&#183;</span>
+          <span class="eco-marquee-item">Slow Living</span
+          ><span class="eco-marquee-sep">&#183;</span>
+        </div>
+      </div>
+
+      <!-- ── 3. EXPERIENCE HIGHLIGHTS ───────────────────────────────── -->
+      <section
+        class="eco-experiences content-section"
+        aria-labelledby="eco-experiences-title"
+      >
+        <div class="container">
+          <div class="eco-experiences-head section-reveal" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">What to expect</p>
+            <h2
+              id="eco-experiences-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Four ways to experience the land
+            </h2>
+            <p
+              class="eco-experiences-sub"
+              data-reveal="up"
+              style="--reveal-delay: 0.16s"
+            >
+              Each visit is shaped by where you are and who you meet &mdash; not
+              a fixed itinerary, but an open invitation.
+            </p>
+          </div>
+
+          <div class="eco-grid">
+            <div
+              class="eco-grid-item eco-grid-item--large section-reveal"
+              data-reveal="up"
+            >
+              <img
+                src="assets/img/into-forest.jpg"
+                alt="Natural landscape and forest in rural Sri Lanka"
+              />
+              <div class="eco-grid-overlay">
+                <h3>Into the Forest</h3>
+                <p>
+                  Walk trails through biodiversity-rich reserves, forest
+                  gardens, and conservation sites managed by local communities.
+                </p>
+              </div>
+            </div>
+            <div
+              class="eco-grid-item section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.07s"
+            >
+              <img
+                src="assets/img/gallery/image_6.jpg"
+                alt="Village life and community in Sri Lanka"
+              />
+              <div class="eco-grid-overlay">
+                <h3>Village Stays</h3>
+                <p>
+                  Spend time in model villages, meet families, and experience
+                  the rhythm of everyday rural life.
+                </p>
+              </div>
+            </div>
+            <div
+              class="eco-grid-item section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.13s"
+            >
+              <img
+                src="assets/img/food-and-bav.jpg"
+                alt="Traditional Sri Lankan food and locally made products"
+              />
+              <div class="eco-grid-overlay">
+                <h3>Local Food &amp; Craft</h3>
+                <p>
+                  Taste traditional food, discover community-made products, and
+                  learn the stories behind each one.
+                </p>
+              </div>
+            </div>
+            <div
+              class="eco-grid-item section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.19s"
+            >
+              <img
+                src="assets/img/gallery/image_9.jpg"
+                alt="Sustainable farming and organic agriculture at CDC"
+              />
+              <div class="eco-grid-overlay">
+                <h3>Farm &amp; Field</h3>
+                <p>
+                  Visit model farms and organic plots, see sustainable practices
+                  in action, and connect with the people behind the land.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 4. ATMOSPHERIC QUOTE ────────────────────────────────────── -->
+      <section
+        class="eco-story section-reveal"
+        aria-label="Eco tourism philosophy at CDC"
+      >
+        <div class="eco-story-bg-wrap">
+          <img
+            src="assets/img/gallery/image_11.jpg"
+            alt=""
+            class="eco-story-bg-img"
+            aria-hidden="true"
+          />
+          <div class="eco-story-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="container eco-story-inner">
+          <blockquote class="eco-story-quote" data-reveal-group>
+            <p data-reveal="up">
+              &#8220;The land, the people,<br />and the food all speak the same
+              story.&#8221;
+            </p>
+            <footer data-reveal="up" style="--reveal-delay: 0.14s">
+              Community Development Centre &mdash; Sri Lanka
+            </footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- ── 5. WHY IT'S DIFFERENT ──────────────────────────────────── -->
+      <section
+        class="eco-pillars content-section"
+        aria-labelledby="eco-pillars-title"
+      >
+        <div class="container eco-pillars-inner">
+          <div class="eco-pillars-copy section-reveal" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">Why it matters</p>
+            <h2
+              id="eco-pillars-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Not tourism.<br />A living connection.
+            </h2>
+            <p
+              class="eco-pillars-intro"
+              data-reveal="up"
+              style="--reveal-delay: 0.16s"
+            >
+              CDC&#8217;s eco tourism isn&#8217;t about sightseeing &mdash;
+              it&#8217;s about participation. Visitors are welcomed into living
+              places, not staged experiences.
+            </p>
+            <ul
+              class="eco-pillar-list"
+              aria-label="What makes CDC eco tourism different"
+              data-reveal="up"
+              style="--reveal-delay: 0.24s"
+            >
+              <li class="eco-pillar-item">
+                <span class="eco-pillar-icon" aria-hidden="true"
+                  ><i class="fa-solid fa-seedling"></i
+                ></span>
+                <div>
+                  <h4>Rooted in conservation</h4>
+                  <p>
+                    Every visit connects directly to CDC&#8217;s on-the-ground
+                    environmental and biodiversity work.
+                  </p>
+                </div>
+              </li>
+              <li class="eco-pillar-item">
+                <span class="eco-pillar-icon" aria-hidden="true"
+                  ><i class="fa-solid fa-people-group"></i
+                ></span>
+                <div>
+                  <h4>Community-led and owned</h4>
+                  <p>
+                    Local families and community groups are the hosts, the
+                    guides, and the beneficiaries.
+                  </p>
+                </div>
+              </li>
+              <li class="eco-pillar-item">
+                <span class="eco-pillar-icon" aria-hidden="true"
+                  ><i class="fa-solid fa-leaf"></i
+                ></span>
+                <div>
+                  <h4>Slow, meaningful, low-impact</h4>
+                  <p>
+                    No luxury packaging. No rush. Just genuine encounters with
+                    people, land, and tradition.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="eco-pillars-media section-reveal" data-reveal="right">
+            <img
+              src="assets/img/eco-tour-family.jpg"
+              alt="Eco tourism experience in Sri Lanka with CDC"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 6. FINAL CTA ────────────────────────────────────────────── -->
+      <section
+        class="eco-cta-section content-section section-reveal"
+        aria-labelledby="eco-cta-title"
+      >
+        <div class="container">
+          <div class="eco-cta-inner" data-reveal-group>
+            <p class="eco-cta-eyebrow" data-reveal="up">Come and explore</p>
+            <h2
+              id="eco-cta-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Ready to visit?
+            </h2>
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              Reach out to CDC to learn more about eco tourism opportunities,
+              plan a group visit, or connect with the communities you&#8217;d
+              like to meet.
+            </p>
+            <div
+              class="eco-cta-actions"
+              data-reveal="up"
+              style="--reveal-delay: 0.24s"
+            >
+              <a href="contact.html" class="button primary">Contact CDC</a>
+              <a href="projects.html" class="button eco-cta-ghost"
+                >See Our Projects</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link">
+            <img
+              src="assets/img/logo.png"
+              alt="CDC logo"
+              class="brand-logo footer-logo"
+            />
+          </a>
+          <p class="footer-tagline">
+            Building resilient communities through sustainable agriculture,
+            training, and eco tourism.
+          </p>
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="Follow us on Facebook"
+              ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Follow us on Instagram"
+              ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Follow us on X"
+              ><i class="fa-brands fa-x-twitter" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Connect on LinkedIn"
+              ><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Explore navigation">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="services.html">What We Do</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Get Involved</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Donate</a></li>
+            <li><a href="contact.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+        <address class="footer-col footer-contact">
+          <h3 class="footer-col-title">Contact</h3>
+          <ul class="footer-links">
+            <li>Haylesewatte, Attapitiya</li>
+            <li>Ussapitiya, Sri Lanka</li>
+            <li><a href="mailto:info@heleala.org">info@heleala.org</a></li>
+            <li><a href="tel:+94718110710">+94 71 811 0710</a></li>
+          </ul>
+        </address>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p class="footer-copy">
+            &copy; 2026 <a href="https://darkroom.lk/" class="darkroom" target="_blank">Darkroom</a> (Pvt) Ltd. All rights reserved.
+          </p>
+          <ul class="footer-legal">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+    <script src="assets/js/main.js?v=20260421"></script>
+
+    <script>
+      /* Hero scroll parallax — translates the media layer at 32% of scroll */
+      (function () {
+        var heroMedia = document.querySelector(".eco-hero-media");
+        var hero = document.querySelector(".eco-hero");
+        if (
+          !heroMedia ||
+          !hero ||
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        )
+          return;
+        var ticking = false;
+        function update() {
+          var scrollY = window.scrollY;
+          if (scrollY < hero.offsetHeight * 1.6) {
+            heroMedia.style.transform = "translateY(" + scrollY * 0.32 + "px)";
+          }
+          ticking = false;
+        }
+        window.addEventListener(
+          "scroll",
+          function () {
+            if (!ticking) {
+              requestAnimationFrame(update);
+              ticking = true;
+            }
+          },
+          { passive: true },
+        );
+      })();
+    </script>
+  </body>
+</html>

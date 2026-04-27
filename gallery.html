@@ -1,0 +1,756 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heleala | Gallery</title>
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260421" />
+    <link rel="icon" href="assets/img/favicon.png" />
+
+    <script
+      src="https://kit.fontawesome.com/2a6b3c3f27.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div
+      id="page-loader"
+      role="progressbar"
+      aria-label="Loading page content"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
+      <div class="loader-inner">
+        <div class="loader-spinner"></div>
+        <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+        <p class="loader-label">Loading…</p>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">
+            <img src="assets/img/logo.png" alt="NGO Logo" class="brand-logo" />
+          </span>
+        </a>
+        <button
+          class="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          aria-label="Open navigation menu"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <nav
+          id="site-navigation"
+          class="site-nav"
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          <div class="nav-drawer-header">
+            <a href="index.html" class="nav-drawer-logo">
+              <img
+                src="assets/img/logo.png"
+                alt="NGO Logo"
+                class="brand-logo"
+              />
+            </a>
+            <button
+              class="nav-drawer-close"
+              type="button"
+              aria-label="Close navigation menu"
+            >
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="nav-drawer-body">
+            <ul class="nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="projects.html" class="nav-link">Projects</a></li>
+              <li class="nav-item-dropdown">
+                <button
+                  class="nav-link nav-dropdown-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  What We Do
+                  <i
+                    class="fa-solid fa-chevron-down nav-caret"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="services.html" class="nav-dropdown-link"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a href="products.html" class="nav-dropdown-link"
+                      >Products</a
+                    >
+                  </li>
+                  <li>
+                    <a href="training.html" class="nav-dropdown-link"
+                      >Training</a
+                    >
+                  </li>
+                  <li>
+                    <a href="eco-tourism.html" class="nav-dropdown-link"
+                      >Eco Tourism</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item-dropdown">
+                <button
+                  class="nav-link nav-dropdown-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  Resources
+                  <i
+                    class="fa-solid fa-chevron-down nav-caret"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="model-farm.html" class="nav-dropdown-link"
+                      >Model Farm</a
+                    >
+                  </li>
+                  <li>
+                    <a href="production-unit.html" class="nav-dropdown-link"
+                      >Production Unit</a
+                    >
+                  </li>
+                  <li>
+                    <a href="training-center.html" class="nav-dropdown-link"
+                      >Training Center</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+    <div id="swipe-open-zone" aria-hidden="true"></div>
+
+    <main>
+      <!-- Gallery Hero -->
+      <section class="gallery-hero" aria-labelledby="gallery-heading">
+        <div class="gallery-hero-overlay" aria-hidden="true"></div>
+        <div class="container">
+          <div class="page-hero-inner section-reveal">
+            <p class="eyebrow eyebrow-light">Our Work in Pictures</p>
+            <h1 id="gallery-heading">Gallery</h1>
+            <p class="page-hero-intro gallery-hero-intro">
+              A glimpse into our programmes, communities, and the landscapes we
+              protect - captured from the field.
+            </p>
+            <span class="gallery-hero-badge" aria-label="22 photos">
+              <i class="fa-solid fa-images" aria-hidden="true"></i>
+              22 Photos
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Grid -->
+      <section class="gallery-section" aria-label="Photo gallery">
+        <div class="gallery-container">
+          <div class="gallery-grid" id="gallery-grid">
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 1 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_1.jpg"
+                alt="Sustainable farming practices at the model farm"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 2 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_2.jpg"
+                alt="Community members at a training workshop"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 3 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_3.png"
+                alt="Agricultural programme demonstration"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 4 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_4.jpg"
+                alt="Eco-tourism trail through the forest"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 5 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_5.jpg"
+                alt="Community development project in Ussapitiya"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 6 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_6.jpg"
+                alt="Food production and processing unit"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 7 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_7.jpg"
+                alt="Field work and crop cultivation"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 8 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_8.jpg"
+                alt="Training centre workshop session"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 9 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_9.jpg"
+                alt="Harvest season at the model farm"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 10 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_10.jpg"
+                alt="Women's empowerment and skills development"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 11 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_11.jpg"
+                alt="Natural landscape of the Ussapitiya region"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 12 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_12.jpg"
+                alt="Organic farming methods in practice"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 13 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_13.jpg"
+                alt="Youth training in sustainable agriculture"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 14 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_14.jpg"
+                alt="Local community gathering and collaboration"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 15 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_15.jpg"
+                alt="Traditional farming techniques demonstration"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 16 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_16.jpg"
+                alt="Eco-tourism visitors exploring the farm"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 17 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_17.jpg"
+                alt="Biodiversity conservation on the model farm"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 18 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_18.jpg"
+                alt="Community members working in the field"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 19 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_19.jpg"
+                alt="Crop management training session"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 20 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_20.png"
+                alt="Water management in the paddy fields"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 21 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_21.png"
+                alt="Community partners and volunteers"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+
+            <button
+              class="gallery-item"
+              data-reveal
+              aria-label="Open image 22 in full view"
+              type="button"
+            >
+              <img
+                src="assets/img/gallery/image_22.jpg"
+                alt="Evening view of the model farm landscape"
+                loading="lazy"
+              />
+              <span class="gallery-overlay" aria-hidden="true">
+                <i class="fa-solid fa-expand"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div
+      id="gallery-lightbox"
+      class="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image viewer"
+    >
+      <button
+        class="lightbox-close"
+        type="button"
+        aria-label="Close image viewer"
+      >
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <button class="lightbox-prev" type="button" aria-label="Previous image">
+        <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+      </button>
+      <button class="lightbox-next" type="button" aria-label="Next image">
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </button>
+      <div class="lightbox-stage">
+        <img class="lightbox-img" src="" alt="" />
+      </div>
+      <p class="lightbox-counter" aria-live="polite" aria-atomic="true"></p>
+    </div>
+
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link">
+            <img
+              src="assets/img/logo.png"
+              alt="NGO Name logo"
+              class="brand-logo footer-logo"
+            />
+          </a>
+          <p class="footer-tagline">
+            Building resilient communities through sustainable agriculture,
+            training, and eco tourism.
+          </p>
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="Follow us on Facebook"
+              ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Follow us on Instagram"
+              ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Follow us on X"
+              ><i class="fa-brands fa-x-twitter" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Connect on LinkedIn"
+              ><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Explore navigation">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="services.html">What We Do</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Get Involved</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Donate</a></li>
+            <li><a href="contact.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+        <address class="footer-col footer-contact">
+          <h3 class="footer-col-title">Contact</h3>
+          <ul class="footer-links">
+            <li>Haylesewatte, Attapitiya</li>
+            <li>Ussapitiya, Sri Lanka</li>
+            <li><a href="mailto:info@heleala.org">info@heleala.org</a></li>
+            <li><a href="tel:+94718110710">+94 71 811 0710</a></li>
+          </ul>
+        </address>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p class="footer-copy">
+            &copy; 2026 <a href="https://darkroom.lk/" class="darkroom" target="_blank">Darkroom</a> (Pvt) Ltd. All rights reserved.
+          </p>
+          <ul class="footer-legal">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+    <script src="assets/js/main.js?v=20260421"></script>
+    <script>
+      /* ── Gallery Lightbox ──────────────────────────────────────── */
+      (function () {
+        var lb = document.getElementById("gallery-lightbox");
+        var lbImg = lb.querySelector(".lightbox-img");
+        var counter = lb.querySelector(".lightbox-counter");
+        var btnClose = lb.querySelector(".lightbox-close");
+        var btnPrev = lb.querySelector(".lightbox-prev");
+        var btnNext = lb.querySelector(".lightbox-next");
+
+        var items = Array.from(
+          document.querySelectorAll("#gallery-grid .gallery-item"),
+        );
+        var total = items.length;
+        var current = 0;
+        var returnFocus = null;
+
+        /* Collect src + alt from each thumbnail */
+        var imgs = items.map(function (btn) {
+          var img = btn.querySelector("img");
+          return { src: img.src, alt: img.alt };
+        });
+
+        /* ── Show image at index ── */
+        function showImage(index) {
+          current = ((index % total) + total) % total;
+          lbImg.classList.remove("lb-loaded");
+          lbImg.alt = imgs[current].alt;
+          lbImg.onload = function () {
+            lbImg.classList.add("lb-loaded");
+          };
+          lbImg.src = imgs[current].src;
+          /* Handle already-cached images */
+          if (lbImg.complete && lbImg.naturalWidth > 0) {
+            lbImg.classList.add("lb-loaded");
+          }
+          counter.textContent = current + 1 + " / " + total;
+        }
+
+        /* ── Open / close ── */
+        function openLightbox(index) {
+          returnFocus = document.activeElement;
+          showImage(index);
+          document.body.style.overflow = "hidden";
+          lb.classList.add("lightbox--open");
+          lb.removeAttribute("inert");
+          btnClose.focus();
+        }
+
+        function closeLightbox() {
+          lb.classList.remove("lightbox--open");
+          document.body.style.overflow = "";
+          lb.setAttribute("inert", "");
+          if (returnFocus) returnFocus.focus();
+        }
+
+        function navigate(dir) {
+          showImage(current + dir);
+        }
+
+        /* ── Thumbnail click ── */
+        items.forEach(function (item, i) {
+          item.addEventListener("click", function () {
+            openLightbox(i);
+          });
+        });
+
+        /* ── Lightbox controls ── */
+        btnClose.addEventListener("click", closeLightbox);
+        btnPrev.addEventListener("click", function () {
+          navigate(-1);
+        });
+        btnNext.addEventListener("click", function () {
+          navigate(1);
+        });
+
+        /* Close on backdrop click */
+        lb.addEventListener("click", function (e) {
+          if (e.target === lb) closeLightbox();
+        });
+
+        /* ── Keyboard ── */
+        document.addEventListener("keydown", function (e) {
+          if (!lb.classList.contains("lightbox--open")) return;
+          if (e.key === "Escape") {
+            e.preventDefault();
+            closeLightbox();
+          }
+          if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            navigate(-1);
+          }
+          if (e.key === "ArrowRight") {
+            e.preventDefault();
+            navigate(1);
+          }
+          /* Focus trap */
+          if (e.key === "Tab") {
+            var focusable = Array.from(lb.querySelectorAll("button"));
+            var first = focusable[0];
+            var last = focusable[focusable.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+              e.preventDefault();
+              last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          }
+        });
+
+        /* ── Touch swipe (Hammer.js already loaded by main.js) ── */
+        if (typeof Hammer !== "undefined") {
+          var mc = new Hammer(lb);
+          mc.on("swipeleft", function () {
+            navigate(1);
+          });
+          mc.on("swiperight", function () {
+            navigate(-1);
+          });
+        }
+
+        /* Mark lightbox as inert on load so it doesn't intercept Tab on page */
+        lb.setAttribute("inert", "");
+      })();
+    </script>
+  </body>
+</html>

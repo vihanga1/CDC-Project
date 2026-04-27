@@ -1,0 +1,874 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heleala| Home</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260421" />
+    <link rel="icon" href="assets/img/favicon.png" />
+    <script
+      src="https://kit.fontawesome.com/2a6b3c3f27.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body id="top">
+    <div
+      id="page-loader"
+      role="progressbar"
+      aria-label="Loading page content"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
+      <div class="loader-inner">
+        <div class="loader-spinner"></div>
+        <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+        <p class="loader-label">Loading…</p>
+      </div>
+    </div>
+    <header class="site-header transparent">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">
+            <img src="assets/img/logo.png" alt="NGO Logo" class="brand-logo" />
+          </span>
+        </a>
+        <button
+          class="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          aria-label="Open navigation menu"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <nav
+          id="site-navigation"
+          class="site-nav"
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          <!-- Drawer header: visible only on mobile inside the off-canvas panel -->
+          <div class="nav-drawer-header">
+            <a href="index.html" class="nav-drawer-logo">
+              <img
+                src="assets/img/logo.png"
+                alt="NGO Logo"
+                class="brand-logo"
+              />
+            </a>
+            <button
+              class="nav-drawer-close"
+              type="button"
+              aria-label="Close navigation menu"
+            >
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+          </div>
+          <!-- Scrollable nav items wrapper -->
+          <div class="nav-drawer-body">
+            <ul class="nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="projects.html" class="nav-link">Projects</a></li>
+
+              <li class="nav-item-dropdown">
+                <button
+                  class="nav-link nav-dropdown-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  What We Do
+                  <i
+                    class="fa-solid fa-chevron-down nav-caret"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="services.html" class="nav-dropdown-link"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a href="products.html" class="nav-dropdown-link"
+                      >Products</a
+                    >
+                  </li>
+                  <li>
+                    <a href="training.html" class="nav-dropdown-link"
+                      >Training</a
+                    >
+                  </li>
+                  <li>
+                    <a href="eco-tourism.html" class="nav-dropdown-link"
+                      >Eco Tourism</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item-dropdown">
+                <button
+                  class="nav-link nav-dropdown-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  Resources
+                  <i
+                    class="fa-solid fa-chevron-down nav-caret"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="model-farm.html" class="nav-dropdown-link"
+                      >Model Farm</a
+                    >
+                  </li>
+                  <li>
+                    <a href="production-unit.html" class="nav-dropdown-link"
+                      >Production Unit</a
+                    >
+                  </li>
+                  <li>
+                    <a href="training-center.html" class="nav-dropdown-link"
+                      >Training Center</a
+                    >
+                  </li>
+                </ul>
+              </li>
+
+              <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Off-canvas backdrop: covers page when drawer is open -->
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+    <div id="swipe-open-zone" aria-hidden="true"></div>
+
+    <main>
+      <section class="hero-section" aria-labelledby="hero-title">
+        <div class="swiper hero-swiper">
+          <div class="swiper-wrapper">
+            <article class="swiper-slide hero-slide slide-1">
+              <div class="hero-overlay"></div>
+              <div class="hero-copy container reveal-visible" data-reveal-group>
+                <span class="eyebrow" data-reveal="up"
+                  >SUSTAINABLE COMMUNITY IMPACT</span
+                >
+                <h1
+                  id="hero-title"
+                  data-reveal="up"
+                  style="--reveal-delay: 0.1s"
+                >
+                  Empowering communities for sustainable futures
+                </h1>
+                <p data-reveal="up" style="--reveal-delay: 0.2s">
+                  Training, leadership, and local action for lasting change
+                </p>
+                <a
+                  class="button primary"
+                  href="#impact"
+                  data-reveal="up"
+                  style="--reveal-delay: 0.3s"
+                  >Explore Projects</a
+                >
+              </div>
+            </article>
+            <article class="swiper-slide hero-slide slide-2">
+              <div class="hero-overlay"></div>
+              <div class="hero-copy container reveal-visible" data-reveal-group>
+                <span class="eyebrow" data-reveal="up"
+                  >AGRICULTURE & FOOD SECURITY</span
+                >
+                <h1 data-reveal="up" style="--reveal-delay: 0.1s">
+                  Reviving traditional farming for a healthier future
+                </h1>
+                <p data-reveal="up" style="--reveal-delay: 0.2s">
+                  Supporting farmers with skills, seeds, and market access
+                </p>
+                <a
+                  class="button primary"
+                  href="#focus"
+                  data-reveal="up"
+                  style="--reveal-delay: 0.3s"
+                  >Visit Model Farms</a
+                >
+              </div>
+            </article>
+            <article class="swiper-slide hero-slide slide-3">
+              <div class="hero-overlay"></div>
+              <div class="hero-copy container reveal-visible" data-reveal-group>
+                <span class="eyebrow" data-reveal="up"
+                  >ENVIRONMENT & WOMEN EMPOWERMENT</span
+                >
+                <h1 data-reveal="up" style="--reveal-delay: 0.1s">
+                  Protecting nature while empowering women
+                </h1>
+                <p data-reveal="up" style="--reveal-delay: 0.2s">
+                  Women driving change in conservation and livelihoods
+                </p>
+                <a
+                  class="button primary"
+                  href="#work"
+                  data-reveal="up"
+                  style="--reveal-delay: 0.3s"
+                  >Get Involved</a
+                >
+              </div>
+            </article>
+          </div>
+
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev" aria-label="Previous slide"></div>
+          <div class="swiper-button-next" aria-label="Next slide"></div>
+        </div>
+      </section>
+
+      <section
+        id="features"
+        class="feature-section content-section section-reveal"
+        aria-labelledby="features-title"
+      >
+        <div class="container">
+          <div class="section-intro" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">
+              What makes our work meaningful
+            </p>
+            <h2
+              id="features-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Community-led programs with lasting impact
+            </h2>
+          </div>
+
+          <div class="feature-grid">
+            <article
+              class="feature-card"
+              data-reveal="up"
+              style="--reveal-delay: 0.05s"
+            >
+              <div class="feature-card-image">
+                <img src="assets/img/card-1-img-1.jpg" alt="Community center" />
+              </div>
+              <div class="feature-card-body">
+                <h3>Community resource centres</h3>
+                <p>
+                  Bringing people together to share knowledge, discuss
+                  challenges, and learn from each other as a community
+                </p>
+                <a class="feature-link" href="#impact">Read more</a>
+              </div>
+            </article>
+
+            <article
+              class="feature-card"
+              data-reveal="up"
+              style="--reveal-delay: 0.12s"
+            >
+              <div class="feature-card-image">
+                <img
+                  src="assets/img/card-1-img-2.jpg"
+                  alt="Training programs"
+                />
+              </div>
+              <div class="feature-card-body">
+                <h3>Training & livelihood programs</h3>
+                <p>
+                  Hands-on programs where communities learn simple, practical
+                  solutions for everyday needs and livelihoods
+                </p>
+                <a class="feature-link" href="#focus">Read more</a>
+              </div>
+            </article>
+
+            <article
+              class="feature-card"
+              data-reveal="up"
+              style="--reveal-delay: 0.19s"
+            >
+              <div class="feature-card-image">
+                <img
+                  src="assets/img/card-1-img-3.jpg"
+                  alt="Responsible travel"
+                />
+              </div>
+              <div class="feature-card-body">
+                <h3>Nature & community action</h3>
+                <p>
+                  Working together to protect the environment through tree
+                  planting, conservation, and local initiatives
+                </p>
+                <a class="feature-link" href="#work">Read more</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="impact"
+        class="impact-section content-section section-reveal"
+        aria-labelledby="impact-title"
+      >
+        <div class="container impact-inner">
+          <div class="impact-content" data-reveal-group>
+            <p class="eyebrow eyebrow-alt" data-reveal="up">
+              Community development
+            </p>
+            <h2
+              id="impact-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Growing stronger communities, one life at a time
+            </h2>
+            <p
+              class="impact-copy"
+              data-reveal="up"
+              style="--reveal-delay: 0.16s"
+            >
+              From small farms to village homes, we stand with people as they
+              build better futures—through skills, support, and a deep
+              connection to their land and community.
+            </p>
+
+            <ul class="arrow-list">
+              <li
+                class="arrow-item"
+                data-reveal="up"
+                style="--reveal-delay: 0.24s"
+              >
+                <span class="arrow-mark">→</span>
+                Women building confidence, income, and new opportunities
+              </li>
+              <li
+                class="arrow-item"
+                data-reveal="up"
+                style="--reveal-delay: 0.32s"
+              >
+                <span class="arrow-mark">→</span>
+                Farmers growing healthy food and creating value-added products
+              </li>
+              <li
+                class="arrow-item"
+                data-reveal="up"
+                style="--reveal-delay: 0.4s"
+              >
+                <span class="arrow-mark">→</span>
+                Communities protecting nature while strengthening local food
+                traditions
+              </li>
+            </ul>
+
+            <a
+              class="button primary impact-cta"
+              href="#focus"
+              data-reveal="up"
+              style="--reveal-delay: 0.48s"
+              >Explore our programs</a
+            >
+          </div>
+
+          <div
+            class="impact-visual"
+            data-reveal="right"
+            style="--reveal-delay: 0.12s"
+          >
+            <div class="image-composition">
+              <div class="main-image">
+                <img
+                  src="assets/img/com-dev-bg.jpg"
+                  alt="Community agriculture training"
+                />
+              </div>
+              <div class="front-image">
+                <img
+                  src="assets/img/com-dev-small.jpg"
+                  alt="Women empowered through training"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="focus"
+        class="focus-section content-section section-reveal"
+        aria-labelledby="focus-title"
+      >
+        <div class="container focus-inner">
+          <div class="focus-intro" data-reveal-group>
+            <p class="eyebrow eyebrow-alt" data-reveal="up">
+              OUR KEY FOCUS AREAS
+            </p>
+            <h2 id="focus-title" data-reveal="up" style="--reveal-delay: 0.08s">
+              Building stronger communities through real, everyday support
+            </h2>
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              From small farms to family livelihoods, our work brings people,
+              skills, and nature together to create lasting change.
+            </p>
+          </div>
+
+          <div class="focus-grid">
+            <article
+              class="focus-card parallax-card"
+              data-speed="0.14"
+              data-reveal="up"
+              style="--reveal-delay: 0.05s"
+            >
+              <div class="focus-card-image">
+                <img
+                  src="assets/img/card-2-img-1.jpg"
+                  alt="Women leading sustainable farming"
+                />
+              </div>
+              <div class="focus-card-content">
+                <h3>Women’s livelihood programs</h3>
+                <p>
+                  Helping women build confidence, earn an income, and create
+                  better futures for their families
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="focus-card parallax-card"
+              data-speed="0.1"
+              data-reveal="up"
+              style="--reveal-delay: 0.12s"
+            >
+              <div class="focus-card-image">
+                <img
+                  src="assets/img/card-2-img-2.jpg"
+                  alt="Community agriculture training"
+                />
+              </div>
+              <div class="focus-card-content">
+                <h3>Sustainable agriculture</h3>
+                <p>
+                  Supporting farmers to grow healthy food while caring for the
+                  land they depend on
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="focus-card parallax-card"
+              data-speed="0.18"
+              data-reveal="up"
+              style="--reveal-delay: 0.19s"
+            >
+              <div class="focus-card-image">
+                <img
+                  src="assets/img/card-2-img-3.jpg"
+                  alt="Indigenous yam conservation"
+                />
+              </div>
+              <div class="focus-card-content">
+                <h3>Indigenous crop conservation</h3>
+                <p>
+                  Protecting traditional yam varieties and keeping local food
+                  knowledge alive for future generations
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="work"
+        class="work-section content-section section-reveal"
+        aria-labelledby="work-title"
+      >
+        <div class="container work-inner">
+          <div
+            class="work-visual"
+            data-reveal="left"
+            style="--reveal-delay: 0.08s"
+          >
+            <div class="work-image">
+              <img
+                src="assets/img/food-and-bav.jpg"
+                alt="Community members working together in the field"
+              />
+            </div>
+          </div>
+
+          <div class="work-content" data-reveal-group>
+            <p class="eyebrow eyebrow-alt" data-reveal="up">
+              LOCAL FOOD & LIVELIHOODS
+            </p>
+            <h2 id="work-title" data-reveal="up" style="--reveal-delay: 0.08s">
+              From traditional crops to thriving livelihoods
+            </h2>
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              We work with communities to grow, protect, and share local
+              food—from indigenous yams to traditional crops—turning knowledge
+              into income and preserving food heritage for future generations.
+            </p>
+
+            <ul class="arrow-list">
+              <li
+                class="arrow-item"
+                data-reveal="up"
+                style="--reveal-delay: 0.24s"
+              >
+                <span class="arrow-mark">→</span>
+                Conserving and growing indigenous yam varieties across
+                communities
+              </li>
+              <li
+                class="arrow-item"
+                data-reveal="up"
+                style="--reveal-delay: 0.32s"
+              >
+                <span class="arrow-mark">→</span>
+                Supporting farmers to produce, process, and sell value-added
+                food products
+              </li>
+              <li
+                class="arrow-item"
+                data-reveal="up"
+                style="--reveal-delay: 0.4s"
+              >
+                <span class="arrow-mark">→</span>
+                Promoting healthy, local foods through training and community
+                markets
+              </li>
+            </ul>
+
+            <div data-reveal="up" style="--reveal-delay: 0.48s; margin-top: 1.75rem">
+              <a class="button primary" href="products.html">See our products</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="eco-tourism"
+        class="eco-section content-section section-reveal"
+        aria-labelledby="eco-title"
+      >
+        <div class="container eco-inner">
+          <div class="eco-text" data-reveal-group>
+            <p class="eyebrow eyebrow-alt" data-reveal="up">ECO TOURISM</p>
+            <h2 id="eco-title" data-reveal="up" style="--reveal-delay: 0.08s">
+              Experience nature through the lives of local communities
+            </h2>
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              Our eco-tourism initiatives connect visitors with rural
+              communities, traditional farming, and natural landscapes—offering
+              meaningful experiences that support both people and the
+              environment.
+            </p>
+
+            <ul
+              class="eco-features"
+              data-reveal="up"
+              style="--reveal-delay: 0.26s"
+            >
+              <li class="eco-feature">
+                <span class="eco-feature-icon" aria-hidden="true">
+                  <i class="fa-solid fa-tree"></i>
+                </span>
+                <span
+                  >Walk through community forests and learn about local
+                  conservation efforts</span
+                >
+              </li>
+              <li class="eco-feature">
+                <span class="eco-feature-icon" aria-hidden="true">
+                  <i class="fa-solid fa-house"></i>
+                </span>
+                <span
+                  >Visit village homes, farms, and small enterprises rooted in
+                  tradition</span
+                >
+              </li>
+              <li class="eco-feature">
+                <span class="eco-feature-icon" aria-hidden="true">
+                  <i class="fa-solid fa-seedling"></i>
+                </span>
+                <span
+                  >Support livelihoods while experiencing authentic local food
+                  and culture</span
+                >
+              </li>
+            </ul>
+
+            <a
+              class="button primary eco-cta"
+              href="eco-tourism.html"
+              data-reveal="up"
+              style="--reveal-delay: 0.36s"
+              >Explore eco-tourism</a
+            >
+          </div>
+
+          <div class="eco-visual">
+            <div class="eco-duo">
+              <div
+                class="eco-img eco-img--primary"
+                data-reveal="up"
+                style="--reveal-delay: 0.1s"
+              >
+                <img
+                  src="assets/img/eco-tour-bg.jpg"
+                  alt="Lush forest trail within a protected community ecosystem"
+                />
+              </div>
+              <div
+                class="eco-img eco-img--secondary"
+                data-reveal="up"
+                style="--reveal-delay: 0.24s"
+              >
+                <img
+                  src="assets/img/eco-tour-sm.jpg"
+                  alt="Visitors welcomed by community members on an eco-tourism trail"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="impact-banner"
+        class="banner-section"
+        aria-labelledby="banner-title"
+      >
+        <div class="banner-overlay"></div>
+        <div class="container banner-inner" data-reveal-group>
+          <p class="eyebrow eyebrow-light" data-reveal="up">OUR COMMITMENT</p>
+          <h2
+            id="banner-title"
+            class="banner-title"
+            data-reveal="up"
+            style="--reveal-delay: 0.1s"
+          >
+            From small beginnings, lasting change grows
+          </h2>
+          <p class="banner-copy" data-reveal="up" style="--reveal-delay: 0.2s">
+            A woman gaining confidence. A farmer growing better crops. A village
+            protecting its future—together, these moments become lasting chang
+          </p>
+          <a
+            class="button primary"
+            href="contact.html"
+            data-reveal="up"
+            style="--reveal-delay: 0.3s"
+            >Get involved</a
+          >
+        </div>
+      </section>
+
+      <section
+        id="stories"
+        class="stories-section content-section section-reveal"
+        aria-labelledby="stories-title"
+      >
+        <div class="container">
+          <div class="stories-intro section-intro" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">Featured impact</p>
+            <h2
+              id="stories-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Stories of change from the heart of communities
+            </h2>
+            <p
+              class="stories-lead"
+              data-reveal="up"
+              style="--reveal-delay: 0.16s"
+            >
+              Behind every program is a person, a family, a turning point. These
+              are stories of how lives begin to change when opportunity meets
+              support.
+            </p>
+          </div>
+
+          <article class="story-card stagger-card" style="--stagger: 0">
+            <div class="story-card-image">
+              <img
+                src="assets/img/training_w.jpg"
+                alt="Women participating in a skills training workshop"
+              />
+            </div>
+            <div class="story-card-body">
+              <p class="eyebrow story-tag">Women&rsquo;s livelihood</p>
+              <h3>From learning a skill to leading others</h3>
+              <p>
+                After joining our training program, she started with a small
+                idea. Today she earns her own income and helps other women in
+                her village do the same.
+              </p>
+            </div>
+          </article>
+
+          <div
+            class="stories-cta"
+            data-reveal="up"
+            style="--reveal-delay: 0.2s"
+          >
+            <a class="button primary" href="stories.html">Read more stories</a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="get-involved"
+        class="cta-section content-section section-reveal"
+        aria-labelledby="cta-title"
+      >
+        <div class="container">
+          <div class="cta-heading section-intro">
+            <p class="eyebrow">Make a difference</p>
+            <h2 id="cta-title">There is a place for you in this work</h2>
+            <p class="cta-intro">
+              Whether you give, volunteer, or collaborate &mdash; every
+              contribution helps communities grow stronger and more resilient.
+            </p>
+          </div>
+
+          <div class="cta-grid">
+            <article
+              class="cta-card stagger-card cta-card--donate"
+              style="--stagger: 0"
+            >
+              <h3 class="cta-card-title">Donate</h3>
+              <p class="cta-card-body">
+                Your gift funds training, tools, and resources that help
+                families build lasting livelihoods from the ground up.
+              </p>
+              <a class="button secondary cta-btn" href="contact.html"
+                >Give now</a
+              >
+            </article>
+
+            <article
+              class="cta-card stagger-card cta-card--volunteer"
+              style="--stagger: 1"
+            >
+              <h3 class="cta-card-title">Volunteer</h3>
+              <p class="cta-card-body">
+                Bring your skills to the field. We welcome educators,
+                agronomists, and passionate community builders.
+              </p>
+              <a class="button primary cta-btn" href="contact.html"
+                >Get involved</a
+              >
+            </article>
+
+            <article
+              class="cta-card stagger-card cta-card--partner"
+              style="--stagger: 2"
+            >
+              <h3 class="cta-card-title">Partner with us</h3>
+              <p class="cta-card-body">
+                Organisations and institutions can scale our reach through
+                strategic programs and long-term partnerships.
+              </p>
+              <a class="button primary cta-btn" href="contact.html"
+                >Let's talk</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link">
+            <img
+              src="assets/img/logo.png"
+              alt="NGO Name logo"
+              class="brand-logo footer-logo"
+            />
+          </a>
+          <p class="footer-tagline">
+            Building resilient communities through sustainable agriculture,
+            training, and eco tourism.
+          </p>
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="Follow us on Facebook"
+              ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Follow us on Instagram"
+              ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Follow us on X"
+              ><i class="fa-brands fa-x-twitter" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Connect on LinkedIn"
+              ><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+
+        <nav class="footer-col" aria-label="Explore navigation">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="services.html">What We Do</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title">Get Involved</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Donate</a></li>
+            <li><a href="contact.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+
+        <address class="footer-col footer-contact">
+          <h3 class="footer-col-title">Contact</h3>
+          <ul class="footer-links">
+            <li>Haylesewatte, Attapitiya</li>
+            <li>Ussapitiya, Sri Lanka</li>
+            <li><a href="mailto:info@ngoname.org">info@heleala.org</a></li>
+            <li><a href="tel:+94718110710"> +9471 811 0710</a></li>
+          </ul>
+        </address>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p class="footer-copy">
+            &copy; 2026 <a href="https://darkroom.lk/" class="darkroom" target="_blank">Darkroom</a> (Pvt) Ltd. All rights reserved.
+          </p>
+          <ul class="footer-legal">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+    <script src="assets/js/main.js?v=20260421"></script>
+  </body>
+</html>

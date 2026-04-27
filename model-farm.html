@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heleala | Model Farm</title>
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260425" />
+    <link rel="icon" href="assets/img/favicon.png" />
+    <script
+      src="https://kit.fontawesome.com/2a6b3c3f27.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div
+      id="page-loader"
+      role="progressbar"
+      aria-label="Loading page content"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
+      <div class="loader-inner">
+        <div class="loader-spinner"></div>
+        <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+        <p class="loader-label">Loading…</p>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">
+            <img src="assets/img/logo.png" alt="NGO Logo" class="brand-logo" />
+          </span>
+        </a>
+        <button
+          class="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          aria-label="Open navigation menu"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <nav
+          id="site-navigation"
+          class="site-nav"
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          <div class="nav-drawer-header">
+            <a href="index.html" class="nav-drawer-logo">
+              <img
+                src="assets/img/logo.png"
+                alt="NGO Logo"
+                class="brand-logo"
+              />
+            </a>
+            <button
+              class="nav-drawer-close"
+              type="button"
+              aria-label="Close navigation menu"
+            >
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="nav-drawer-body">
+            <ul class="nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="projects.html" class="nav-link">Projects</a></li>
+              <li class="nav-item-dropdown">
+                <button
+                  class="nav-link nav-dropdown-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  What We Do
+                  <i
+                    class="fa-solid fa-chevron-down nav-caret"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="services.html" class="nav-dropdown-link"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a href="products.html" class="nav-dropdown-link"
+                      >Products</a
+                    >
+                  </li>
+                  <li>
+                    <a href="training.html" class="nav-dropdown-link"
+                      >Training</a
+                    >
+                  </li>
+                  <li>
+                    <a href="eco-tourism.html" class="nav-dropdown-link"
+                      >Eco Tourism</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item-dropdown">
+                <button
+                  class="nav-link nav-dropdown-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  Resources
+                  <i
+                    class="fa-solid fa-chevron-down nav-caret"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a
+                      href="model-farm.html"
+                      class="nav-dropdown-link"
+                      aria-current="page"
+                      >Model Farm</a
+                    >
+                  </li>
+                  <li>
+                    <a href="production-unit.html" class="nav-dropdown-link"
+                      >Production Unit</a
+                    >
+                  </li>
+                  <li>
+                    <a href="training-center.html" class="nav-dropdown-link"
+                      >Training Center</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+    <div id="swipe-open-zone" aria-hidden="true"></div>
+
+    <main>
+      <!-- ── 1. HERO ──────────────────────────────────────────────── -->
+      <section class="mf-hero" aria-labelledby="mf-hero-title">
+        <!-- Floating particles -->
+        <div class="mf-particles" aria-hidden="true">
+          <span class="mf-particle"></span>
+          <span class="mf-particle"></span>
+          <span class="mf-particle"></span>
+          <span class="mf-particle"></span>
+          <span class="mf-particle"></span>
+          <span class="mf-particle"></span>
+          <span class="mf-particle"></span>
+          <span class="mf-particle"></span>
+          <span class="mf-particle"></span>
+          <span class="mf-particle"></span>
+          <span class="mf-particle"></span>
+          <span class="mf-particle"></span>
+        </div>
+
+        <div class="container mf-hero-inner">
+          <!-- Copy -->
+          <div class="mf-hero-copy section-reveal" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">A Living Classroom</p>
+            <h1
+              id="mf-hero-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Where sustainable<br />farming comes to life.
+            </h1>
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              Our model farm in Haylesewatte is a hands-on demonstration site
+              where communities learn organic farming methods that work on real
+              land, with real results.
+            </p>
+            <div
+              class="mf-hero-btns"
+              data-reveal="up"
+              style="--reveal-delay: 0.26s"
+            >
+              <a href="contact.html" class="button primary">Visit the Farm</a>
+              <a href="#mf-about" class="button secondary">Learn More</a>
+            </div>
+          </div>
+
+          <!-- Image frame -->
+          <div class="mf-hero-frame section-reveal" data-reveal="right">
+            <img
+              src="assets/img/model-farm-main.jpg"
+              alt="Lush green landscape of the Heleala model farm"
+              loading="eager"
+            />
+            <div class="mf-hero-badge" aria-hidden="true">
+              <i class="fa-solid fa-seedling"></i>
+              <span>100% Organic</span>
+            </div>
+            <div class="mf-hero-badge-alt" aria-hidden="true">
+              <i class="fa-solid fa-leaf"></i>
+              Haylesewatte
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 2. STATS BAND ────────────────────────────────────────── -->
+      <section
+        id="mf-stats"
+        class="mf-stats"
+        aria-labelledby="mf-stats-heading"
+      >
+        <div class="mf-stats-bg" aria-hidden="true"></div>
+        <div class="container">
+          <div class="mf-stats-header section-reveal" data-reveal-group>
+            <p class="mf-stats-eyebrow" data-reveal="up">
+              Model Farm Highlights
+            </p>
+            <h2
+              class="mf-stats-heading"
+              id="mf-stats-heading"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Rooted in conservation,<br />grown with communities.
+            </h2>
+          </div>
+
+          <div class="mf-stats-cards">
+            <div class="mf-stat-card section-reveal" data-reveal="up">
+              <div class="mf-stat-card-icon" aria-hidden="true">
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+              <div class="mf-stat-card-main">
+                <span class="mf-stat-number" data-count="50">0</span
+                ><span class="mf-stat-unit">+</span>
+              </div>
+              <p class="mf-stat-card-label">
+                Indigenous yam varieties conserved
+              </p>
+            </div>
+
+            <div
+              class="mf-stat-card section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              <div class="mf-stat-card-icon" aria-hidden="true">
+                <i class="fa-solid fa-people-group"></i>
+              </div>
+              <div class="mf-stat-card-main">
+                <span class="mf-stat-text">Community-based</span>
+              </div>
+              <p class="mf-stat-card-label">Farming and livelihood support</p>
+            </div>
+
+            <div
+              class="mf-stat-card section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.16s"
+            >
+              <div class="mf-stat-card-icon" aria-hidden="true">
+                <i class="fa-solid fa-handshake"></i>
+              </div>
+              <div class="mf-stat-card-main">
+                <span class="mf-stat-text">Trusted partners</span>
+              </div>
+              <p class="mf-stat-card-label">UNDP, Oxfam, IUCN &amp; others</p>
+            </div>
+
+            <div
+              class="mf-stat-card section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.24s"
+            >
+              <div class="mf-stat-card-icon" aria-hidden="true">
+                <i class="fa-solid fa-tree"></i>
+              </div>
+              <div class="mf-stat-card-main">
+                <span class="mf-stat-text">Long-term work</span>
+              </div>
+              <p class="mf-stat-card-label">
+                Grassroots support for rural communities
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 3. ABOUT THE FARM ────────────────────────────────────── -->
+      <section
+        class="mf-about content-section"
+        id="mf-about"
+        aria-labelledby="mf-about-title"
+      >
+        <div class="container">
+          <div class="mf-about-inner">
+            <!-- Image composition (first on mobile, left on desktop) -->
+            <div class="mf-about-visual section-reveal" data-reveal="left">
+              <div class="image-composition">
+                <div class="main-image">
+                  <img
+                    src="assets/img/model-farm-big.jpg"
+                    alt="Farmer tending to crops on the model farm"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="front-image">
+                  <img
+                    src="assets/img/into-forest.jpg"
+                    alt="Close-up of fresh organic produce"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="mf-about-content section-reveal" data-reveal-group>
+              <p class="eyebrow" data-reveal="up">What is a model farm?</p>
+              <h2
+                id="mf-about-title"
+                data-reveal="up"
+                style="--reveal-delay: 0.08s"
+              >
+                A real farm. A living classroom.
+              </h2>
+              <p data-reveal="up" style="--reveal-delay: 0.15s">
+                The Heleala model farm is not a demonstration in theory it is a
+                working farm. Community members and smallholder farmers visit,
+                observe, and practise proven organic methods on real soil, with
+                real crops, through every season.
+              </p>
+              <ul
+                class="mf-about-list"
+                data-reveal="up"
+                style="--reveal-delay: 0.22s"
+              >
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  Organic soil preparation and composting
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  Water-wise and drought-resilient growing techniques
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  Indigenous seed preservation and natural propagation
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  Integrated pest management without synthetic chemicals
+                </li>
+                <li>
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  Yield-sharing with participating community families
+                </li>
+              </ul>
+              <a
+                href="contact.html"
+                class="button primary"
+                data-reveal="up"
+                style="--reveal-delay: 0.3s"
+                >Plan a Visit</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 4. WHAT WE GROW ──────────────────────────────────────── -->
+      <section class="mf-grow content-section" aria-labelledby="mf-grow-title">
+        <div class="container">
+          <div class="mf-section-head section-reveal" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">Our crops</p>
+            <h2
+              id="mf-grow-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              What grows here.
+            </h2>
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              Three core crop groups cultivated using traditional knowledge and
+              modern organic practices each one chosen for community value and
+              food security.
+            </p>
+          </div>
+
+          <div class="mf-grow-grid">
+            <!-- Card 1 -->
+            <div class="mf-grow-card section-reveal" data-reveal="up">
+              <div class="mf-grow-card-img">
+                <img
+                  src="assets/img/yam model farm.jpg"
+                  alt="Yam and root crops cultivated on the model farm"
+                  loading="lazy"
+                />
+                <div class="mf-grow-icon" aria-hidden="true">
+                  <i class="fa-solid fa-seedling"></i>
+                </div>
+              </div>
+              <div class="mf-grow-card-body">
+                <h3>Yam &amp; Root Crops</h3>
+                <p>
+                  Traditional Sri Lankan yam varieties cultivated using organic
+                  methods, preserving indigenous crops while supporting
+                  household food security across seasons.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="mf-grow-card section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.1s"
+            >
+              <div class="mf-grow-card-img">
+                <img
+                  src="assets/img/veg and greens.jpg"
+                  alt="Seasonal vegetables and greens grown without chemicals"
+                  loading="lazy"
+                />
+                <div class="mf-grow-icon" aria-hidden="true">
+                  <i class="fa-solid fa-leaf"></i>
+                </div>
+              </div>
+              <div class="mf-grow-card-body">
+                <h3>Vegetables &amp; Greens</h3>
+                <p>
+                  Seasonal vegetables grown without synthetic chemicals
+                  providing nutrition for community families and showing
+                  chemical-free farming at practical scale.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="mf-grow-card section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.2s"
+            >
+              <div class="mf-grow-card-img">
+                <img
+                  src="assets/img/medical and herbs.jpg"
+                  alt="Medicinal herbs and Ayurvedic plants on the farm"
+                  loading="lazy"
+                />
+                <div class="mf-grow-icon" aria-hidden="true">
+                  <i class="fa-solid fa-mortar-pestle"></i>
+                </div>
+              </div>
+              <div class="mf-grow-card-body">
+                <h3>Medicinal Herbs</h3>
+                <p>
+                  Traditional Ayurvedic and aromatic plants cultivated for
+                  community health use and value-added product development
+                  linking farming directly with local wellbeing.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 5. HOW IT WORKS ──────────────────────────────────────── -->
+      <section
+        class="mf-process content-section"
+        aria-labelledby="mf-process-title"
+      >
+        <div class="container">
+          <div class="mf-section-head section-reveal" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">Our approach</p>
+            <h2
+              id="mf-process-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Four seasons of growth.
+            </h2>
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              A complete cycle of sustainable farming from soil preparation to
+              harvest that communities experience and practise first-hand.
+            </p>
+          </div>
+
+          <div class="mf-process-grid">
+            <div class="mf-process-card section-reveal" data-reveal="up">
+              <span class="mf-process-num" aria-hidden="true">01</span>
+              <div class="mf-process-icon" aria-hidden="true">
+                <i class="fa-solid fa-mound"></i>
+              </div>
+              <h3>Prepare the Soil</h3>
+              <p>
+                Composting, crop rotation, and organic matter building creates
+                rich, healthy soil that supports long-term yields without any
+                synthetic inputs.
+              </p>
+            </div>
+
+            <div
+              class="mf-process-card section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.09s"
+            >
+              <span class="mf-process-num" aria-hidden="true">02</span>
+              <div class="mf-process-icon" aria-hidden="true">
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+              <h3>Plant Organically</h3>
+              <p>
+                Using saved local seeds and natural propagation methods, without
+                reliance on synthetic fertilisers or chemical inputs.
+              </p>
+            </div>
+
+            <div
+              class="mf-process-card section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.17s"
+            >
+              <span class="mf-process-num" aria-hidden="true">03</span>
+              <div class="mf-process-icon" aria-hidden="true">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <h3>Maintain &amp; Monitor</h3>
+              <p>
+                Daily observation and integrated pest management keeps crops
+                healthy. Community members join in learning by doing, season
+                after season.
+              </p>
+            </div>
+
+            <div
+              class="mf-process-card section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.25s"
+            >
+              <span class="mf-process-num" aria-hidden="true">04</span>
+              <div class="mf-process-icon" aria-hidden="true">
+                <i class="fa-solid fa-basket-shopping"></i>
+              </div>
+              <h3>Harvest &amp; Share</h3>
+              <p>
+                Harvests are used in training and shared within the community
+                completing the cycle and reinforcing practical learning.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 6. EXPLORE LINKS ────────────────────────────────────── -->
+      <section
+        class="mf-links content-section"
+        aria-labelledby="mf-links-title"
+      >
+        <div class="container">
+          <div class="mf-section-head section-reveal" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">Part of something bigger</p>
+            <h2
+              id="mf-links-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Explore what else we do.
+            </h2>
+          </div>
+
+          <div class="mf-links-grid">
+            <a
+              href="production-unit.html"
+              class="mf-link-card section-reveal"
+              data-reveal="up"
+            >
+              <div class="mf-link-icon" aria-hidden="true">
+                <i class="fa-solid fa-warehouse"></i>
+              </div>
+              <div class="mf-link-body">
+                <span class="mf-link-title">Production Unit</span>
+                <p class="mf-link-desc">
+                  How we process and add value to farm produce.
+                </p>
+              </div>
+              <i
+                class="fa-solid fa-arrow-right mf-link-arrow"
+                aria-hidden="true"
+              ></i>
+            </a>
+
+            <a
+              href="training-center.html"
+              class="mf-link-card section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              <div class="mf-link-icon" aria-hidden="true">
+                <i class="fa-solid fa-chalkboard-user"></i>
+              </div>
+              <div class="mf-link-body">
+                <span class="mf-link-title">Training Center</span>
+                <p class="mf-link-desc">
+                  Where skills are taught, practised, and passed on.
+                </p>
+              </div>
+              <i
+                class="fa-solid fa-arrow-right mf-link-arrow"
+                aria-hidden="true"
+              ></i>
+            </a>
+
+            <a
+              href="services.html"
+              class="mf-link-card section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.16s"
+            >
+              <div class="mf-link-icon" aria-hidden="true">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              </div>
+              <div class="mf-link-body">
+                <span class="mf-link-title">Community Services</span>
+                <p class="mf-link-desc">
+                  Explore our work in training, farming, and community support.
+                </p>
+              </div>
+              <i
+                class="fa-solid fa-arrow-right mf-link-arrow"
+                aria-hidden="true"
+              ></i>
+            </a>
+
+            <a
+              href="contact.html"
+              class="mf-link-card section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.24s"
+            >
+              <div class="mf-link-icon" aria-hidden="true">
+                <i class="fa-solid fa-handshake"></i>
+              </div>
+              <div class="mf-link-body">
+                <span class="mf-link-title">Get Involved</span>
+                <p class="mf-link-desc">
+                  Visit, volunteer, or partner with our team.
+                </p>
+              </div>
+              <i
+                class="fa-solid fa-arrow-right mf-link-arrow"
+                aria-hidden="true"
+              ></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── 7. CTA BANNER ───────────────────────────────────────── -->
+      <section
+        class="banner-section mf-cta-banner"
+        aria-labelledby="mf-cta-title"
+      >
+        <div class="banner-overlay"></div>
+        <div class="banner-inner section-reveal" data-reveal-group>
+          <p class="eyebrow eyebrow-light" data-reveal="up">
+            Come see it yourself
+          </p>
+          <h2
+            class="banner-title"
+            id="mf-cta-title"
+            data-reveal="up"
+            style="--reveal-delay: 0.08s"
+          >
+            Visit the model farm.
+          </h2>
+          <p class="banner-copy" data-reveal="up" style="--reveal-delay: 0.16s">
+            Our farm is open to community groups, smallholder farmers, and
+            learners from across Sri Lanka. Come and see how sustainable
+            agriculture works in practice on real land.
+          </p>
+          <a
+            href="contact.html"
+            class="button primary"
+            data-reveal="up"
+            style="--reveal-delay: 0.26s"
+            >Get in Touch</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link">
+            <img
+              src="assets/img/logo.png"
+              alt="Heleala logo"
+              class="brand-logo footer-logo"
+            />
+          </a>
+          <p class="footer-tagline">
+            Building resilient communities through sustainable agriculture,
+            training, and eco tourism.
+          </p>
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="Follow us on Facebook"
+              ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Follow us on Instagram"
+              ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Follow us on X"
+              ><i class="fa-brands fa-x-twitter" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Connect on LinkedIn"
+              ><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Explore navigation">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="services.html">What We Do</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Get Involved</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Donate</a></li>
+            <li><a href="contact.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+        <address class="footer-col footer-contact">
+          <h3 class="footer-col-title">Contact</h3>
+          <ul class="footer-links">
+            <li>Haylesewatte, Attapitiya</li>
+            <li>Ussapitiya, Sri Lanka</li>
+            <li><a href="mailto:info@heleala.org">info@heleala.org</a></li>
+            <li><a href="tel:+94718110710">+9471 811 0710</a></li>
+          </ul>
+        </address>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p class="footer-copy">
+            &copy; 2026
+            <a
+              href="https://darkroom.lk/"
+              class="darkroom"
+              target="_blank"
+              rel="noopener"
+              >Darkroom</a
+            >
+            (Pvt) Ltd. All rights reserved.
+          </p>
+          <ul class="footer-legal">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+    <script src="assets/js/main.js?v=20260425"></script>
+
+    <!-- Counter animation: rolls numbers up when scrolled into view -->
+    <script>
+      (function () {
+        var counters = document.querySelectorAll("[data-count]");
+        if (!counters.length) return;
+
+        var reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        if (reducedMotion || !("IntersectionObserver" in window)) {
+          counters.forEach(function (el) {
+            el.textContent = el.dataset.count;
+          });
+          return;
+        }
+
+        var obs = new IntersectionObserver(
+          function (entries, observer) {
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) return;
+              var el = entry.target;
+              var target = parseInt(el.dataset.count, 10);
+              var duration = target > 50 ? 1800 : 1200;
+              var start = null;
+
+              function step(ts) {
+                if (!start) start = ts;
+                var elapsed = ts - start;
+                var progress = Math.min(elapsed / duration, 1);
+                var eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.floor(eased * target);
+                if (progress < 1) {
+                  requestAnimationFrame(step);
+                } else {
+                  el.textContent = target;
+                }
+              }
+
+              requestAnimationFrame(step);
+              observer.unobserve(el);
+            });
+          },
+          { threshold: 0.65 },
+        );
+
+        counters.forEach(function (el) {
+          obs.observe(el);
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,636 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CDC | Services</title>
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260421" />
+    <link rel="icon" href="assets/img/favicon.png" />
+
+    <script
+      src="https://kit.fontawesome.com/2a6b3c3f27.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div
+      id="page-loader"
+      role="progressbar"
+      aria-label="Loading page content"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
+      <div class="loader-inner">
+        <div class="loader-spinner"></div>
+        <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+        <p class="loader-label">Loading...</p>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">
+            <img src="assets/img/logo.png" alt="CDC logo" class="brand-logo" />
+          </span>
+        </a>
+        <button
+          class="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          aria-label="Open navigation menu"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <nav
+          id="site-navigation"
+          class="site-nav"
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          <div class="nav-drawer-header">
+            <a href="index.html" class="nav-drawer-logo">
+              <img
+                src="assets/img/logo.png"
+                alt="CDC logo"
+                class="brand-logo"
+              />
+            </a>
+            <button
+              class="nav-drawer-close"
+              type="button"
+              aria-label="Close navigation menu"
+            >
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="nav-drawer-body">
+            <ul class="nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="projects.html" class="nav-link">Projects</a></li>
+              <li class="nav-item-dropdown">
+                <button
+                  class="nav-link nav-dropdown-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  What We Do
+                  <i
+                    class="fa-solid fa-chevron-down nav-caret"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a
+                      href="services.html"
+                      class="nav-dropdown-link"
+                      aria-current="page"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a href="products.html" class="nav-dropdown-link"
+                      >Products</a
+                    >
+                  </li>
+                  <li>
+                    <a href="training.html" class="nav-dropdown-link"
+                      >Training</a
+                    >
+                  </li>
+                  <li>
+                    <a href="eco-tourism.html" class="nav-dropdown-link"
+                      >Eco Tourism</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item-dropdown">
+                <button
+                  class="nav-link nav-dropdown-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  Resources
+                  <i
+                    class="fa-solid fa-chevron-down nav-caret"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="model-farm.html" class="nav-dropdown-link"
+                      >Model Farm</a
+                    >
+                  </li>
+                  <li>
+                    <a href="production-unit.html" class="nav-dropdown-link"
+                      >Production Unit</a
+                    >
+                  </li>
+                  <li>
+                    <a href="training-center.html" class="nav-dropdown-link"
+                      >Training Center</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+    <div id="swipe-open-zone" aria-hidden="true"></div>
+
+    <main>
+      <!-- ─── Hero ─────────────────────────────────────────────────── -->
+      <section class="services-page-hero" aria-labelledby="services-page-title">
+        <img
+          src="assets/img/com-dev-bg.jpg"
+          alt=""
+          class="services-page-hero-bg"
+          aria-hidden="true"
+        />
+        <div
+          class="container services-page-hero-inner section-reveal"
+          data-reveal-group
+        >
+          <p class="eyebrow" data-reveal="up">Practical community support</p>
+          <h1
+            id="services-page-title"
+            data-reveal="up"
+            style="--reveal-delay: 0.08s"
+          >
+            Support that starts with people and stays in communities
+          </h1>
+          <p
+            class="services-page-hero-intro"
+            data-reveal="up"
+            style="--reveal-delay: 0.16s"
+          >
+            CDC works alongside rural communities in Sri Lanka through training,
+            guidance, and hands-on collaboration — building lasting skills and
+            strengthening livelihoods from the ground up.
+          </p>
+          <a
+            href="contact.html"
+            class="button secondary"
+            data-reveal="up"
+            style="--reveal-delay: 0.24s"
+            >Talk to CDC</a
+          >
+        </div>
+      </section>
+
+      <!-- ─── What We Support ───────────────────────────────────────── -->
+      <section
+        class="services-what-support content-section section-reveal"
+        aria-labelledby="what-support-title"
+      >
+        <div class="container">
+          <div class="services-themes-intro" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">What we offer</p>
+            <h2
+              id="what-support-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Support that meets communities where they are
+            </h2>
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              CDC's support is not a fixed menu. It grows from years of
+              fieldwork, listening to communities, and responding to what is
+              genuinely needed on the ground.
+            </p>
+          </div>
+
+          <ul class="support-theme-list" aria-label="CDC service areas">
+            <li class="support-theme-item section-reveal" data-reveal="up">
+              <span class="support-theme-number" aria-hidden="true">01</span>
+              <div class="support-theme-main">
+                <h3 class="support-theme-heading">Learning &amp; Training</h3>
+                <div>
+                  <p class="support-theme-body">
+                    Training in agriculture, organic farming, entrepreneurship,
+                    and livelihood skills — designed so communities can apply
+                    learning in their own context, at their own pace.
+                  </p>
+                  <ul
+                    class="support-theme-tags"
+                    aria-label="Learning and training activities"
+                  >
+                    <li class="support-tag">Agricultural training</li>
+                    <li class="support-tag">Entrepreneurship</li>
+                    <li class="support-tag">Field demonstrations</li>
+                    <li class="support-tag">Awareness programs</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <li class="support-theme-item section-reveal" data-reveal="up">
+              <span class="support-theme-number" aria-hidden="true">02</span>
+              <div class="support-theme-main">
+                <h3 class="support-theme-heading">Community Leadership</h3>
+                <div>
+                  <p class="support-theme-body">
+                    Supporting communities to organize, participate, and take
+                    collective action — building local leaders and strong
+                    community structures that can sustain themselves.
+                  </p>
+                  <ul
+                    class="support-theme-tags"
+                    aria-label="Community leadership activities"
+                  >
+                    <li class="support-tag">Community mobilization</li>
+                    <li class="support-tag">Leadership development</li>
+                    <li class="support-tag">Group formation</li>
+                    <li class="support-tag">Women empowerment</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <li class="support-theme-item section-reveal" data-reveal="up">
+              <span class="support-theme-number" aria-hidden="true">03</span>
+              <div class="support-theme-main">
+                <h3 class="support-theme-heading">Sustainable Livelihoods</h3>
+                <div>
+                  <p class="support-theme-body">
+                    Building income pathways through value addition, product
+                    processing, extension services, and local enterprise —
+                    connected to farming, food, and community production.
+                  </p>
+                  <ul
+                    class="support-theme-tags"
+                    aria-label="Livelihoods activities"
+                  >
+                    <li class="support-tag">Value addition</li>
+                    <li class="support-tag">Marketing support</li>
+                    <li class="support-tag">Extension services</li>
+                    <li class="support-tag">Toxin-free food</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <li class="support-theme-item section-reveal" data-reveal="up">
+              <span class="support-theme-number" aria-hidden="true">04</span>
+              <div class="support-theme-main">
+                <h3 class="support-theme-heading">
+                  Agriculture &amp; Environment
+                </h3>
+                <div>
+                  <p class="support-theme-body">
+                    Organic farming guidance, seedling provision, and practical
+                    conservation work — supporting communities to care well for
+                    the land they live and work on.
+                  </p>
+                  <ul
+                    class="support-theme-tags"
+                    aria-label="Agriculture and environment activities"
+                  >
+                    <li class="support-tag">Organic farming</li>
+                    <li class="support-tag">Seedling supply</li>
+                    <li class="support-tag">Environmental conservation</li>
+                    <li class="support-tag">Indigenous crops</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+
+            <li class="support-theme-item section-reveal" data-reveal="up">
+              <span class="support-theme-number" aria-hidden="true">05</span>
+              <div class="support-theme-main">
+                <h3 class="support-theme-heading">
+                  Research &amp; Knowledge Support
+                </h3>
+                <div>
+                  <p class="support-theme-body">
+                    Supporting field research, educational visits, and knowledge
+                    exchange — bridging practical community experience with
+                    wider learning and documentation.
+                  </p>
+                  <ul
+                    class="support-theme-tags"
+                    aria-label="Research and knowledge activities"
+                  >
+                    <li class="support-tag">Research services</li>
+                    <li class="support-tag">Field training support</li>
+                    <li class="support-tag">Educational visits</li>
+                    <li class="support-tag">Knowledge sharing</li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ─── How Support Happens ───────────────────────────────────── -->
+      <section
+        class="services-process-section content-section section-reveal"
+        aria-labelledby="services-process-title"
+      >
+        <div class="container">
+          <div class="services-process-head" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">How it works</p>
+            <h2
+              id="services-process-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              From first conversation to lasting community action
+            </h2>
+          </div>
+
+          <div class="process-track">
+            <div
+              class="process-track-step"
+              data-reveal="up"
+              style="--reveal-delay: 0.06s"
+            >
+              <div class="process-track-num" aria-hidden="true">01</div>
+              <h3>Listening to communities</h3>
+              <p>
+                We begin by spending time in the field — understanding local
+                priorities, existing knowledge, and what meaningful support
+                actually looks like in practice.
+              </p>
+            </div>
+
+            <div
+              class="process-track-step"
+              data-reveal="up"
+              style="--reveal-delay: 0.14s"
+            >
+              <div class="process-track-num" aria-hidden="true">02</div>
+              <h3>Building skills and awareness</h3>
+              <p>
+                Training, workshops, and field sessions that strengthen
+                practical capabilities and raise awareness around farming,
+                environment, and community enterprise.
+              </p>
+            </div>
+
+            <div
+              class="process-track-step"
+              data-reveal="up"
+              style="--reveal-delay: 0.22s"
+            >
+              <div class="process-track-num" aria-hidden="true">03</div>
+              <h3>Supporting action on the ground</h3>
+              <p>
+                Hands-on guidance, materials, and practical resources as
+                communities put learning into real use — in fields, homes, and
+                local enterprises.
+              </p>
+            </div>
+
+            <div
+              class="process-track-step"
+              data-reveal="up"
+              style="--reveal-delay: 0.3s"
+            >
+              <div class="process-track-num" aria-hidden="true">04</div>
+              <h3>Strengthening local capacity</h3>
+              <p>
+                Long-term relationships that help communities lead their own
+                development — so support becomes embedded in local knowledge
+                rather than dependent on outside help.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Where Support Reaches ─────────────────────────────────── -->
+      <section
+        class="services-reaches content-section section-reveal"
+        aria-labelledby="services-reaches-title"
+      >
+        <div class="container services-reaches-inner">
+          <div class="services-reaches-copy" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">Who we walk alongside</p>
+            <h2
+              id="services-reaches-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Support built on relationships, not transactions
+            </h2>
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              CDC does not deliver services from a distance. The people at the
+              centre of this work are the ones who shape it. Farming families,
+              women's groups, local producers, and community leaders are not
+              recipients — they are the reason for it.
+            </p>
+            <p data-reveal="up" style="--reveal-delay: 0.22s">
+              Support also reaches youth, local institutions, and researchers
+              who want to understand or engage with community-based development
+              in Sri Lanka.
+            </p>
+            <ul
+              class="who-roster"
+              data-reveal="up"
+              style="--reveal-delay: 0.28s"
+              aria-label="Groups CDC works with"
+            >
+              <li class="who-roster-item">Rural communities</li>
+              <li class="who-roster-item">Women's groups</li>
+              <li class="who-roster-item">Farming families</li>
+              <li class="who-roster-item">Local producers</li>
+              <li class="who-roster-item">Youth</li>
+              <li class="who-roster-item">Schools &amp; institutions</li>
+              <li class="who-roster-item">Researchers &amp; partners</li>
+            </ul>
+          </div>
+
+          <div
+            class="services-reaches-image"
+            data-reveal="right"
+            style="--reveal-delay: 0.12s"
+          >
+            <img
+              src="assets/img/card-1-img-2.jpg"
+              alt="Community members engaged in practical work and training in Sri Lanka"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Highlight: Training & Empowerment ─────────────────────── -->
+      <section
+        class="services-highlight content-section section-reveal"
+        aria-labelledby="services-highlight-title"
+      >
+        <div class="container services-highlight-inner">
+          <div class="services-highlight-frame" data-reveal="left">
+            <img
+              src="assets/img/training_w.jpg"
+              alt="Women's skills training and empowerment supported by CDC"
+            />
+          </div>
+
+          <div class="services-highlight-copy" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">A closer look</p>
+            <h2
+              id="services-highlight-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Training and empowerment run through everything CDC does
+            </h2>
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              Two of CDC's most consistent areas of work are training and
+              women's empowerment — not as separate programs, but as connected
+              threads running through most of what the organization does in the
+              field.
+            </p>
+            <ul class="arrow-list">
+              <li
+                class="arrow-item"
+                data-reveal="up"
+                style="--reveal-delay: 0.24s"
+              >
+                <span class="arrow-mark">-></span>
+                Skills training in agriculture, enterprise, and safe food
+                production
+              </li>
+              <li
+                class="arrow-item"
+                data-reveal="up"
+                style="--reveal-delay: 0.3s"
+              >
+                <span class="arrow-mark">-></span>
+                Women's groups supported through leadership and livelihood
+                programs
+              </li>
+              <li
+                class="arrow-item"
+                data-reveal="up"
+                style="--reveal-delay: 0.36s"
+              >
+                <span class="arrow-mark">-></span>
+                Practical fieldwork that connects learning directly to daily
+                life and real income
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── Final CTA ─────────────────────────────────────────────── -->
+      <section
+        class="services-final-cta content-section section-reveal"
+        aria-labelledby="services-cta-title"
+      >
+        <div class="container">
+          <div class="services-final-cta-inner" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">Get in touch</p>
+            <h2
+              id="services-cta-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Interested in working with CDC?
+            </h2>
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              Whether you are a community group, a researcher, an organization,
+              or someone who simply wants to understand more about this work —
+              CDC is open to conversation.
+            </p>
+            <a
+              href="contact.html"
+              class="button primary"
+              data-reveal="up"
+              style="--reveal-delay: 0.24s"
+              >Contact CDC</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link">
+            <img
+              src="assets/img/logo.png"
+              alt="CDC logo"
+              class="brand-logo footer-logo"
+            />
+          </a>
+          <p class="footer-tagline">
+            Building resilient communities through sustainable agriculture,
+            training, and eco tourism.
+          </p>
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="Follow us on Facebook"
+              ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Follow us on Instagram"
+              ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Follow us on X"
+              ><i class="fa-brands fa-x-twitter" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Connect on LinkedIn"
+              ><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Explore navigation">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="services.html">What We Do</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Get Involved</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Donate</a></li>
+            <li><a href="contact.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+        <address class="footer-col footer-contact">
+          <h3 class="footer-col-title">Contact</h3>
+          <ul class="footer-links">
+            <li>Haylesewatte, Attapitiya</li>
+            <li>Ussapitiya, Sri Lanka</li>
+            <li><a href="mailto:info@heleala.org">info@heleala.org</a></li>
+            <li><a href="tel:+94718110710">+94 71 811 0710</a></li>
+          </ul>
+        </address>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p class="footer-copy">
+            &copy; 2026 <a href="https://darkroom.lk/" class="darkroom" target="_blank">Darkroom</a> (Pvt) Ltd. All rights reserved.
+          </p>
+          <ul class="footer-legal">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+    <script src="assets/js/main.js?v=20260421"></script>
+  </body>
+</html>

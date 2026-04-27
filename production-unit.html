@@ -1,0 +1,862 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CDC | Production Unit</title>
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260426-9" />
+    <link rel="icon" href="assets/img/favicon.png" />
+    <script
+      src="https://kit.fontawesome.com/2a6b3c3f27.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="production-unit-page">
+    <div
+      id="page-loader"
+      role="progressbar"
+      aria-label="Loading page content"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
+      <div class="loader-inner">
+        <div class="loader-spinner"></div>
+        <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+        <p class="loader-label">Loading...</p>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">
+            <img src="assets/img/logo.png" alt="CDC logo" class="brand-logo" />
+          </span>
+        </a>
+        <button
+          class="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          aria-label="Open navigation menu"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <nav
+          id="site-navigation"
+          class="site-nav"
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          <div class="nav-drawer-header">
+            <a href="index.html" class="nav-drawer-logo">
+              <img
+                src="assets/img/logo.png"
+                alt="CDC logo"
+                class="brand-logo"
+              />
+            </a>
+            <button
+              class="nav-drawer-close"
+              type="button"
+              aria-label="Close navigation menu"
+            >
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="nav-drawer-body">
+            <ul class="nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="projects.html" class="nav-link">Projects</a></li>
+              <li class="nav-item-dropdown">
+                <button
+                  class="nav-link nav-dropdown-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  What We Do
+                  <i
+                    class="fa-solid fa-chevron-down nav-caret"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="services.html" class="nav-dropdown-link"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a href="products.html" class="nav-dropdown-link"
+                      >Products</a
+                    >
+                  </li>
+                  <li>
+                    <a href="training.html" class="nav-dropdown-link"
+                      >Training</a
+                    >
+                  </li>
+                  <li>
+                    <a href="eco-tourism.html" class="nav-dropdown-link"
+                      >Eco Tourism</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item-dropdown">
+                <button
+                  class="nav-link nav-dropdown-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  Resources
+                  <i
+                    class="fa-solid fa-chevron-down nav-caret"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="model-farm.html" class="nav-dropdown-link"
+                      >Model Farm</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="production-unit.html"
+                      class="nav-dropdown-link"
+                      aria-current="page"
+                      >Production Unit</a
+                    >
+                  </li>
+                  <li>
+                    <a href="training-center.html" class="nav-dropdown-link"
+                      >Training Center</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+    <div id="swipe-open-zone" aria-hidden="true"></div>
+
+    <main>
+      <!-- ══ 1. HERO ═══════════════════════════════════════════════════ -->
+      <section class="pu-hero" aria-labelledby="pu-hero-title">
+        <!-- Decorative floating particles -->
+        <div class="pu-hero-particles" aria-hidden="true">
+          <span class="pu-particle"></span>
+          <span class="pu-particle"></span>
+          <span class="pu-particle"></span>
+          <span class="pu-particle"></span>
+          <span class="pu-particle"></span>
+          <span class="pu-particle"></span>
+        </div>
+
+        <div class="container pu-hero-inner">
+          <!-- Left: copy -->
+          <div class="pu-hero-copy">
+            <p
+              class="eyebrow pu-eyebrow--light pu-fade-up"
+              style="--pu-delay: 0.05s"
+            >
+              Community Production Unit
+            </p>
+
+            <h1 id="pu-hero-title" class="pu-fade-up" style="--pu-delay: 0.18s">
+              Turning local harvests<br />into products with purpose
+            </h1>
+
+            <p class="pu-fade-up" style="--pu-delay: 0.32s">
+              CDC&#8217;s production unit is a small-scale space where local
+              crops are prepared, processed, and developed into value-added food
+              products while supporting training, livelihoods, and community
+              enterprise.
+            </p>
+
+            <div class="pu-hero-actions pu-fade-up" style="--pu-delay: 0.46s">
+              <a href="contact.html" class="button primary">Contact CDC</a>
+              <a href="#pu-features" class="pu-hero-scroll-link">
+                See the process
+                <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: image composition -->
+          <div class="pu-hero-visual pu-fade-right" style="--pu-delay: 0.22s">
+            <div class="pu-hero-images" id="pu-hero-collage">
+              <div class="pu-hero-img-main">
+                <img
+                  src="assets/img/food-and-bav.jpg"
+                  alt="Food products made at the CDC community production unit"
+                />
+              </div>
+
+              <div class="pu-hero-img-third">
+                <img
+                  src="assets/img/pro-unit-hero-img-3.jpg"
+                  alt="Yam crops grown at the CDC model farm"
+                />
+              </div>
+
+              <div class="pu-hero-img-front">
+                <img
+                  src="assets/img/pro-unit-hero-img-2.jpg"
+                  alt="Community members working at the CDC production unit"
+                />
+              </div>
+
+              <!-- Floating badge -->
+              <div class="pu-hero-badge" aria-hidden="true">
+                <i class="fa-solid fa-wheat-awn"></i>
+                <span>Farm to Product</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll nudge -->
+        <a
+          href="#pu-features"
+          class="pu-scroll-indicator"
+          aria-label="Scroll to next section"
+        >
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </a>
+      </section>
+
+      <!-- ══ 2. WHAT HAPPENS HERE ══════════════════════════════════════ -->
+      <section
+        id="pu-features"
+        class="pu-features content-section"
+        aria-labelledby="pu-features-title"
+      >
+        <div class="container">
+          <div class="pu-section-head section-reveal" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">What happens here</p>
+            <h2
+              id="pu-features-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              A shared space for learning, processing,<br />and livelihood
+              support
+            </h2>
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              The production unit connects farming, training, and community
+              enterprise. It helps people learn practical skills while turning
+              local crops into useful, marketable products.
+            </p>
+          </div>
+
+          <div class="pu-features-list">
+            <!-- Feature 1 -->
+            <div class="pu-feature-row section-reveal" data-reveal="left">
+              <div class="pu-feature-icon-wrap" aria-hidden="true">
+                <span class="pu-feature-icon">
+                  <i class="fa-solid fa-mortar-pestle"></i>
+                </span>
+                <span class="pu-feature-num">01</span>
+              </div>
+              <div class="pu-feature-body">
+                <h3>Processing local crops</h3>
+                <p>
+                  Local crops, especially yams and traditional food ingredients,
+                  are cleaned, prepared, and processed into value-added
+                  products.
+                </p>
+              </div>
+              <div class="pu-feature-img-wrap" aria-hidden="true">
+                <img
+                  src="assets/img/pro-unit-sm-1.jpg"
+                  alt="Yam crops used in CDC's local food processing"
+                />
+              </div>
+              <div class="pu-feature-accent" aria-hidden="true"></div>
+            </div>
+
+            <!-- Feature 2 (offset) -->
+            <div
+              class="pu-feature-row pu-feature-row--offset section-reveal"
+              data-reveal="right"
+              style="--reveal-delay: 0.08s"
+            >
+              <div class="pu-feature-icon-wrap" aria-hidden="true">
+                <span class="pu-feature-icon">
+                  <i class="fa-solid fa-chalkboard-user"></i>
+                </span>
+                <span class="pu-feature-num">02</span>
+              </div>
+              <div class="pu-feature-body">
+                <h3>Building practical skills</h3>
+                <p>
+                  Community members learn food preparation, simple processing,
+                  packaging, and small enterprise skills through hands-on
+                  sessions.
+                </p>
+              </div>
+              <div class="pu-feature-img-wrap" aria-hidden="true">
+                <img
+                  src="assets/img/pro-unit-sm-2.jpg"
+                  alt="Community members building food processing skills"
+                />
+              </div>
+              <div class="pu-feature-accent" aria-hidden="true"></div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div
+              class="pu-feature-row section-reveal"
+              data-reveal="left"
+              style="--reveal-delay: 0.06s"
+            >
+              <div class="pu-feature-icon-wrap" aria-hidden="true">
+                <span class="pu-feature-icon">
+                  <i class="fa-solid fa-store"></i>
+                </span>
+                <span class="pu-feature-num">03</span>
+              </div>
+              <div class="pu-feature-body">
+                <h3>Supporting local income</h3>
+                <p>
+                  By adding value to farm produce, the unit helps families and
+                  producer groups create products that can support sustainable
+                  livelihoods.
+                </p>
+              </div>
+              <div class="pu-feature-img-wrap" aria-hidden="true">
+                <img
+                  src="assets/img/pro-unit-sm-3.jpg"
+                  alt="Fresh vegetables and greens supporting local income"
+                />
+              </div>
+              <div class="pu-feature-accent" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ 3. FROM HARVEST TO PRODUCT ════════════════════════════════ -->
+      <section
+        class="pu-journey content-section"
+        aria-labelledby="pu-journey-title"
+      >
+        <div class="container">
+          <div
+            class="pu-section-head pu-section-head--light section-reveal"
+            data-reveal-group
+          >
+            <p class="eyebrow pu-eyebrow--light" data-reveal="up">
+              The process
+            </p>
+            <!-- Section heading: 40–55 characters -->
+            <h2
+              id="pu-journey-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              From harvest to product, step by step
+            </h2>
+          </div>
+
+          <div class="pu-journey-steps" role="list">
+            <!-- Step 1 -->
+            <div
+              class="pu-step section-reveal"
+              data-reveal="up"
+              role="listitem"
+            >
+              <div class="pu-step-img-wrap" aria-hidden="true">
+                <img src="assets/img/pro-unit-wide-1.jpg" alt="" />
+              </div>
+              <div class="pu-step-head">
+                <span class="pu-step-num" aria-hidden="true">01</span>
+                <span class="pu-step-icon" aria-hidden="true">
+                  <i class="fa-solid fa-seedling"></i>
+                </span>
+              </div>
+              <h3 class="pu-step-title">Harvest</h3>
+              <p class="pu-step-desc">
+                Crops are grown through community farming, model farm learning,
+                and local agricultural knowledge.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div
+              class="pu-step section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.1s"
+              role="listitem"
+            >
+              <div class="pu-step-img-wrap" aria-hidden="true">
+                <img src="assets/img/veg and greens.jpg" alt="" />
+              </div>
+              <div class="pu-step-head">
+                <span class="pu-step-num" aria-hidden="true">02</span>
+                <span class="pu-step-icon" aria-hidden="true">
+                  <i class="fa-solid fa-hands-holding-circle"></i>
+                </span>
+              </div>
+              <h3 class="pu-step-title">Prepare</h3>
+              <p class="pu-step-desc">
+                Fresh produce is cleaned, sorted, and prepared carefully before
+                processing begins.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div
+              class="pu-step section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.2s"
+              role="listitem"
+            >
+              <div class="pu-step-img-wrap" aria-hidden="true">
+                <img src="assets/img/food-and-bav.jpg" alt="" />
+              </div>
+              <div class="pu-step-head">
+                <span class="pu-step-num" aria-hidden="true">03</span>
+                <span class="pu-step-icon" aria-hidden="true">
+                  <i class="fa-solid fa-blender"></i>
+                </span>
+              </div>
+              <h3 class="pu-step-title">Process</h3>
+              <p class="pu-step-desc">
+                Yams and other local ingredients are turned into value-added
+                foods using small-scale processing methods.
+              </p>
+            </div>
+
+            <!-- Step 4 (last — no connector) -->
+            <div
+              class="pu-step pu-step--last section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.3s"
+              role="listitem"
+            >
+              <div class="pu-step-img-wrap" aria-hidden="true">
+                <img src="assets/img/pro-unit-wide-4.jpg" alt="" />
+              </div>
+              <div class="pu-step-head">
+                <span class="pu-step-num" aria-hidden="true">04</span>
+                <span class="pu-step-icon" aria-hidden="true">
+                  <i class="fa-solid fa-basket-shopping"></i>
+                </span>
+              </div>
+              <h3 class="pu-step-title">Share</h3>
+              <p class="pu-step-desc">
+                Finished products are shared through CDC channels, community
+                networks, and the Poshana Mandapaya sales outlet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ 4. IMAGE STORY ════════════════════════════════════════════ -->
+      <section class="pu-story" aria-labelledby="pu-story-title">
+        <!-- Fixed background image -->
+        <div class="pu-story-bg" aria-hidden="true">
+          <img
+            class="pu-story-image"
+            src="assets/img/model-farm-big.jpg"
+            alt=""
+          />
+          <div class="pu-story-overlay"></div>
+        </div>
+
+        <div class="container pu-story-content">
+          <div class="pu-story-panel section-reveal" data-reveal-group>
+            <p class="eyebrow pu-eyebrow--light" data-reveal="up">
+              From Farm to Food
+            </p>
+
+            <h2
+              id="pu-story-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Where community effort becomes<br />something people can use
+            </h2>
+
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              The production unit is more than a work space. It is where farming
+              knowledge, women&#8217;s skills, traditional foods, and local
+              enterprise come together to create products that carry both value
+              and meaning.
+            </p>
+          </div>
+
+          <div class="pu-story-float section-reveal" data-reveal="right">
+            <img
+              src="assets/img/pro-unit-sec-1.jpg"
+              alt="Community members at the CDC production unit"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ 5. LINKED TO CDC'S WIDER WORK ════════════════════════════ -->
+      <section
+        class="pu-network content-section"
+        aria-labelledby="pu-network-title"
+      >
+        <div class="container">
+          <div class="pu-section-head section-reveal" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">Connections</p>
+            <h2
+              id="pu-network-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Connected to every part of CDC&#8217;s work
+            </h2>
+          </div>
+
+          <div
+            class="pu-network-grid section-reveal"
+            data-reveal="up"
+            style="--reveal-delay: 0.12s"
+          >
+            <!-- Hub — Production Unit (spans full left column) -->
+            <div class="pu-network-hub" id="pu-hub">
+              <span class="pu-network-hub-icon" aria-hidden="true">
+                <i class="fa-solid fa-industry"></i>
+              </span>
+              <span class="pu-network-hub-label">Production Unit</span>
+              <p class="pu-network-hub-desc">
+                Where farming knowledge becomes food products.
+              </p>
+            </div>
+
+            <!-- Node 1: Model Farm -->
+            <a
+              href="model-farm.html"
+              class="pu-network-node"
+              data-node="model-farm"
+            >
+              <span class="pu-node-img-wrap" aria-hidden="true">
+                <img src="assets/img/pro-unit-con-1.jpg" alt="" />
+              </span>
+              <span class="pu-node-icon" aria-hidden="true">
+                <i class="fa-solid fa-tractor"></i>
+              </span>
+              <span class="pu-node-title">Model Farm</span>
+              <p class="pu-node-desc">
+                The model farm supports crop conservation, farming
+                demonstrations, and local food production.
+              </p>
+            </a>
+
+            <!-- Node 2: Training Center -->
+            <a
+              href="training-center.html"
+              class="pu-network-node"
+              data-node="training"
+            >
+              <span class="pu-node-img-wrap" aria-hidden="true">
+                <img src="assets/img/training_w.jpg" alt="" />
+              </span>
+              <span class="pu-node-icon" aria-hidden="true">
+                <i class="fa-solid fa-chalkboard-user"></i>
+              </span>
+              <span class="pu-node-title">Training Center</span>
+              <p class="pu-node-desc">
+                Training programs help people learn practical skills for food
+                processing and livelihood development.
+              </p>
+            </a>
+
+            <!-- Node 3: Products -->
+            <a
+              href="products.html"
+              class="pu-network-node"
+              data-node="products"
+            >
+              <span class="pu-node-img-wrap" aria-hidden="true">
+                <img src="assets/img/food-and-bav.jpg" alt="" />
+              </span>
+              <span class="pu-node-icon" aria-hidden="true">
+                <i class="fa-solid fa-boxes-stacked"></i>
+              </span>
+              <span class="pu-node-title">Products</span>
+              <p class="pu-node-desc">
+                Value-added foods and traditional products are developed from
+                local crops and community knowledge.
+              </p>
+            </a>
+
+            <!-- Node 4: Community Livelihoods -->
+            <a
+              href="services.html"
+              class="pu-network-node"
+              data-node="livelihoods"
+            >
+              <span class="pu-node-img-wrap" aria-hidden="true">
+                <img src="assets/img/pro-unit-con-2.jpg" alt="" />
+              </span>
+              <span class="pu-node-icon" aria-hidden="true">
+                <i class="fa-solid fa-people-group"></i>
+              </span>
+              <span class="pu-node-title">Community Livelihoods</span>
+              <p class="pu-node-desc">
+                The production unit supports income opportunities for families,
+                farmers, and community groups.
+              </p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ 6. CTA BANNER ══════════════════════════════════════════════ -->
+      <section class="pu-cta content-section" aria-labelledby="pu-cta-title">
+        <div class="pu-cta-bg" aria-hidden="true"></div>
+        <div class="container">
+          <div class="pu-cta-inner section-reveal" data-reveal-group>
+            <p class="eyebrow pu-eyebrow--light" data-reveal="up">
+              Work with us
+            </p>
+
+            <h2
+              id="pu-cta-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Interested in learning more about our production unit?
+            </h2>
+
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              Whether you want to visit, collaborate, or ask about CDC&#8217;s
+              community-made products, we&#8217;d be happy to start a
+              conversation.
+            </p>
+
+            <a
+              href="contact.html"
+              class="button primary"
+              data-reveal="up"
+              style="--reveal-delay: 0.24s"
+              >Contact CDC</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link">
+            <img
+              src="assets/img/logo.png"
+              alt="CDC logo"
+              class="brand-logo footer-logo"
+            />
+          </a>
+          <p class="footer-tagline">
+            Building resilient communities through sustainable agriculture,
+            training, and eco tourism.
+          </p>
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="Follow us on Facebook"
+              ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Follow us on Instagram"
+              ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Follow us on X"
+              ><i class="fa-brands fa-x-twitter" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Connect on LinkedIn"
+              ><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Explore navigation">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="services.html">What We Do</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Get Involved</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Donate</a></li>
+            <li><a href="contact.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+        <address class="footer-col footer-contact">
+          <h3 class="footer-col-title">Contact</h3>
+          <ul class="footer-links">
+            <li>Haylesewatte, Attapitiya</li>
+            <li>Ussapitiya, Sri Lanka</li>
+            <li><a href="mailto:info@heleala.org">info@heleala.org</a></li>
+            <li><a href="tel:+94718110710">+94 71 811 0710</a></li>
+          </ul>
+        </address>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p class="footer-copy">
+            &copy; 2026
+            <a href="https://darkroom.lk/" class="darkroom" target="_blank"
+              >Darkroom</a
+            >
+            (Pvt) Ltd. All rights reserved.
+          </p>
+          <ul class="footer-legal">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+    <script src="assets/js/main.js?v=20260421"></script>
+
+    <!-- Production Unit page — inline script, scoped with IIFE -->
+    <script>
+      (function () {
+        var reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        /* ── Scroll direction ─ adds pu-scrolling-up / pu-scrolling-down to body ── */
+        var lastSY = window.scrollY;
+        window.addEventListener(
+          "scroll",
+          function () {
+            var sy = window.scrollY;
+            if (sy > lastSY + 4) {
+              document.body.classList.add("pu-scrolling-down");
+              document.body.classList.remove("pu-scrolling-up");
+            } else if (sy < lastSY - 4) {
+              document.body.classList.add("pu-scrolling-up");
+              document.body.classList.remove("pu-scrolling-down");
+            }
+            lastSY = sy;
+          },
+          { passive: true },
+        );
+
+        /* ── Hero collage — mousemove parallax ─────────────────────────────────── */
+        if (!reducedMotion) {
+          var heroEl = document.querySelector(".pu-hero");
+          var collageEl = document.getElementById("pu-hero-collage");
+          if (heroEl && collageEl) {
+            var hMX = 0,
+              hMY = 0,
+              hTick = false;
+            heroEl.addEventListener(
+              "mousemove",
+              function (e) {
+                var r = heroEl.getBoundingClientRect();
+                hMX = (e.clientX - r.left - r.width * 0.5) / (r.width * 0.5);
+                hMY = (e.clientY - r.top - r.height * 0.5) / (r.height * 0.5);
+                if (!hTick) {
+                  requestAnimationFrame(function () {
+                    var m = collageEl.querySelector(".pu-hero-img-main  img");
+                    var f = collageEl.querySelector(".pu-hero-img-front img");
+                    var t = collageEl.querySelector(".pu-hero-img-third img");
+                    if (m)
+                      m.style.transform =
+                        "translate(" +
+                        -hMX * 7 +
+                        "px," +
+                        -hMY * 5 +
+                        "px) scale(1.06)";
+                    if (f)
+                      f.style.transform =
+                        "translate(" +
+                        -hMX * 12 +
+                        "px," +
+                        -hMY * 8 +
+                        "px) scale(1.06)";
+                    if (t)
+                      t.style.transform =
+                        "translate(" +
+                        -hMX * 9 +
+                        "px," +
+                        -hMY * 6 +
+                        "px) scale(1.06)";
+                    hTick = false;
+                  });
+                  hTick = true;
+                }
+              },
+              { passive: true },
+            );
+            heroEl.addEventListener(
+              "mouseleave",
+              function () {
+                var m = collageEl.querySelector(".pu-hero-img-main  img");
+                var f = collageEl.querySelector(".pu-hero-img-front img");
+                var t = collageEl.querySelector(".pu-hero-img-third img");
+                if (m) m.style.transform = "";
+                if (f) f.style.transform = "";
+                if (t) t.style.transform = "";
+              },
+              { passive: true },
+            );
+          }
+        }
+
+        /* Story background is fixed in CSS. */
+
+        /* ── Network hover / focus — highlight hub when a node is active ──────── */
+        var networkGrid = document.querySelector(".pu-network-grid");
+        if (networkGrid) {
+          var hub = document.getElementById("pu-hub");
+
+          var enter = function (e) {
+            var node = e.target.closest(".pu-network-node");
+            if (!node) return;
+            hub && hub.classList.add("pu-hub-lit");
+            node.classList.add("pu-node-lit");
+          };
+
+          var leave = function (e) {
+            var node = e.target.closest(".pu-network-node");
+            if (!node) return;
+            hub && hub.classList.remove("pu-hub-lit");
+            node.classList.remove("pu-node-lit");
+          };
+
+          networkGrid.addEventListener("mouseover", enter);
+          networkGrid.addEventListener("mouseout", leave);
+          networkGrid.addEventListener("focusin", enter);
+          networkGrid.addEventListener("focusout", leave);
+        }
+
+        /* ── Feature rows — JS mouseenter / mouseleave for lift effect ─────────── */
+        if (!reducedMotion) {
+          document.querySelectorAll(".pu-feature-row").forEach(function (row) {
+            row.addEventListener("mouseenter", function () {
+              row.classList.add("pu-row-hover");
+            });
+            row.addEventListener("mouseleave", function () {
+              row.classList.remove("pu-row-hover");
+            });
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>

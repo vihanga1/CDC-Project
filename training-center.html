@@ -1,0 +1,911 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CDC | Training Center</title>
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260421" />
+    <link rel="icon" href="assets/img/favicon.png" />
+    <script
+      src="https://kit.fontawesome.com/2a6b3c3f27.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div
+      id="page-loader"
+      role="progressbar"
+      aria-label="Loading page content"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
+      <div class="loader-inner">
+        <div class="loader-spinner"></div>
+        <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+        <p class="loader-label">Loading...</p>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">
+            <img src="assets/img/logo.png" alt="CDC logo" class="brand-logo" />
+          </span>
+        </a>
+        <button
+          class="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          aria-label="Open navigation menu"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <nav
+          id="site-navigation"
+          class="site-nav"
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          <div class="nav-drawer-header">
+            <a href="index.html" class="nav-drawer-logo">
+              <img
+                src="assets/img/logo.png"
+                alt="CDC logo"
+                class="brand-logo"
+              />
+            </a>
+            <button
+              class="nav-drawer-close"
+              type="button"
+              aria-label="Close navigation menu"
+            >
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="nav-drawer-body">
+            <ul class="nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="projects.html" class="nav-link">Projects</a></li>
+              <li class="nav-item-dropdown">
+                <button
+                  class="nav-link nav-dropdown-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  What We Do
+                  <i
+                    class="fa-solid fa-chevron-down nav-caret"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="services.html" class="nav-dropdown-link"
+                      >Services</a
+                    >
+                  </li>
+                  <li>
+                    <a href="products.html" class="nav-dropdown-link"
+                      >Products</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="training.html"
+                      class="nav-dropdown-link"
+                      aria-current="page"
+                      >Training</a
+                    >
+                  </li>
+                  <li>
+                    <a href="eco-tourism.html" class="nav-dropdown-link"
+                      >Eco Tourism</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item-dropdown">
+                <button
+                  class="nav-link nav-dropdown-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  Resources
+                  <i
+                    class="fa-solid fa-chevron-down nav-caret"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="model-farm.html" class="nav-dropdown-link"
+                      >Model Farm</a
+                    >
+                  </li>
+                  <li>
+                    <a href="production-unit.html" class="nav-dropdown-link"
+                      >Production Unit</a
+                    >
+                  </li>
+                  <li>
+                    <a href="training-center.html" class="nav-dropdown-link"
+                      >Training Center</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+    <div id="swipe-open-zone" aria-hidden="true"></div>
+
+    <main>
+      <!-- ══ 1. HERO ═══════════════════════════════════════════════════ -->
+      <section class="tr-hero" aria-labelledby="tr-hero-title">
+        <!-- Decorative floating particles -->
+        <div class="tr-hero-particles" aria-hidden="true">
+          <span class="tr-particle"></span>
+          <span class="tr-particle"></span>
+          <span class="tr-particle"></span>
+          <span class="tr-particle"></span>
+          <span class="tr-particle"></span>
+        </div>
+
+        <div class="container tr-hero-inner">
+          <!-- Left: copy -->
+          <div class="tr-hero-copy">
+            <p
+              class="eyebrow tr-eyebrow--light tr-fade-up"
+              style="--tr-delay: 0.05s"
+            >
+              TRAINING CENTER
+            </p>
+
+            <h1 id="tr-hero-title" class="tr-fade-up" style="--tr-delay: 0.18s">
+              A space for learning,<br />confidence, and community growth
+            </h1>
+
+            <p class="tr-fade-up" style="--tr-delay: 0.32s">
+              CDC's training center provides a welcoming space for community
+              members, women's groups, farmers, youth, and learners to gain
+              practical skills through workshops, discussions, and hands-on
+              learning.
+            </p>
+
+            <div class="tr-hero-actions tr-fade-up" style="--tr-delay: 0.46s">
+              <a href="contact.html" class="button primary">Contact CDC</a>
+              <a href="#tr-about" class="tr-hero-scroll-link">
+                Explore training
+                <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: image collage -->
+          <div class="tr-hero-visual tr-fade-right" style="--tr-delay: 0.22s">
+            <div class="tr-hero-images" id="tr-hero-collage">
+              <div class="tr-hero-img-main">
+                <img
+                  src="assets/img/training_w.jpg"
+                  alt="Community training session at CDC"
+                />
+              </div>
+
+              <div class="tr-hero-img-front">
+                <img
+                  src="assets/img/com-dev-small.jpg"
+                  alt="Community group participating in CDC training"
+                />
+              </div>
+
+              <!-- Floating badge -->
+              <div class="tr-hero-badge" aria-hidden="true">
+                <i class="fa-solid fa-seedling"></i>
+                <span>Learn &middot; Lead &middot; Grow</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll nudge -->
+        <a
+          href="#tr-about"
+          class="tr-scroll-indicator"
+          aria-label="Scroll to next section"
+        >
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </a>
+      </section>
+
+      <!-- ══ 2. ABOUT ═════════════════════════════════════════════════════ -->
+      <section
+        id="tr-about"
+        class="tr-about content-section"
+        aria-labelledby="tr-about-title"
+      >
+        <div class="container tr-spaces-inner">
+          <!-- Left: copy -->
+          <div class="tr-spaces-copy section-reveal" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">LEARNING WITH PURPOSE</p>
+            <h2
+              id="tr-about-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              More than a classroom
+            </h2>
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              The training center is designed to support real community needs.
+              With space for group sessions, training modules, resource persons,
+              and practical learning, it helps people build skills they can use
+              in daily life and livelihood activities.
+            </p>
+          </div>
+
+          <!-- Right: image -->
+          <div class="tr-spaces-image section-reveal" data-reveal="right">
+            <div class="tr-spaces-img-frame">
+              <img
+                class="tr-spaces-img"
+                src="assets/img/images/centere 4to.png"
+                alt="The CDC training center — a community learning space"
+              />
+              <div class="tr-spaces-overlay" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ 3. KEY FEATURES ════════════════════════════════════════════ -->
+      <section
+        class="tr-process content-section"
+        aria-labelledby="tr-features-title"
+      >
+        <div class="container">
+          <div
+            class="tr-section-head tr-section-head--light section-reveal"
+            data-reveal-group
+          >
+            <h2
+              id="tr-features-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              What the training center offers
+            </h2>
+          </div>
+
+          <div class="tr-areas-grid">
+            <div class="tr-area-card section-reveal" data-reveal="up">
+              <div class="tr-area-icon" aria-hidden="true">
+                <i class="fa-solid fa-chalkboard-user"></i>
+              </div>
+              <h3>Training space</h3>
+              <p>
+                A dedicated space for group sessions, discussions, and practical
+                workshops designed for community learning.
+              </p>
+            </div>
+
+            <div
+              class="tr-area-card tr-area-card--offset section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.1s"
+            >
+              <div class="tr-area-icon tr-area-icon--warm" aria-hidden="true">
+                <i class="fa-solid fa-hands-holding-circle"></i>
+              </div>
+              <h3>Hands-on learning</h3>
+              <p>
+                Training focuses on real practice, allowing participants to
+                learn by doing rather than theory alone.
+              </p>
+            </div>
+
+            <div
+              class="tr-area-card section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.15s"
+            >
+              <div class="tr-area-icon" aria-hidden="true">
+                <i class="fa-solid fa-people-group"></i>
+              </div>
+              <h3>Community participation</h3>
+              <p>
+                Women, farmers, and local groups actively take part, sharing
+                experiences and learning together.
+              </p>
+            </div>
+
+            <div
+              class="tr-area-card tr-area-card--offset section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.2s"
+            >
+              <div class="tr-area-icon tr-area-icon--warm" aria-hidden="true">
+                <i class="fa-solid fa-book-open-reader"></i>
+              </div>
+              <h3>Resource support</h3>
+              <p>
+                Access to trainers, learning materials, and practical guidance
+                that supports long-term skill development.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ 4. LEARNING AREAS ══════════════════════════════════════════ -->
+      <section
+        id="tr-areas"
+        class="tr-areas content-section"
+        aria-labelledby="tr-areas-title"
+      >
+        <div class="container">
+          <div class="tr-section-head section-reveal" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">What we teach</p>
+            <h2
+              id="tr-areas-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              What people learn here
+            </h2>
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              Training programs focus on practical skills that support
+              sustainable livelihoods and community development.
+            </p>
+          </div>
+
+          <div class="tr-areas-grid">
+            <!-- Area 1: Organic farming -->
+            <div class="tr-area-card section-reveal" data-reveal="up">
+              <div class="tr-area-icon" aria-hidden="true">
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+              <h3>Organic farming methods</h3>
+              <p>Learning chemical-free farming practices and soil care.</p>
+            </div>
+
+            <!-- Area 2: Livelihood & entrepreneurship -->
+            <div
+              class="tr-area-card tr-area-card--offset section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.1s"
+            >
+              <div class="tr-area-icon tr-area-icon--warm" aria-hidden="true">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+              <h3>Livelihood and entrepreneurship</h3>
+              <p>Building skills to create small income opportunities.</p>
+            </div>
+
+            <!-- Area 3: Women's empowerment -->
+            <div
+              class="tr-area-card section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.15s"
+            >
+              <div class="tr-area-icon" aria-hidden="true">
+                <i class="fa-solid fa-user-group"></i>
+              </div>
+              <h3>Women&#8217;s empowerment</h3>
+              <p>Supporting confidence, leadership, and participation.</p>
+            </div>
+
+            <!-- Area 4: Food processing -->
+            <div
+              class="tr-area-card tr-area-card--offset section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.2s"
+            >
+              <div class="tr-area-icon tr-area-icon--warm" aria-hidden="true">
+                <i class="fa-solid fa-blender"></i>
+              </div>
+              <h3>Food processing and product development</h3>
+              <p>
+                Learning how to create value-added products from local crops.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ 3. HOW TRAINING WORKS ══════════════════════════════════════ -->
+      <section
+        class="tr-process content-section"
+        aria-labelledby="tr-process-title"
+      >
+        <div class="container">
+          <div
+            class="tr-section-head tr-section-head--light section-reveal"
+            data-reveal-group
+          >
+            <p class="eyebrow tr-eyebrow--light" data-reveal="up">
+              The learning journey
+            </p>
+            <h2
+              id="tr-process-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              How learning happens
+            </h2>
+          </div>
+
+          <div class="tr-process-steps" role="list">
+            <!-- Step 1 -->
+            <div
+              class="tr-step section-reveal"
+              data-reveal="up"
+              role="listitem"
+            >
+              <div class="tr-step-head">
+                <span class="tr-step-num" aria-hidden="true">01</span>
+                <span class="tr-step-icon" aria-hidden="true">
+                  <i class="fa-solid fa-ear-listen"></i>
+                </span>
+              </div>
+              <h3 class="tr-step-title">Understand local needs</h3>
+              <p class="tr-step-desc">
+                Training begins by listening to community needs and existing
+                knowledge.
+              </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div
+              class="tr-step section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.1s"
+              role="listitem"
+            >
+              <div class="tr-step-head">
+                <span class="tr-step-num" aria-hidden="true">02</span>
+                <span class="tr-step-icon" aria-hidden="true">
+                  <i class="fa-solid fa-chalkboard-user"></i>
+                </span>
+              </div>
+              <h3 class="tr-step-title">Demonstrate</h3>
+              <p class="tr-step-desc">
+                Practical methods are shown through real examples and guided
+                sessions.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div
+              class="tr-step section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.2s"
+              role="listitem"
+            >
+              <div class="tr-step-head">
+                <span class="tr-step-num" aria-hidden="true">03</span>
+                <span class="tr-step-icon" aria-hidden="true">
+                  <i class="fa-solid fa-hands-holding-circle"></i>
+                </span>
+              </div>
+              <h3 class="tr-step-title">Practise</h3>
+              <p class="tr-step-desc">
+                Participants take part in hands-on activities to build
+                confidence.
+              </p>
+            </div>
+
+            <!-- Step 4 (last — no connector after) -->
+            <div
+              class="tr-step tr-step--last section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.3s"
+              role="listitem"
+            >
+              <div class="tr-step-head">
+                <span class="tr-step-num" aria-hidden="true">04</span>
+                <span class="tr-step-icon" aria-hidden="true">
+                  <i class="fa-solid fa-arrow-trend-up"></i>
+                </span>
+              </div>
+              <h3 class="tr-step-title">Apply</h3>
+              <p class="tr-step-desc">
+                Skills are used in daily life, farming, and small livelihood
+                activities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ 4. LEARNING SPACES ════════════════════════════════════════ -->
+      <section
+        class="tr-spaces content-section"
+        aria-labelledby="tr-spaces-title"
+      >
+        <div class="container tr-spaces-inner">
+          <!-- Left: image with scroll parallax -->
+          <div class="tr-spaces-image section-reveal" data-reveal="left">
+            <div class="tr-spaces-img-frame">
+              <img
+                id="tr-spaces-img"
+                class="tr-spaces-img"
+                src="assets/img/model-farm-big.jpg"
+                alt="Farming and community work connected to CDC's training"
+              />
+              <div class="tr-spaces-overlay" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <!-- Right: text -->
+          <div class="tr-spaces-copy section-reveal" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">
+              Connected to CDC's wider work
+            </p>
+
+            <h2
+              id="tr-spaces-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Connected to CDC's wider work
+            </h2>
+
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              Training at CDC does not happen in isolation. It connects directly
+              to the model farm, production unit, and community programs — so
+              learning is always grounded in real work and real outcomes.
+            </p>
+
+            <ul
+              class="tr-spaces-features"
+              data-reveal="up"
+              style="--reveal-delay: 0.24s"
+              aria-label="Connected work areas"
+            >
+              <li>
+                <span class="tr-spaces-feature-icon" aria-hidden="true">
+                  <i class="fa-solid fa-tractor"></i>
+                </span>
+                <span
+                  >Model Farm &mdash; farming demonstrations and crop
+                  learning</span
+                >
+              </li>
+              <li>
+                <span class="tr-spaces-feature-icon" aria-hidden="true">
+                  <i class="fa-solid fa-industry"></i>
+                </span>
+                <span
+                  >Production Unit &mdash; product processing and
+                  preparation</span
+                >
+              </li>
+              <li>
+                <span class="tr-spaces-feature-icon" aria-hidden="true">
+                  <i class="fa-solid fa-people-group"></i>
+                </span>
+                <span
+                  >Community Programs &mdash; livelihood and development
+                  work</span
+                >
+              </li>
+            </ul>
+
+            <div data-reveal="up" style="--reveal-delay: 0.32s">
+              <a href="projects.html" class="button secondary"
+                >Explore our work</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ 5. WHO CAN JOIN ════════════════════════════════════════════ -->
+      <section class="tr-who content-section" aria-labelledby="tr-who-title">
+        <div class="container">
+          <div class="tr-section-head section-reveal" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">Open to all</p>
+            <h2
+              id="tr-who-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Training is for everyone
+            </h2>
+          </div>
+
+          <ul
+            class="tr-who-grid section-reveal"
+            data-reveal="up"
+            style="--reveal-delay: 0.12s"
+            aria-label="Who can join training"
+          >
+            <li class="tr-who-card">
+              <span class="tr-who-icon" aria-hidden="true">
+                <i class="fa-solid fa-person-dress"></i>
+              </span>
+              <span class="tr-who-label">Women</span>
+            </li>
+
+            <li class="tr-who-card">
+              <span class="tr-who-icon" aria-hidden="true">
+                <i class="fa-solid fa-tractor"></i>
+              </span>
+              <span class="tr-who-label">Farmers</span>
+            </li>
+
+            <li class="tr-who-card">
+              <span class="tr-who-icon" aria-hidden="true">
+                <i class="fa-solid fa-person-running"></i>
+              </span>
+              <span class="tr-who-label">Youth</span>
+            </li>
+
+            <li class="tr-who-card">
+              <span class="tr-who-icon" aria-hidden="true">
+                <i class="fa-solid fa-people-group"></i>
+              </span>
+              <span class="tr-who-label">Community Groups</span>
+            </li>
+
+            <li class="tr-who-card">
+              <span class="tr-who-icon" aria-hidden="true">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </span>
+              <span class="tr-who-label">Students &amp; Researchers</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ══ 6. CTA BANNER ════════════════════════════════════════════ -->
+      <section class="tr-cta content-section" aria-labelledby="tr-cta-title">
+        <div class="tr-cta-bg" aria-hidden="true"></div>
+        <div class="container">
+          <div class="tr-cta-inner section-reveal" data-reveal-group>
+            <p class="eyebrow tr-eyebrow--light" data-reveal="up">
+              Join the learning
+            </p>
+
+            <h2
+              id="tr-cta-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Interested in joining a training program?
+            </h2>
+
+            <p data-reveal="up" style="--reveal-delay: 0.16s">
+              Get in touch to learn more about upcoming sessions, community
+              programs, and opportunities to take part.
+            </p>
+
+            <a
+              href="contact.html"
+              class="button primary"
+              data-reveal="up"
+              style="--reveal-delay: 0.24s"
+              >Contact CDC</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link">
+            <img
+              src="assets/img/logo.png"
+              alt="CDC logo"
+              class="brand-logo footer-logo"
+            />
+          </a>
+          <p class="footer-tagline">
+            Building resilient communities through sustainable agriculture,
+            training, and eco tourism.
+          </p>
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="Follow us on Facebook"
+              ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Follow us on Instagram"
+              ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Follow us on X"
+              ><i class="fa-brands fa-x-twitter" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Connect on LinkedIn"
+              ><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Explore navigation">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="services.html">What We Do</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Get Involved</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Donate</a></li>
+            <li><a href="contact.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+        <address class="footer-col footer-contact">
+          <h3 class="footer-col-title">Contact</h3>
+          <ul class="footer-links">
+            <li>Haylesewatte, Attapitiya</li>
+            <li>Ussapitiya, Sri Lanka</li>
+            <li><a href="mailto:info@heleala.org">info@heleala.org</a></li>
+            <li><a href="tel:+94718110710">+94 71 811 0710</a></li>
+          </ul>
+        </address>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p class="footer-copy">
+            &copy; 2026
+            <a href="https://darkroom.lk/" class="darkroom" target="_blank"
+              >Darkroom</a
+            >
+            (Pvt) Ltd. All rights reserved.
+          </p>
+          <ul class="footer-legal">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+    <script src="assets/js/main.js?v=20260421"></script>
+
+    <!-- Training page — inline script, scoped with IIFE -->
+    <script>
+      (function () {
+        var reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        /* ── Scroll direction — adds scrolling-up / scrolling-down to body ── */
+        var lastSY = window.scrollY;
+        window.addEventListener(
+          "scroll",
+          function () {
+            var sy = window.scrollY;
+            if (sy > lastSY + 4) {
+              document.body.classList.add("scrolling-down");
+              document.body.classList.remove("scrolling-up");
+            } else if (sy < lastSY - 4) {
+              document.body.classList.add("scrolling-up");
+              document.body.classList.remove("scrolling-down");
+            }
+            lastSY = sy;
+          },
+          { passive: true },
+        );
+
+        /* ── Hero collage — mousemove parallax ──────────────────────────── */
+        if (!reducedMotion) {
+          var heroEl = document.querySelector(".tr-hero");
+          var collageEl = document.getElementById("tr-hero-collage");
+          if (heroEl && collageEl) {
+            var hMX = 0,
+              hMY = 0,
+              hTick = false;
+            heroEl.addEventListener(
+              "mousemove",
+              function (e) {
+                var r = heroEl.getBoundingClientRect();
+                hMX = (e.clientX - r.left - r.width * 0.5) / (r.width * 0.5);
+                hMY = (e.clientY - r.top - r.height * 0.5) / (r.height * 0.5);
+                if (!hTick) {
+                  requestAnimationFrame(function () {
+                    var m = collageEl.querySelector(".tr-hero-img-main  img");
+                    var f = collageEl.querySelector(".tr-hero-img-front img");
+                    if (m)
+                      m.style.transform =
+                        "translate(" +
+                        -hMX * 7 +
+                        "px," +
+                        -hMY * 5 +
+                        "px) scale(1.06)";
+                    if (f)
+                      f.style.transform =
+                        "translate(" +
+                        -hMX * 11 +
+                        "px," +
+                        -hMY * 8 +
+                        "px) scale(1.06)";
+                    hTick = false;
+                  });
+                  hTick = true;
+                }
+              },
+              { passive: true },
+            );
+            heroEl.addEventListener(
+              "mouseleave",
+              function () {
+                var m = collageEl.querySelector(".tr-hero-img-main  img");
+                var f = collageEl.querySelector(".tr-hero-img-front img");
+                if (m) m.style.transform = "";
+                if (f) f.style.transform = "";
+              },
+              { passive: true },
+            );
+          }
+        }
+
+        /* ── Learning Spaces image — scroll parallax ────────────────────── */
+        if (!reducedMotion) {
+          var spacesSection = document.querySelector(".tr-spaces");
+          var spacesImg = document.getElementById("tr-spaces-img");
+          var sxTick = false;
+          var updateSpaces = function () {
+            if (!spacesSection || !spacesImg) return;
+            var rect = spacesSection.getBoundingClientRect();
+            var mid = window.innerHeight * 0.5;
+            var progress =
+              (mid - rect.top) / (rect.height + window.innerHeight);
+            var offset = Math.max(-12, Math.min(progress * 22 - 4, 12));
+            spacesImg.style.transform =
+              "translateY(" + offset + "px) scale(1.07)";
+            sxTick = false;
+          };
+          window.addEventListener(
+            "scroll",
+            function () {
+              if (!sxTick) {
+                requestAnimationFrame(updateSpaces);
+                sxTick = true;
+              }
+            },
+            { passive: true },
+          );
+          updateSpaces();
+        }
+
+        /* ── Area cards (learning areas + key features) — hover lift ──────── */
+        document.querySelectorAll(".tr-area-card").forEach(function (card) {
+          card.addEventListener("mouseenter", function () {
+            card.classList.add("tr-card-hover");
+          });
+          card.addEventListener("mouseleave", function () {
+            card.classList.remove("tr-card-hover");
+          });
+        });
+
+        /* ── Who cards — mouseenter / mouseleave ────────────────────────── */
+        if (!reducedMotion) {
+          document.querySelectorAll(".tr-who-card").forEach(function (card) {
+            card.addEventListener("mouseenter", function () {
+              card.classList.add("tr-who-hover");
+            });
+            card.addEventListener("mouseleave", function () {
+              card.classList.remove("tr-who-hover");
+            });
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
