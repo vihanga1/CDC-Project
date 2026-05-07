@@ -1,16 +1,778 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Heleala | Training</title>
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260421" />
+    <title>CDC | Training</title>
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260428" />
     <link rel="icon" href="assets/img/favicon.png" />
-
     <script
       src="https://kit.fontawesome.com/2a6b3c3f27.js"
       crossorigin="anonymous"
     ></script>
+    <style>
+      /* =====================================================
+         Training page — scoped styles (prefix: tr-)
+         ===================================================== */
+
+      /* --- Hero --- */
+      .tr-hero {
+        padding-block: calc(var(--header-offset) + clamp(2rem, 4vw, 3.5rem))
+          clamp(4rem, 7vw, 6rem);
+        background: var(--light-green);
+        overflow: hidden;
+      }
+
+      .tr-hero-inner {
+        display: grid;
+        gap: clamp(2rem, 5vw, 4rem);
+        align-items: center;
+      }
+
+      /* Mobile: stack image above text */
+      @media (max-width: 899px) {
+        .tr-hero-visual {
+          order: -1;
+        }
+
+        .tr-collage-wrap {
+          height: clamp(200px, 55vw, 300px);
+          border-radius: 12px;
+          overflow: hidden;
+        }
+
+        /* Single full-bleed image on mobile — hide small overlays */
+        .tr-c-sm1,
+        .tr-c-sm2,
+        .tr-hero-badge {
+          display: none;
+        }
+
+        .tr-c-main {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      @media (min-width: 900px) {
+        .tr-hero-inner {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      .tr-hero-eyebrow {
+        color: var(--secondary-color);
+      }
+
+      .tr-hero h1 {
+        font-size: clamp(2.1rem, 4vw, 3.3rem);
+        color: var(--dark-green);
+        line-height: 1.15;
+        margin-block: 0.5rem 1.25rem;
+      }
+
+      .tr-hero-intro {
+        color: #575757;
+        font-size: 1.0625rem;
+        max-width: 500px;
+        margin: 0;
+        line-height: 1.65;
+      }
+
+      .tr-hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.875rem;
+        margin-top: 1.875rem;
+      }
+
+      /* Collage */
+      .tr-hero-visual {
+        position: relative;
+      }
+
+      .tr-collage-wrap {
+        position: relative;
+        height: clamp(280px, 40vw, 440px);
+      }
+
+      .tr-c-img {
+        position: absolute;
+        overflow: hidden;
+        border-radius: 12px;
+        box-shadow: 0 12px 36px rgba(11, 94, 32, 0.15);
+        transition: transform 0.32s var(--reveal-easing);
+        will-change: transform;
+      }
+
+      .tr-c-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.55s var(--reveal-easing);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .tr-c-img,
+        .tr-c-img img {
+          transition: none;
+        }
+      }
+
+      .tr-c-img:hover img {
+        transform: scale(1.05);
+      }
+
+      .tr-c-main {
+        top: 0;
+        left: 0;
+        width: 68%;
+        height: 76%;
+      }
+
+      .tr-c-sm1 {
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        height: 52%;
+        border: 3px solid #fff;
+      }
+
+      .tr-c-sm2 {
+        bottom: 5%;
+        left: 22%;
+        width: 36%;
+        height: 35%;
+        border: 3px solid #fff;
+        z-index: 2;
+      }
+
+      .tr-hero-badge {
+        position: absolute;
+        top: 1.25rem;
+        right: 0;
+        background: var(--secondary-color);
+        color: #fff;
+        padding: 0.6rem 1rem;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        line-height: 1.45;
+        text-align: center;
+        box-shadow: 0 8px 22px rgba(245, 124, 0, 0.32);
+        pointer-events: none;
+        z-index: 3;
+      }
+
+      /* --- Intro --- */
+      .tr-intro-inner {
+        display: grid;
+        gap: clamp(1.5rem, 4vw, 3.5rem);
+        align-items: start;
+      }
+
+      @media (min-width: 820px) {
+        .tr-intro-inner {
+          grid-template-columns: 1fr 1.65fr;
+        }
+      }
+
+      .tr-intro-label .eyebrow {
+        color: var(--secondary-color);
+      }
+
+      .tr-intro-label h2 {
+        font-size: clamp(1.6rem, 2.8vw, 2.35rem);
+        color: var(--dark-green);
+        line-height: 1.22;
+        margin-block: 0.5rem 0;
+      }
+
+      .tr-intro-text {
+        color: #575757;
+        font-size: 1rem;
+        line-height: 1.72;
+        margin: 0;
+        padding-top: 0.2rem;
+      }
+
+      @media (min-width: 820px) {
+        .tr-intro-text {
+          padding-top: 0.75rem;
+        }
+      }
+
+      /* --- Training Areas --- */
+      .tr-areas {
+        background: var(--light-green);
+      }
+
+      .tr-areas-head .eyebrow {
+        color: var(--secondary-color);
+      }
+
+      .tr-areas-head h2 {
+        font-size: clamp(1.7rem, 3vw, 2.5rem);
+        color: var(--dark-green);
+        line-height: 1.2;
+        margin-block: 0.4rem 0.75rem;
+      }
+
+      .tr-areas-lead {
+        max-width: 580px;
+        color: #585858;
+        font-size: 0.9375rem;
+        margin-block: 0 clamp(2rem, 4vw, 2.75rem);
+      }
+
+      .tr-areas-grid {
+        display: grid;
+        gap: clamp(1rem, 2.5vw, 1.5rem);
+      }
+
+      @media (min-width: 640px) {
+        .tr-areas-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .tr-area-card:nth-child(even) {
+          margin-top: clamp(1rem, 3vw, 2rem);
+        }
+      }
+
+      .tr-area-card {
+        background: var(--white);
+        border-radius: 14px;
+        padding: clamp(1.25rem, 2.5vw, 1.875rem);
+        border-left: 4px solid var(--primary-color);
+        box-shadow: 0 4px 18px rgba(11, 94, 32, 0.06);
+        transition: transform 0.3s var(--reveal-easing),
+          box-shadow 0.3s ease;
+        will-change: transform;
+      }
+
+      .tr-area-card:nth-child(2) {
+        border-left-color: var(--secondary-color);
+      }
+
+      .tr-area-card:nth-child(3) {
+        border-left-color: var(--dark-green);
+      }
+
+      .tr-area-card:nth-child(4) {
+        border-left-color: #c8960a;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .tr-area-card.tr-hovered {
+          transform: translateY(-6px);
+          box-shadow: 0 18px 48px rgba(11, 94, 32, 0.14);
+        }
+      }
+
+      .tr-area-icon {
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 50%;
+        background: var(--light-green);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        font-size: 1.05rem;
+        color: var(--primary-color);
+        flex-shrink: 0;
+      }
+
+      .tr-area-card:nth-child(2) .tr-area-icon {
+        color: var(--secondary-color);
+        background: #fff3e0;
+      }
+
+      .tr-area-card:nth-child(3) .tr-area-icon {
+        color: var(--dark-green);
+      }
+
+      .tr-area-card:nth-child(4) .tr-area-icon {
+        color: #8b6914;
+        background: #fffde7;
+      }
+
+      .tr-area-card h3 {
+        font-size: clamp(0.975rem, 1.4vw, 1.15rem);
+        color: var(--dark-green);
+        margin-block: 0 0.6rem;
+        line-height: 1.3;
+      }
+
+      .tr-area-card p {
+        color: #585858;
+        font-size: 0.9375rem;
+        line-height: 1.65;
+        margin: 0;
+      }
+
+      /* --- How Training Works --- */
+      .tr-process-head .eyebrow {
+        color: var(--secondary-color);
+      }
+
+      .tr-process-head h2 {
+        font-size: clamp(1.7rem, 3vw, 2.5rem);
+        color: var(--dark-green);
+        line-height: 1.2;
+        margin-block: 0.4rem 0;
+      }
+
+      .tr-steps-wrap {
+        margin-top: clamp(2rem, 4vw, 3rem);
+      }
+
+      .tr-steps {
+        display: grid;
+        gap: clamp(1rem, 2.5vw, 1.5rem);
+        position: relative;
+      }
+
+      @media (min-width: 600px) {
+        .tr-steps {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (min-width: 960px) {
+        .tr-steps {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        .tr-steps::before {
+          content: "";
+          position: absolute;
+          top: 1.25rem;
+          left: 2rem;
+          right: 2rem;
+          height: 2px;
+          background: linear-gradient(
+            90deg,
+            var(--primary-color),
+            var(--secondary-color)
+          );
+          opacity: 0.18;
+          z-index: 0;
+          pointer-events: none;
+        }
+      }
+
+      .tr-step {
+        background: var(--neutral-light);
+        border-radius: 12px;
+        padding: clamp(1.125rem, 2vw, 1.625rem);
+        position: relative;
+        z-index: 1;
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+        cursor: default;
+      }
+
+      .tr-step:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(11, 94, 32, 0.12);
+      }
+
+      .tr-step-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background: var(--primary-color);
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 0.875rem;
+        flex-shrink: 0;
+        transition: transform 0.22s ease;
+      }
+
+      .tr-step:hover .tr-step-num {
+        transform: scale(1.12);
+      }
+
+      .tr-step:nth-child(2) .tr-step-num {
+        background: var(--secondary-color);
+      }
+
+      .tr-step:nth-child(3) .tr-step-num {
+        background: var(--dark-green);
+      }
+
+      .tr-step:nth-child(4) .tr-step-num {
+        background: #b8860b;
+      }
+
+      .tr-step h3 {
+        font-size: 0.975rem;
+        color: var(--dark-green);
+        margin-block: 0 0.45rem;
+        font-weight: 600;
+      }
+
+      .tr-step p {
+        color: #5a5a5a;
+        font-size: 0.9rem;
+        line-height: 1.65;
+        margin: 0;
+      }
+
+      /* --- Learning Spaces --- */
+      .tr-spaces {
+        background: var(--neutral-light);
+      }
+
+      .tr-spaces-head .eyebrow {
+        color: var(--secondary-color);
+      }
+
+      .tr-spaces-head h2 {
+        font-size: clamp(1.7rem, 3vw, 2.5rem);
+        color: var(--dark-green);
+        margin-block: 0.4rem 0.75rem;
+        line-height: 1.22;
+      }
+
+      .tr-spaces-lead {
+        max-width: 580px;
+        color: #585858;
+        font-size: 0.9375rem;
+        margin-block: 0 clamp(2rem, 4vw, 2.75rem);
+      }
+
+      .tr-spaces-grid {
+        display: grid;
+        gap: clamp(1.25rem, 2.5vw, 2rem);
+      }
+
+      @media (min-width: 720px) {
+        .tr-spaces-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .tr-space-card {
+        background: var(--white);
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 4px 18px rgba(11, 94, 32, 0.07);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.32s var(--reveal-easing),
+          box-shadow 0.32s ease;
+        text-decoration: none;
+        color: inherit;
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .tr-space-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 20px 44px rgba(11, 94, 32, 0.13);
+        }
+      }
+
+      .tr-space-img {
+        height: 185px;
+        overflow: hidden;
+        flex-shrink: 0;
+      }
+
+      .tr-space-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s var(--reveal-easing);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .tr-space-img img {
+          transition: none;
+        }
+      }
+
+      .tr-space-card:hover .tr-space-img img {
+        transform: scale(1.05);
+      }
+
+      .tr-space-body {
+        padding: clamp(1rem, 2vw, 1.375rem);
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
+      .tr-space-body h3 {
+        font-size: 1rem;
+        color: var(--dark-green);
+        margin-block: 0 0.5rem;
+      }
+
+      .tr-space-body p {
+        color: #585858;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin: 0 0 1rem;
+        flex: 1;
+      }
+
+      .tr-space-more {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+        color: var(--primary-color);
+        font-size: 0.85rem;
+        font-weight: 600;
+        transition: gap 0.2s ease;
+        margin-top: auto;
+      }
+
+      .tr-space-card:hover .tr-space-more {
+        gap: 0.55rem;
+      }
+
+      /* --- Who Can Take Part --- */
+      .tr-who-inner {
+        display: grid;
+        gap: clamp(1.5rem, 4vw, 3.5rem);
+        align-items: start;
+      }
+
+      @media (min-width: 820px) {
+        .tr-who-inner {
+          grid-template-columns: 1fr 1.55fr;
+        }
+      }
+
+      .tr-who-copy .eyebrow {
+        color: var(--secondary-color);
+      }
+
+      .tr-who-copy h2 {
+        font-size: clamp(1.6rem, 2.8vw, 2.3rem);
+        color: var(--dark-green);
+        line-height: 1.22;
+        margin-block: 0.5rem 0;
+      }
+
+      .tr-who-groups {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.25rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+      }
+
+      .tr-who-group {
+        background: var(--light-green);
+        color: var(--dark-green);
+        padding: 0.45rem 1rem;
+        border-radius: 999px;
+        font-size: 0.875rem;
+        font-weight: 500;
+        border: 1px solid rgba(17, 147, 41, 0.2);
+        transition: transform 0.18s ease, background 0.18s ease,
+          border-color 0.18s ease, box-shadow 0.18s ease;
+        cursor: default;
+      }
+
+      .tr-who-group:hover {
+        transform: translateY(-2px);
+        background: rgba(17, 147, 41, 0.14);
+        border-color: rgba(17, 147, 41, 0.4);
+        box-shadow: 0 4px 12px rgba(17, 147, 41, 0.12);
+      }
+
+      .tr-who-note {
+        color: #585858;
+        font-size: 0.9375rem;
+        line-height: 1.65;
+        margin: 0;
+      }
+
+      /* --- CTA — split layout --- */
+      .tr-cta {
+        background: #e8f2e9;
+        background-image:
+          radial-gradient(
+            ellipse 65% 55% at 8% 20%,
+            rgba(17, 147, 41, 0.08) 0%,
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 45% 45% at 94% 88%,
+            rgba(245, 124, 0, 0.06) 0%,
+            transparent 70%
+          );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .tr-cta .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Split card */
+      .tr-cta-card {
+        display: grid;
+        grid-template-columns: 55fr 45fr;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 20px;
+        border: 1.5px solid rgba(17, 147, 41, 0.14);
+        box-shadow:
+          0 2px 8px rgba(11, 94, 32, 0.05),
+          0 10px 32px rgba(11, 94, 32, 0.1);
+        overflow: hidden;
+      }
+
+      /* Left column */
+      .tr-cta-left {
+        padding: clamp(2rem, 4vw, 3.25rem);
+        border-right: 1px solid rgba(17, 147, 41, 0.12);
+      }
+
+      .tr-cta-left .eyebrow {
+        color: var(--secondary-color);
+      }
+
+      .tr-cta-left h2 {
+        font-size: clamp(1.45rem, 2.5vw, 2.1rem);
+        color: var(--dark-green);
+        line-height: 1.25;
+        margin-block: 0.5rem 1rem;
+      }
+
+      .tr-cta-note {
+        color: #5a6a5c;
+        font-size: 0.9375rem;
+        line-height: 1.65;
+        margin-block: 0 1.75rem;
+      }
+
+      .tr-cta-btn {
+        background: var(--primary-color);
+        transition: transform 0.22s var(--reveal-easing), box-shadow 0.22s ease;
+      }
+
+      .tr-cta-btn:hover,
+      .tr-cta-btn:focus-visible {
+        transform: translateY(-2px) scale(1.03);
+        box-shadow: 0 12px 28px rgba(17, 147, 41, 0.3);
+      }
+
+      /* Right column */
+      .tr-cta-right {
+        padding: clamp(2rem, 4vw, 3.25rem);
+        display: flex;
+        flex-direction: column;
+        gap: clamp(0.875rem, 1.5vw, 1.25rem);
+        justify-content: center;
+        background: rgba(232, 242, 233, 0.35);
+      }
+
+      /* Action items */
+      .tr-cta-item {
+        display: flex;
+        gap: 0.875rem;
+        align-items: flex-start;
+        padding: 0.875rem 1rem;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(17, 147, 41, 0.1);
+        transition: transform 0.2s ease, box-shadow 0.2s ease,
+          background 0.2s ease;
+        cursor: default;
+      }
+
+      .tr-cta-item:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 18px rgba(17, 147, 41, 0.12);
+        background: rgba(255, 255, 255, 0.95);
+      }
+
+      .tr-cta-icon {
+        flex-shrink: 0;
+        width: 2.125rem;
+        height: 2.125rem;
+        border-radius: 50%;
+        background: rgba(17, 147, 41, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8125rem;
+        color: var(--primary-color);
+        margin-top: 0.1rem;
+      }
+
+      .tr-cta-item-title {
+        display: block;
+        font-size: 0.9375rem;
+        font-weight: 600;
+        color: var(--dark-green);
+        margin-block-end: 0.2rem;
+      }
+
+      .tr-cta-item-desc {
+        font-size: 0.8125rem;
+        color: #5a7060;
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      /* Mobile: stack columns */
+      @media (max-width: 720px) {
+        .tr-cta-card {
+          grid-template-columns: 1fr;
+        }
+
+        .tr-cta-left {
+          border-right: none;
+          border-bottom: 1px solid rgba(17, 147, 41, 0.12);
+        }
+
+        .tr-cta-right {
+          background: transparent;
+        }
+
+        .tr-cta-btn {
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .tr-cta-btn,
+        .tr-cta-item,
+        .tr-step,
+        .tr-step-num,
+        .tr-who-group {
+          transition: none;
+        }
+
+        .tr-cta-btn:hover,
+        .tr-cta-btn:focus-visible,
+        .tr-cta-item:hover,
+        .tr-step:hover,
+        .tr-step:hover .tr-step-num,
+        .tr-who-group:hover {
+          transform: none;
+          box-shadow: none;
+        }
+      }
+    </style>
   </head>
   <body>
     <div
@@ -26,11 +788,12 @@
         <p class="loader-label">Loading…</p>
       </div>
     </div>
+
     <header class="site-header">
       <div class="container header-inner">
         <a href="index.html" class="brand">
           <span class="brand-mark">
-            <img src="assets/img/logo.png" alt="NGO Logo" class="brand-logo" />
+            <img src="assets/img/logo.png" alt="CDC logo" class="brand-logo" />
           </span>
         </a>
         <button
@@ -52,7 +815,7 @@
             <a href="index.html" class="nav-drawer-logo">
               <img
                 src="assets/img/logo.png"
-                alt="NGO Logo"
+                alt="CDC logo"
                 class="brand-logo"
               />
             </a>
@@ -93,7 +856,10 @@
                     >
                   </li>
                   <li>
-                    <a href="training.html" class="nav-dropdown-link"
+                    <a
+                      href="training.html"
+                      class="nav-dropdown-link"
+                      aria-current="page"
                       >Training</a
                     >
                   </li>
@@ -136,6 +902,7 @@
                 </ul>
               </li>
               <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+              <li><a href="stories.html" class="nav-link">Stories</a></li>
               <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
           </div>
@@ -146,24 +913,533 @@
     <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
     <div id="swipe-open-zone" aria-hidden="true"></div>
 
-    <main>
-      <section class="maintenance-hero" aria-labelledby="page-title">
-        <div class="container">
-          <div class="maintenance-inner section-reveal">
-            <div class="maintenance-icon" aria-hidden="true">
-              <i class="fa-solid fa-school"></i>
-            </div>
-            <p class="eyebrow">Coming Soon</p>
-            <h1 id="page-title">Training</h1>
-            <p class="maintenance-copy">
-              Our training page is being developed. The center provides hands-on
-              learning facilities for agriculture, livelihoods, and community
-              development programmes.
+    <main class="tr-page">
+
+      <!-- ═══════════════════════════════════
+           1. HERO
+           ═══════════════════════════════════ -->
+      <section class="tr-hero" aria-labelledby="tr-hero-title">
+        <div class="container tr-hero-inner">
+
+          <div class="section-reveal" data-reveal-group>
+            <p class="eyebrow tr-hero-eyebrow" data-reveal="up">
+              TRAINING &amp; LEARNING
             </p>
-            <a href="index.html" class="button primary">Return to Home</a>
+            <h1
+              id="tr-hero-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Practical learning that builds confidence and livelihoods
+            </h1>
+            <p
+              class="tr-hero-intro"
+              data-reveal="up"
+              style="--reveal-delay: 0.16s"
+            >
+              CDC's training programs help community members, women's groups,
+              farmers, youth, and learners gain practical skills they can use in
+              daily life, farming, enterprise, and community leadership.
+            </p>
+            <div
+              class="tr-hero-actions"
+              data-reveal="up"
+              style="--reveal-delay: 0.24s"
+            >
+              <a href="contact.html" class="button primary">Contact CDC</a>
+              <a href="#training-areas" class="button secondary"
+                >Explore training</a
+              >
+            </div>
+          </div>
+
+          <div
+            class="tr-hero-visual section-reveal"
+            data-reveal="right"
+            style="--reveal-delay: 0.14s"
+          >
+            <div class="tr-collage-wrap" id="tr-collage">
+              <div class="tr-c-img tr-c-main">
+                <img
+                  src="assets/img/training_w.jpg"
+                  alt="Women participating in a hands-on CDC training workshop"
+                />
+              </div>
+              <div class="tr-c-img tr-c-sm1">
+                <img
+                  src="assets/img/model-farm-main.jpg"
+                  alt="Farming demonstration at the CDC model farm"
+                />
+              </div>
+              <div class="tr-c-img tr-c-sm2">
+                <img
+                  src="assets/img/com-dev-small.jpg"
+                  alt="Community members taking part in a group learning session"
+                />
+              </div>
+            </div>
+            <div class="tr-hero-badge" aria-hidden="true">
+              Hands-on<br />learning
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════
+           2. INTRO
+           ═══════════════════════════════════ -->
+      <section
+        class="content-section"
+        aria-labelledby="tr-intro-title"
+      >
+        <div class="container">
+          <div class="tr-intro-inner">
+            <div class="tr-intro-label section-reveal" data-reveal-group>
+              <p class="eyebrow" data-reveal="up">
+                LEARNING WITH PURPOSE
+              </p>
+              <h2
+                id="tr-intro-title"
+                data-reveal="up"
+                style="--reveal-delay: 0.08s"
+              >
+                Skills people can use beyond the training room
+              </h2>
+            </div>
+            <p
+              class="tr-intro-text section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.1s"
+            >
+              Training at CDC is designed around real community needs. Sessions
+              are practical, participatory, and connected to the wider work of
+              CDC through the model farm, production unit, community programs,
+              and livelihood support.
+            </p>
           </div>
         </div>
       </section>
+
+      <!-- ═══════════════════════════════════
+           3. TRAINING AREAS
+           ═══════════════════════════════════ -->
+      <section
+        class="tr-areas content-section"
+        id="training-areas"
+        aria-labelledby="tr-areas-title"
+      >
+        <div class="container">
+          <div class="tr-areas-head section-reveal" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">WHAT PEOPLE LEARN</p>
+            <h2
+              id="tr-areas-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Training rooted in everyday community life
+            </h2>
+            <p
+              class="tr-areas-lead"
+              data-reveal="up"
+              style="--reveal-delay: 0.16s"
+            >
+              Each training area is shaped around practical skills, confidence
+              building, and opportunities for sustainable livelihoods.
+            </p>
+          </div>
+
+          <div class="tr-areas-grid">
+            <article
+              class="tr-area-card section-reveal"
+              data-reveal="up"
+            >
+              <div class="tr-area-icon" aria-hidden="true">
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+              <h3>Organic farming methods</h3>
+              <p>
+                Participants learn soil care, composting, chemical-free
+                cultivation, home gardening, and sustainable farming practices
+                that support families and the land.
+              </p>
+            </article>
+
+            <article
+              class="tr-area-card section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.1s"
+            >
+              <div class="tr-area-icon" aria-hidden="true">
+                <i class="fa-solid fa-coins"></i>
+              </div>
+              <h3>Livelihood and entrepreneurship</h3>
+              <p>
+                Training supports people to turn skills, local resources, and
+                small ideas into income-generating activities and
+                community-based enterprise.
+              </p>
+            </article>
+
+            <article
+              class="tr-area-card section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              <div class="tr-area-icon" aria-hidden="true">
+                <i class="fa-solid fa-people-group"></i>
+              </div>
+              <h3>Women's leadership and empowerment</h3>
+              <p>
+                Women are encouraged to build confidence, take part in
+                decisions, strengthen leadership, and become active contributors
+                to community development.
+              </p>
+            </article>
+
+            <article
+              class="tr-area-card section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.18s"
+            >
+              <div class="tr-area-icon" aria-hidden="true">
+                <i class="fa-solid fa-bowl-food"></i>
+              </div>
+              <h3>Food processing and product development</h3>
+              <p>
+                Participants learn how local crops, especially yams and
+                traditional foods, can be prepared, processed, and developed
+                into value-added products.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════
+           4. HOW TRAINING WORKS
+           ═══════════════════════════════════ -->
+      <section
+        class="content-section"
+        aria-labelledby="tr-process-title"
+      >
+        <div class="container">
+          <div class="tr-process-head section-reveal" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">HOW LEARNING HAPPENS</p>
+            <h2
+              id="tr-process-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Learning by doing, sharing, and applying
+            </h2>
+          </div>
+
+          <div class="tr-steps-wrap">
+            <div class="tr-steps">
+              <article
+                class="tr-step section-reveal"
+                data-reveal="up"
+              >
+                <div class="tr-step-num" aria-hidden="true">1</div>
+                <h3>Listen to needs</h3>
+                <p>
+                  Training begins by understanding community needs, existing
+                  knowledge, and the practical challenges people face.
+                </p>
+              </article>
+
+              <article
+                class="tr-step section-reveal"
+                data-reveal="up"
+                style="--reveal-delay: 0.1s"
+              >
+                <div class="tr-step-num" aria-hidden="true">2</div>
+                <h3>Demonstrate</h3>
+                <p>
+                  Methods are shown through workshops, field sessions, examples,
+                  and guided demonstrations.
+                </p>
+              </article>
+
+              <article
+                class="tr-step section-reveal"
+                data-reveal="up"
+                style="--reveal-delay: 0.2s"
+              >
+                <div class="tr-step-num" aria-hidden="true">3</div>
+                <h3>Practise together</h3>
+                <p>
+                  Participants take part in hands-on activities, discussions,
+                  and group learning to build confidence.
+                </p>
+              </article>
+
+              <article
+                class="tr-step section-reveal"
+                data-reveal="up"
+                style="--reveal-delay: 0.3s"
+              >
+                <div class="tr-step-num" aria-hidden="true">4</div>
+                <h3>Apply in daily life</h3>
+                <p>
+                  Skills are carried into farming, food production, livelihood
+                  work, and community leadership.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════
+           5. LEARNING SPACES
+           ═══════════════════════════════════ -->
+      <section
+        class="tr-spaces content-section"
+        aria-labelledby="tr-spaces-title"
+      >
+        <div class="container">
+          <div class="tr-spaces-head section-reveal" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">WHERE TRAINING CONNECTS</p>
+            <h2
+              id="tr-spaces-title"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Learning happens across CDC's community spaces
+            </h2>
+            <p
+              class="tr-spaces-lead"
+              data-reveal="up"
+              style="--reveal-delay: 0.16s"
+            >
+              Training is connected to CDC's wider facilities and programs,
+              helping people move from learning to action.
+            </p>
+          </div>
+
+          <div class="tr-spaces-grid">
+            <a
+              href="model-farm.html"
+              class="tr-space-card section-reveal"
+              data-reveal="up"
+            >
+              <div class="tr-space-img">
+                <img
+                  src="assets/img/model-farm-back.jpg"
+                  alt="The CDC model farm with cultivated land and organic crops"
+                />
+              </div>
+              <div class="tr-space-body">
+                <h3>Model Farm</h3>
+                <p>
+                  A place for practical farming demonstrations, indigenous crop
+                  learning, and sustainable agriculture practices.
+                </p>
+                <span class="tr-space-more" aria-hidden="true"
+                  >Learn more
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
+                ></span>
+              </div>
+            </a>
+
+            <a
+              href="production-unit.html"
+              class="tr-space-card section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.1s"
+            >
+              <div class="tr-space-img">
+                <img
+                  src="assets/img/pro-unit-hero-img-2.jpg"
+                  alt="Inside the CDC production unit where local crops are processed"
+                />
+              </div>
+              <div class="tr-space-body">
+                <h3>Production Unit</h3>
+                <p>
+                  A small-scale space where local crops are processed into
+                  value-added products while people learn practical production
+                  skills.
+                </p>
+                <span class="tr-space-more" aria-hidden="true"
+                  >Learn more
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
+                ></span>
+              </div>
+            </a>
+
+            <a
+              href="training-center.html"
+              class="tr-space-card section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.2s"
+            >
+              <div class="tr-space-img">
+                <img
+                  src="assets/img/card-2-img-1.jpg"
+                  alt="The CDC training centre, a welcoming space for community workshops"
+                />
+              </div>
+              <div class="tr-space-body">
+                <h3>Training Center</h3>
+                <p>
+                  A welcoming space for workshops, group sessions, discussions,
+                  and community learning.
+                </p>
+                <span class="tr-space-more" aria-hidden="true"
+                  >Learn more
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
+                ></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════
+           6. WHO CAN TAKE PART
+           ═══════════════════════════════════ -->
+      <section
+        class="content-section"
+        aria-labelledby="tr-who-title"
+      >
+        <div class="container">
+          <div class="tr-who-inner">
+            <div class="tr-who-copy section-reveal" data-reveal-group>
+              <p class="eyebrow" data-reveal="up">
+                WHO IT IS FOR
+              </p>
+              <h2
+                id="tr-who-title"
+                data-reveal="up"
+                style="--reveal-delay: 0.08s"
+              >
+                Open to people ready to learn, grow, and contribute
+              </h2>
+            </div>
+
+            <div
+              class="section-reveal"
+              data-reveal="up"
+              style="--reveal-delay: 0.14s"
+            >
+              <ul
+                class="tr-who-groups"
+                aria-label="Groups that can take part in CDC training"
+              >
+                <li class="tr-who-group">Women's groups</li>
+                <li class="tr-who-group">Farmers</li>
+                <li class="tr-who-group">Youth</li>
+                <li class="tr-who-group">Community groups</li>
+                <li class="tr-who-group">Students and researchers</li>
+                <li class="tr-who-group">Local producers</li>
+              </ul>
+              <p class="tr-who-note">
+                CDC welcomes people and groups who want to build skills, share
+                knowledge, and take part in practical community development.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════
+           7. CTA
+           ═══════════════════════════════════ -->
+      <section
+        class="tr-cta content-section"
+        aria-labelledby="tr-cta-title"
+      >
+        <div class="container">
+          <div class="tr-cta-card section-reveal" data-reveal-group>
+
+            <!-- Left: heading + button -->
+            <div class="tr-cta-left">
+              <p class="eyebrow" data-reveal="up">GET INVOLVED</p>
+              <h2
+                id="tr-cta-title"
+                data-reveal="up"
+                style="--reveal-delay: 0.08s"
+              >
+                Interested in joining or organizing a training session?
+              </h2>
+              <p
+                class="tr-cta-note"
+                data-reveal="up"
+                style="--reveal-delay: 0.16s"
+              >
+                Contact CDC to learn more about training opportunities,
+                community programs, workshops, or collaboration.
+              </p>
+              <a
+                href="contact.html"
+                class="button primary tr-cta-btn"
+                data-reveal="up"
+                style="--reveal-delay: 0.24s"
+                >Contact CDC</a
+              >
+            </div>
+
+            <!-- Right: action items -->
+            <div class="tr-cta-right" aria-label="Ways to get involved">
+              <div
+                class="tr-cta-item section-reveal"
+                data-reveal="up"
+                style="--reveal-delay: 0.18s"
+              >
+                <span class="tr-cta-icon" aria-hidden="true"
+                  ><i class="fas fa-user-graduate"></i
+                ></span>
+                <div>
+                  <strong class="tr-cta-item-title">Join a training</strong>
+                  <p class="tr-cta-item-desc">
+                    Open programs available year-round for individuals and
+                    groups.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="tr-cta-item section-reveal"
+                data-reveal="up"
+                style="--reveal-delay: 0.26s"
+              >
+                <span class="tr-cta-icon" aria-hidden="true"
+                  ><i class="fas fa-chalkboard-teacher"></i
+                ></span>
+                <div>
+                  <strong class="tr-cta-item-title"
+                    >Organize a workshop</strong
+                  >
+                  <p class="tr-cta-item-desc">
+                    Bring CDC trainers to your community or organisation.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="tr-cta-item section-reveal"
+                data-reveal="up"
+                style="--reveal-delay: 0.34s"
+              >
+                <span class="tr-cta-icon" aria-hidden="true"
+                  ><i class="fas fa-handshake"></i
+                ></span>
+                <div>
+                  <strong class="tr-cta-item-title"
+                    >Collaborate with CDC</strong
+                  >
+                  <p class="tr-cta-item-desc">
+                    Partner with us on programs, funding, or research.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
     </main>
 
     <footer class="site-footer" aria-label="Site footer">
@@ -172,7 +1448,7 @@
           <a href="index.html" class="footer-logo-link">
             <img
               src="assets/img/logo.png"
-              alt="NGO Name logo"
+              alt="CDC logo"
               class="brand-logo footer-logo"
             />
           </a>
@@ -218,8 +1494,8 @@
           <ul class="footer-links">
             <li>Haylesewatte, Attapitiya</li>
             <li>Ussapitiya, Sri Lanka</li>
-            <li><a href="mailto:info@ngoname.org">info@heleala.org</a></li>
-            <li><a href="tel:+94718110710"> +9471 811 0710</a></li>
+            <li><a href="mailto:info@heleala.org">info@heleala.org</a></li>
+            <li><a href="tel:+94718110710">+94 71 811 0710</a></li>
           </ul>
         </address>
       </div>
@@ -241,6 +1517,75 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
-    <script src="assets/js/main.js?v=20260421"></script>
+    <script src="assets/js/main.js?v=20260428"></script>
+    <script>
+      /* Training page supplementary animations */
+      (function () {
+        var reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        /* Scroll direction detection */
+        var lastY = window.scrollY;
+        window.addEventListener(
+          "scroll",
+          function () {
+            var y = window.scrollY;
+            if (y > lastY) {
+              document.body.classList.add("scrolling-down");
+              document.body.classList.remove("scrolling-up");
+            } else {
+              document.body.classList.add("scrolling-up");
+              document.body.classList.remove("scrolling-down");
+            }
+            lastY = y;
+          },
+          { passive: true }
+        );
+
+        /* mouseenter / mouseleave on training area cards */
+        document.querySelectorAll(".tr-area-card").forEach(function (card) {
+          card.addEventListener("mouseenter", function () {
+            card.classList.add("tr-hovered");
+          });
+          card.addEventListener("mouseleave", function () {
+            card.classList.remove("tr-hovered");
+          });
+        });
+
+        if (reducedMotion) return;
+
+        /* Subtle parallax on hero collage containers */
+        var collage = document.getElementById("tr-collage");
+        if (!collage) return;
+
+        var imgMain = collage.querySelector(".tr-c-main");
+        var imgSm1 = collage.querySelector(".tr-c-sm1");
+        var imgSm2 = collage.querySelector(".tr-c-sm2");
+
+        var ticking = false;
+        window.addEventListener(
+          "scroll",
+          function () {
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(function () {
+              var rect = collage.getBoundingClientRect();
+              var vh = window.innerHeight;
+              var offset = (rect.top + rect.height / 2 - vh / 2) / vh;
+              if (imgMain)
+                imgMain.style.transform =
+                  "translateY(" + offset * -16 + "px)";
+              if (imgSm1)
+                imgSm1.style.transform = "translateY(" + offset * -9 + "px)";
+              if (imgSm2)
+                imgSm2.style.transform = "translateY(" + offset * -5 + "px)";
+              ticking = false;
+            });
+          },
+          { passive: true }
+        );
+      })();
+    </script>
   </body>
 </html>
