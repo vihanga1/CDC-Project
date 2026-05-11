@@ -29,44 +29,44 @@
         grid-template-columns: unset;
         grid-template-rows: auto 1fr;
         height: 100%;
-        border-radius: 1.25rem;
+        border-radius: 0.95rem;
         box-shadow: 0 16px 42px rgba(17, 147, 41, 0.08);
       }
 
       .stories-grid .story-card-image {
-        position: relative;
-        aspect-ratio: 3 / 2;
-        height: auto;
-        max-height: 240px;
-        min-height: unset;
+        display: none;
+      }
+
+      .story-avatar {
+        width: 96px;
+        height: 96px;
+        border-radius: 50%;
         overflow: hidden;
-        border-radius: 1.25rem 1.25rem 0 0;
+        margin-bottom: 1rem;
+        border: 4px solid #eef7ef;
+        box-shadow: 0 10px 28px rgba(15, 69, 32, 0.14);
+        flex-shrink: 0;
       }
 
-      .stories-grid .story-card-image::after {
-        content: "";
-        position: absolute;
-        inset: auto 0 0;
-        height: 38%;
-        background: linear-gradient(transparent, rgba(0, 0, 0, 0.05));
-        pointer-events: none;
-        z-index: 1;
-      }
-
-      .stories-grid .story-card-image img {
-        display: block;
+      .story-avatar img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center;
-        transition: transform 0.45s ease;
+      }
+
+      .story-card:first-child .story-avatar img {
+        object-position: center 30%;
+      }
+
+      .story-card:nth-child(2) .story-avatar img {
+        object-position: center 25%;
       }
 
       .stories-grid .story-card-body {
         display: flex;
         flex-direction: column;
-        gap: 0.8rem;
-        padding: 1.85rem 1.9rem 2rem;
+        gap: 0.7rem;
+        padding: 1.35rem 1.55rem 1.55rem;
         align-content: unset;
       }
 
@@ -125,13 +125,14 @@
           gap: 1.25rem;
         }
 
-        .stories-grid .story-card-image {
-          max-height: 195px;
+        .story-avatar {
+          width: 82px;
+          height: 82px;
         }
 
         .stories-grid .story-card-body {
-          gap: 0.7rem;
-          padding: 1.35rem 1.25rem 1.5rem;
+          gap: 0.6rem;
+          padding: 1.05rem 1.15rem 1.25rem;
         }
 
         .stories-grid .story-card-body > p:not(.story-tag) {
@@ -1712,13 +1713,14 @@
           <div class="stories-grid">
 
             <article class="story-card stagger-card" style="--stagger: 0">
-              <div class="story-card-image">
-                <img
-                  src="assets/img/ranjani.jpeg"
-                  alt="R.M. Ranjani Ratnayake, a community entrepreneur supported by CDC"
-                />
-              </div>
+              <div class="story-card-image"></div>
               <div class="story-card-body">
+                <div class="story-avatar">
+                  <img
+                    src="assets/img/ranjani.jpeg"
+                    alt="R.M. Ranjani Ratnayake, a community entrepreneur supported by CDC"
+                  />
+                </div>
                 <p class="eyebrow story-tag">WOMEN&rsquo;S LIVELIHOOD</p>
                 <h3>Rebuilding after loss, rising with strength</h3>
                 <p>
@@ -1740,13 +1742,14 @@
             </article>
 
             <article class="story-card stagger-card" style="--stagger: 1">
-              <div class="story-card-image">
-                <img
-                  src="assets/img/dhammika.jpeg"
-                  alt="Dhammika Kumari, an entrepreneur from Ududumbara supported by CDC"
-                />
-              </div>
+              <div class="story-card-image"></div>
               <div class="story-card-body">
+                <div class="story-avatar">
+                  <img
+                    src="assets/img/dhammika.jpeg"
+                    alt="Dhammika Kumari, an entrepreneur from Ududumbara supported by CDC"
+                  />
+                </div>
                 <p class="eyebrow story-tag">COMMUNITY ENTERPRISE</p>
                 <h3>Finding light and confidence through enterprise</h3>
                 <p>
