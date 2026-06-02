@@ -47,7 +47,7 @@
           rgba(3, 14, 6, 0.94) 0%,
           rgba(5, 22, 10, 0.82) 28%,
           rgba(7, 30, 14, 0.58) 55%,
-          rgba(7, 28, 12, 0.20) 100%
+          rgba(7, 28, 12, 0.2) 100%
         );
         z-index: -1;
       }
@@ -99,8 +99,15 @@
       }
 
       @keyframes ph-pulse {
-        0%, 100% { opacity: 1; transform: scale(1); }
-        50%       { opacity: 0.35; transform: scale(1.6); }
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.35;
+          transform: scale(1.6);
+        }
       }
 
       .ph-location-chip {
@@ -222,7 +229,9 @@
         padding-bottom: 2px;
         letter-spacing: 0.02em;
         white-space: nowrap;
-        transition: color 0.2s ease, border-color 0.2s ease;
+        transition:
+          color 0.2s ease,
+          border-color 0.2s ease;
       }
 
       .ph-ghost-link:hover,
@@ -309,83 +318,6 @@
         object-position: center 40%;
       }
 
-      /* Floating glass location badge */
-      .ph-float-badge {
-        position: absolute;
-        top: -1.25rem;
-        right: 0.75rem;
-        z-index: 10;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.6rem;
-        background: rgba(255, 255, 255, 0.11);
-        border: 1px solid rgba(255, 255, 255, 0.22);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-        border-radius: 100px;
-        padding: 0.55rem 1.2rem;
-        font-size: 0.72rem;
-        font-weight: 700;
-        letter-spacing: 0.1em;
-        color: rgba(255, 255, 255, 0.93);
-        text-transform: uppercase;
-        white-space: nowrap;
-        animation: ph-float-a 5.5s ease-in-out infinite alternate;
-        will-change: transform;
-        pointer-events: none;
-      }
-
-      .ph-float-badge i {
-        color: #86efac;
-        font-size: 0.8rem;
-      }
-
-      /* Floating stat badge */
-      .ph-stat-badge {
-        position: absolute;
-        bottom: 1.5rem;
-        left: -1.75rem;
-        z-index: 10;
-        background: rgba(4, 18, 7, 0.82);
-        border: 1px solid rgba(34, 197, 94, 0.28);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
-        border-radius: 1rem;
-        padding: 0.9rem 1.3rem;
-        min-width: 11.5rem;
-        animation: ph-float-b 6.5s ease-in-out infinite alternate;
-        will-change: transform;
-        pointer-events: none;
-      }
-
-      .ph-stat-kicker {
-        display: block;
-        font-size: 0.67rem;
-        font-weight: 700;
-        letter-spacing: 0.13em;
-        text-transform: uppercase;
-        color: #86efac;
-        margin-bottom: 0.28rem;
-      }
-
-      .ph-stat-value {
-        display: block;
-        font-size: 1rem;
-        font-weight: 700;
-        color: #ffffff;
-        line-height: 1.3;
-      }
-
-      @keyframes ph-float-a {
-        from { transform: translateY(0px) rotate(0deg); }
-        to   { transform: translateY(-12px) rotate(-0.4deg); }
-      }
-
-      @keyframes ph-float-b {
-        from { transform: translateY(0px) rotate(0deg); }
-        to   { transform: translateY(10px) rotate(0.4deg); }
-      }
-
       /* Scroll cue */
       .ph-scroll-cue {
         position: absolute;
@@ -406,25 +338,49 @@
         animation: ph-scroll-bob 2.2s ease-in-out infinite;
       }
 
-      .ph-scroll-cue i { font-size: 0.95rem; }
+      .ph-scroll-cue i {
+        font-size: 0.95rem;
+      }
 
       @keyframes ph-scroll-bob {
-        0%, 100% { opacity: 0.42; transform: translateX(-50%) translateY(0); }
-        50%       { opacity: 0.82; transform: translateX(-50%) translateY(7px); }
+        0%,
+        100% {
+          opacity: 0.42;
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          opacity: 0.82;
+          transform: translateX(-50%) translateY(7px);
+        }
       }
 
       /* ── Reduced motion ────────────────────────────────────── */
       @media (prefers-reduced-motion: reduce) {
-        .ph-eyebrow-pulse                          { animation: none; }
-        .ph-float-badge                            { animation: none; }
-        .ph-stat-badge                             { animation: none; }
-        .ph-scroll-cue                             { animation: none; }
-        .ph-img-card                               { transition: none; }
-        .ph-img-card:hover                         { box-shadow: 0 28px 72px rgba(0,0,0,0.58); }
-        .ph-img-card:hover img                     { transform: none; }
-        .projects-hero .button.primary:hover       { transform: none; box-shadow: none; }
-        .projects-hero .button.primary .btn-arrow  { transition: none; }
-        .ph-ghost-link                             { transition: none; }
+        .ph-eyebrow-pulse {
+          animation: none;
+        }
+        .ph-scroll-cue {
+          animation: none;
+        }
+        .ph-img-card {
+          transition: none;
+        }
+        .ph-img-card:hover {
+          box-shadow: 0 28px 72px rgba(0, 0, 0, 0.58);
+        }
+        .ph-img-card:hover img {
+          transform: none;
+        }
+        .projects-hero .button.primary:hover {
+          transform: none;
+          box-shadow: none;
+        }
+        .projects-hero .button.primary .btn-arrow {
+          transition: none;
+        }
+        .ph-ghost-link {
+          transition: none;
+        }
       }
 
       /* ── Tablet (≤ 899px) — single column, simplify visuals ───── */
@@ -439,8 +395,12 @@
           max-width: unset;
         }
 
-        .ph-heading { max-width: unset; }
-        .ph-description { max-width: unset; }
+        .ph-heading {
+          max-width: unset;
+        }
+        .ph-description {
+          max-width: unset;
+        }
 
         .ph-visual {
           max-width: 100%;
@@ -450,18 +410,8 @@
         }
 
         /* Hide secondary card on tablet — main image fills full width */
-        .ph-card-sec-wrap { display: none; }
-
-        /* Keep only the location glass badge, tuck it inside bounds */
-        .ph-float-badge {
-          top: -1rem;
-          right: 0.5rem;
-        }
-
-        /* Move stat badge to inside the visual (no left bleed) */
-        .ph-stat-badge {
-          left: 0.75rem;
-          bottom: 0.75rem;
+        .ph-card-sec-wrap {
+          display: none;
         }
       }
 
@@ -476,17 +426,329 @@
           padding-right: 0;
         }
 
-        .ph-stat-badge  { display: none; }
-        .ph-float-badge { display: none; }
-
         .ph-cta {
           flex-direction: column;
           align-items: flex-start;
           gap: 1rem;
         }
 
-        .ph-features    { gap: 0.75rem; }
-        .ph-scroll-cue  { display: none; }
+        .ph-features {
+          gap: 0.75rem;
+        }
+        .ph-scroll-cue {
+          display: none;
+        }
+      }
+
+      /* ============================================================
+         HERITAGE PROJECT SECTION (Project 11 — Book Launch)
+         ============================================================ */
+
+      .heritage-project {
+        background: linear-gradient(
+          155deg,
+          #f8faf9 0%,
+          #f2f8f5 60%,
+          #eef6f1 100%
+        );
+      }
+
+      .heritage-project-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(3rem, 5.5vw, 5.5rem);
+        align-items: start;
+      }
+
+      /* ── Left: copy ─────────────────────────────────────────── */
+
+      .heritage-project-copy {
+        display: flex;
+        flex-direction: column;
+        /* Sticky so copy stays visible while scrolling the tall gallery */
+        position: sticky;
+        top: calc(var(--header-offset, 96px) + 2rem);
+      }
+
+      .heritage-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #f97316;
+        margin: 0 0 1.1rem;
+      }
+
+      .heritage-heading {
+        font-size: clamp(1.65rem, 2.8vw, 2.4rem);
+        line-height: 1.13;
+        color: #0b5e20;
+        font-weight: 800;
+        letter-spacing: -0.014em;
+        margin: 0 0 1.25rem;
+      }
+
+      .heritage-desc {
+        font-size: clamp(0.975rem, 1.1vw, 1.055rem);
+        line-height: 1.78;
+        color: #4a5a4e;
+        margin: 0 0 1.5rem;
+      }
+
+      .heritage-supporting {
+        background: linear-gradient(135deg, #f0faf2 0%, #eaf6ec 100%);
+        border-left: 3px solid #22c55e;
+        border-radius: 0 0.75rem 0.75rem 0;
+        padding: 0.95rem 1.25rem;
+        margin-bottom: 1.75rem;
+      }
+
+      .heritage-supporting p {
+        font-size: 0.925rem;
+        line-height: 1.7;
+        color: #2d5a35;
+        font-style: italic;
+        margin: 0;
+      }
+
+      .heritage-points {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.78rem;
+      }
+
+      .heritage-point {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.82rem;
+        font-size: 0.965rem;
+        color: #333333;
+        line-height: 1.5;
+      }
+
+      .heritage-point-icon {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: rgba(22, 163, 74, 0.1);
+        border: 1px solid rgba(22, 163, 74, 0.22);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #16a34a;
+        font-size: 0.62rem;
+        margin-top: 2px;
+      }
+
+      /* ── Right: editorial photo story ───────────────────────── */
+
+      .heritage-project-gallery {
+        position: relative;
+      }
+
+      /* Subtle paper-warmth behind the gallery — barely perceptible */
+      .heritage-project-gallery::before {
+        content: "";
+        position: absolute;
+        inset: -1.25rem;
+        border-radius: 2rem;
+        background: linear-gradient(
+          145deg,
+          rgba(240, 250, 242, 0.65) 0%,
+          rgba(228, 244, 232, 0.42) 100%
+        );
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      /* Outer editorial grid:
+         left col → featured portrait
+         right col → two supporting images stacked
+         second row → full-width closing strip */
+      .heritage-gallery {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 0.875rem;
+      }
+
+      .heritage-gallery-feature {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .heritage-gallery-aside {
+        grid-column: 2;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.875rem;
+      }
+
+      .heritage-gallery-strip {
+        grid-column: 1 / 3;
+        grid-row: 2;
+      }
+
+      /* ── Shared media card ────────────────────────────────────── */
+
+      .heritage-gallery-media {
+        position: relative;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        box-shadow:
+          0 6px 24px rgba(0, 0, 0, 0.09),
+          0 0 0 1px rgba(0, 0, 0, 0.04);
+        /* Transition on BASE — covers reveal (opacity, transform) AND
+           hover (translate, box-shadow). Smooth enter AND exit for all. */
+        transition:
+          opacity var(--reveal-duration, 0.75s)
+            var(--reveal-easing, cubic-bezier(0.22, 1, 0.36, 1))
+            var(--reveal-delay, 0s),
+          transform var(--reveal-duration, 0.75s)
+            var(--reveal-easing, cubic-bezier(0.22, 1, 0.36, 1))
+            var(--reveal-delay, 0s),
+          translate 0.36s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+          box-shadow 0.36s ease;
+      }
+
+      .heritage-gallery-media:hover {
+        translate: 0 -5px;
+        box-shadow:
+          0 18px 52px rgba(0, 0, 0, 0.14),
+          0 0 0 1px rgba(0, 0, 0, 0.06);
+      }
+
+      /* position:absolute fills the container whether sized by
+         aspect-ratio, flex, or grid — reliably consistent */
+      .heritage-gallery-media img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center 20%;
+        transition: scale 0.48s ease;
+      }
+
+      .heritage-gallery-media:hover img {
+        scale: 1.025;
+      }
+
+      /* ── Feature: tall portrait ───────────────────────────────── */
+
+      .heritage-gallery-feature .heritage-gallery-media {
+        aspect-ratio: 3 / 4;
+      }
+
+      /* ── Aside: two equal images filling the feature height ────── */
+
+      .heritage-gallery-aside .heritage-gallery-media {
+        flex: 1;
+        min-height: 0; /* prevent flex overflow */
+      }
+
+      /* ── Strip: cinematic wide closing image ─────────────────── */
+
+      .heritage-gallery-strip .heritage-gallery-media {
+        aspect-ratio: 21 / 9;
+      }
+
+      /* ── Reduced motion ─────────────────────────────────────── */
+      @media (prefers-reduced-motion: reduce) {
+        .heritage-gallery-media {
+          transition: box-shadow 0s;
+        }
+        .heritage-gallery-media:hover {
+          translate: none;
+        }
+        .heritage-gallery-media:hover img {
+          scale: 1;
+        }
+      }
+
+      /* ── Tablet (≤ 899px) ───────────────────────────────────── */
+      @media (max-width: 899px) {
+        .heritage-project-inner {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
+
+        .heritage-project-copy {
+          position: static;
+        }
+
+        /* Gallery: feature full-width, aside goes horizontal, strip stays */
+        .heritage-gallery {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: auto auto auto;
+        }
+
+        .heritage-gallery-feature {
+          grid-column: 1 / 3;
+          grid-row: 1;
+        }
+
+        .heritage-gallery-feature .heritage-gallery-media {
+          aspect-ratio: 16 / 9;
+        }
+
+        .heritage-gallery-aside {
+          grid-column: 1 / 3;
+          grid-row: 2;
+          flex-direction: row;
+        }
+
+        .heritage-gallery-aside .heritage-gallery-media {
+          flex: 1;
+          aspect-ratio: 4 / 3;
+        }
+
+        .heritage-gallery-strip {
+          grid-column: 1 / 3;
+          grid-row: 3;
+        }
+      }
+
+      /* ── Mobile (≤ 599px) ───────────────────────────────────── */
+      @media (max-width: 599px) {
+        .heritage-project-gallery::before {
+          display: none;
+        }
+
+        .heritage-gallery {
+          grid-template-columns: 1fr;
+        }
+
+        .heritage-gallery-feature,
+        .heritage-gallery-aside,
+        .heritage-gallery-strip {
+          grid-column: 1;
+          grid-row: auto;
+        }
+
+        .heritage-gallery-feature .heritage-gallery-media,
+        .heritage-gallery-strip .heritage-gallery-media {
+          aspect-ratio: 4 / 3;
+        }
+
+        .heritage-gallery-aside {
+          flex-direction: column;
+        }
+
+        .heritage-gallery-aside .heritage-gallery-media {
+          flex: none;
+          aspect-ratio: 4 / 3;
+        }
       }
 
       /* ============================================================
@@ -531,206 +793,187 @@
         align-items: center;
       }
 
-      /* ── Left: image collage ──────────────────────────────── */
+      /* ── Left: editorial photo composition ──────────────────── */
 
       .wr-visual {
         position: relative;
-        /* padding makes room for secondary card + badges that bleed out */
-        padding-top: 1.75rem;
-        padding-bottom: 5rem;
-        padding-right: 1.75rem;
       }
 
-      /* Main image card */
-      .wr-main-card {
+      /* Atmospheric green glow — barely perceptible depth element */
+      .wr-visual::before {
+        content: "";
+        position: absolute;
+        width: 360px;
+        height: 360px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(34, 197, 94, 0.08) 0%,
+          transparent 70%
+        );
+        filter: blur(52px);
+        top: -70px;
+        right: -50px;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* 2-column editorial grid: tall portrait left + right stack,
+         then a 3-image strip spanning the full width below */
+      .wr-editorial {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1.35fr 1fr;
+        grid-template-rows: 1fr auto;
+        gap: 0.875rem;
+      }
+
+      /* ── Featured — tall portrait, left column ──────────────── */
+
+      .wr-ed-featured {
+        grid-column: 1;
+        grid-row: 1;
         position: relative;
         border-radius: 1.5rem;
         overflow: hidden;
+        aspect-ratio: 3 / 4;
         box-shadow:
-          0 24px 66px rgba(0, 0, 0, 0.13),
-          0 0 0 1px rgba(0, 0, 0, 0.04);
+          0 12px 40px rgba(0, 0, 0, 0.14),
+          0 0 0 1px rgba(0, 0, 0, 0.05);
+        /* Transition on BASE — covers [data-reveal] (opacity + transform)
+           AND hover (box-shadow). Smooth enter and exit for all states. */
+        transition:
+          opacity var(--reveal-duration, 0.75s)
+            var(--reveal-easing, cubic-bezier(0.22, 1, 0.36, 1))
+            var(--reveal-delay, 0s),
+          transform var(--reveal-duration, 0.75s)
+            var(--reveal-easing, cubic-bezier(0.22, 1, 0.36, 1))
+            var(--reveal-delay, 0s),
+          box-shadow 0.4s ease;
       }
 
-      .wr-main-card img {
-        display: block;
-        width: 100%;
-        aspect-ratio: 4 / 3;
-        object-fit: cover;
-        object-position: center 30%;
-        transition: transform 0.65s ease;
+      .wr-ed-featured:hover {
+        box-shadow:
+          0 24px 64px rgba(0, 0, 0, 0.2),
+          0 0 0 1px rgba(0, 0, 0, 0.06);
       }
 
-      .wr-main-card:hover img {
-        transform: scale(1.04);
-      }
-
-      .wr-main-overlay {
+      .wr-ed-featured img {
+        /* position:absolute + inset:0 fills the container reliably
+           regardless of how the grid resolves the row height */
         position: absolute;
         inset: 0;
-        background: linear-gradient(
-          to bottom,
-          transparent 50%,
-          rgba(10, 20, 10, 0.28) 100%
-        );
-        pointer-events: none;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        /* Individual CSS transform properties — don't conflict with
+           the scroll parallax JS which sets `translate` separately */
+        transition: scale 0.5s ease;
       }
 
-      /* Secondary overlapping card */
-      .wr-sec-card {
-        position: absolute;
-        bottom: 0;
-        right: -0.75rem;
-        width: 50%;
-        border-radius: 1.1rem;
+      .wr-ed-featured:hover img {
+        scale: 1.03;
+      }
+
+      /* ── Right stack — three supporting images ───────────────── */
+
+      .wr-ed-right {
+        grid-column: 2;
+        grid-row: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.875rem;
+      }
+
+      .wr-ed-right-item {
+        position: relative;
+        flex: 1;
+        min-height: 0; /* prevent flex overflow */
+        border-radius: 1rem;
         overflow: hidden;
-        border: 4px solid #ffffff;
         box-shadow:
-          0 18px 48px rgba(0, 0, 0, 0.15),
+          0 6px 22px rgba(0, 0, 0, 0.1),
           0 0 0 1px rgba(0, 0, 0, 0.04);
-        transition: box-shadow 0.35s ease;
+        /* BASE transition — covers reveal AND hover */
+        transition:
+          opacity var(--reveal-duration, 0.75s)
+            var(--reveal-easing, cubic-bezier(0.22, 1, 0.36, 1))
+            var(--reveal-delay, 0s),
+          transform var(--reveal-duration, 0.75s)
+            var(--reveal-easing, cubic-bezier(0.22, 1, 0.36, 1))
+            var(--reveal-delay, 0s),
+          box-shadow 0.38s ease;
       }
 
-      .wr-sec-card:hover {
+      .wr-ed-right-item:hover {
         box-shadow:
-          0 28px 66px rgba(0, 0, 0, 0.2),
+          0 14px 42px rgba(0, 0, 0, 0.16),
           0 0 0 1px rgba(0, 0, 0, 0.05);
       }
 
-      .wr-sec-card img {
-        display: block;
+      .wr-ed-right-item img {
+        position: absolute;
+        inset: 0;
         width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        transition: scale 0.45s ease;
+      }
+
+      .wr-ed-right-item:hover img {
+        scale: 1.04;
+      }
+
+      /* ── Bottom strip — three equal accent images ────────────── */
+
+      .wr-ed-bottom {
+        grid-column: 1 / 3;
+        grid-row: 2;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.875rem;
+      }
+
+      .wr-ed-bottom-item {
+        position: relative;
+        border-radius: 1rem;
+        overflow: hidden;
         aspect-ratio: 4 / 3;
-        object-fit: cover;
-        object-position: center;
-        transition: transform 0.65s ease;
-      }
-
-      .wr-sec-card:hover img {
-        transform: scale(1.04);
-      }
-
-      /* Small square accent chip */
-      .wr-chip {
-        position: absolute;
-        border-radius: 0.85rem;
-        overflow: hidden;
-        border: 3px solid #ffffff;
-        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.17);
-      }
-
-      .wr-chip--accent {
-        top: 0.75rem;
-        right: -0.75rem;
-        width: 82px;
-        height: 82px;
-      }
-
-      .wr-chip img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      /* Thumbnail strip — two small preview chips at bottom of main card */
-      .wr-thumb-row {
-        position: absolute;
-        bottom: 5rem;
-        left: 1rem;
-        display: flex;
-        gap: 0.42rem;
-        z-index: 5;
-      }
-
-      .wr-thumb {
-        width: 54px;
-        height: 54px;
-        border-radius: 0.65rem;
-        overflow: hidden;
-        border: 2.5px solid #ffffff;
-        box-shadow: 0 3px 14px rgba(0, 0, 0, 0.18);
-        transition: transform 0.3s ease;
-      }
-
-      .wildroots-section.reveal-visible .wr-thumb:hover {
-        transform: translateY(-3px);
-      }
-
-      .wr-thumb img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      /* Floating location badge — white with green border */
-      .wr-loc-badge {
-        position: absolute;
-        bottom: 0.75rem;
-        left: -0.75rem;
-        z-index: 10;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.52rem;
-        background: #ffffff;
-        border: 1.5px solid rgba(22, 163, 74, 0.24);
-        border-radius: 100px;
-        padding: 0.52rem 1.1rem;
-        font-size: 0.71rem;
-        font-weight: 700;
-        letter-spacing: 0.09em;
-        color: #0b5e20;
-        text-transform: uppercase;
-        white-space: nowrap;
         box-shadow:
           0 4px 18px rgba(0, 0, 0, 0.09),
-          0 0 0 1px rgba(22, 163, 74, 0.06);
-        animation: wr-float-a 5.5s ease-in-out infinite alternate;
-        will-change: transform;
-        pointer-events: none;
+          0 0 0 1px rgba(0, 0, 0, 0.03);
+        /* BASE transition — covers reveal AND hover */
+        transition:
+          opacity var(--reveal-duration, 0.75s)
+            var(--reveal-easing, cubic-bezier(0.22, 1, 0.36, 1))
+            var(--reveal-delay, 0s),
+          transform var(--reveal-duration, 0.75s)
+            var(--reveal-easing, cubic-bezier(0.22, 1, 0.36, 1))
+            var(--reveal-delay, 0s),
+          box-shadow 0.38s ease;
       }
 
-      .wr-loc-badge i {
-        color: #f97316;
-        font-size: 0.76rem;
+      .wr-ed-bottom-item:hover {
+        box-shadow:
+          0 12px 36px rgba(0, 0, 0, 0.14),
+          0 0 0 1px rgba(0, 0, 0, 0.04);
       }
 
-      /* Enterprise pill badge — orange */
-      .wr-ent-badge {
+      .wr-ed-bottom-item img {
         position: absolute;
-        top: 0;
-        left: 1rem;
-        z-index: 10;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.45rem;
-        background: linear-gradient(90deg, #ea6c0a, #f97316);
-        border-radius: 100px;
-        padding: 0.42rem 1rem;
-        font-size: 0.68rem;
-        font-weight: 700;
-        letter-spacing: 0.09em;
-        color: #ffffff;
-        text-transform: uppercase;
-        white-space: nowrap;
-        box-shadow: 0 4px 14px rgba(249, 115, 22, 0.38);
-        animation: wr-float-b 6.2s ease-in-out infinite alternate;
-        will-change: transform;
-        pointer-events: none;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        transition: scale 0.45s ease;
       }
 
-      .wr-ent-badge i {
-        font-size: 0.62rem;
-      }
-
-      @keyframes wr-float-a {
-        from { transform: translateY(0px); }
-        to   { transform: translateY(-10px); }
-      }
-
-      @keyframes wr-float-b {
-        from { transform: translateY(0px) rotate(0deg); }
-        to   { transform: translateY(6px) rotate(0.35deg); }
+      .wr-ed-bottom-item:hover img {
+        scale: 1.03;
       }
 
       /* ── Right: content ───────────────────────────────────── */
@@ -750,16 +993,6 @@
         text-transform: uppercase;
         color: #f97316;
         margin: 0 0 1.1rem;
-      }
-
-      .wr-eyebrow::before {
-        content: "";
-        display: inline-block;
-        width: 1.4rem;
-        height: 2px;
-        background: #f97316;
-        border-radius: 999px;
-        flex-shrink: 0;
       }
 
       .wr-heading {
@@ -874,16 +1107,23 @@
 
       /* ── Reduced motion ───────────────────────────────────── */
       @media (prefers-reduced-motion: reduce) {
-        .wr-loc-badge                                { animation: none; }
-        .wr-ent-badge                                { animation: none; }
-        .wr-main-card img                            { transition: none; }
-        .wr-main-card:hover img                      { transform: none; }
-        .wr-sec-card img                             { transition: none; }
-        .wr-sec-card:hover img                       { transform: none; }
-        .wildroots-section .wr-thumb                 { transition: none; }
-        .wildroots-section.reveal-visible .wr-thumb:hover { transform: none; }
-        .wildroots-section .button.primary:hover     { transform: none; box-shadow: none; }
-        .wildroots-section .button.primary .btn-arrow { transition: none; }
+        .wr-ed-featured,
+        .wr-ed-right-item,
+        .wr-ed-bottom-item {
+          transition: box-shadow 0s;
+        }
+        .wr-ed-featured:hover img,
+        .wr-ed-right-item:hover img,
+        .wr-ed-bottom-item:hover img {
+          scale: 1;
+        }
+        .wildroots-section .button.primary:hover {
+          transform: none;
+          box-shadow: none;
+        }
+        .wildroots-section .button.primary .btn-arrow {
+          transition: none;
+        }
       }
 
       /* ── Tablet (≤ 899px) ─────────────────────────────────── */
@@ -893,58 +1133,71 @@
           gap: 3rem;
         }
 
-        .wr-visual {
-          padding-bottom: 4.5rem;
-          padding-right: 1.25rem;
-          padding-top: 1.5rem;
+        /* Tablet: feature stays full-width, right stack goes horizontal */
+        .wr-editorial {
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: auto auto auto;
         }
 
-        .wr-sec-card {
-          right: -0.25rem;
+        .wr-ed-featured {
+          grid-column: 1 / 4;
+          grid-row: 1;
+          aspect-ratio: 16 / 9;
         }
 
-        .wr-loc-badge {
-          left: 0;
-          bottom: 0.5rem;
+        .wr-ed-right {
+          grid-column: 1 / 4;
+          grid-row: 2;
+          flex-direction: row;
         }
 
-        .wr-thumb-row {
-          bottom: 4.75rem;
+        .wr-ed-right-item {
+          aspect-ratio: 4 / 3;
+        }
+
+        .wr-ed-bottom {
+          grid-column: 1 / 4;
+          grid-row: 3;
         }
       }
 
       /* ── Mobile (≤ 599px) ─────────────────────────────────── */
       @media (max-width: 599px) {
-        .wr-visual {
-          padding-bottom: 4rem;
-          padding-right: 0.5rem;
+        /* Mobile: single-column stack */
+        .wr-editorial {
+          grid-template-columns: 1fr;
         }
 
-        .wr-sec-card {
-          width: 42%;
-          right: 0;
+        .wr-ed-featured {
+          grid-column: 1;
+          grid-row: 1;
+          aspect-ratio: 4 / 3;
         }
 
-        .wr-chip--accent {
-          width: 62px;
-          height: 62px;
-          right: 0;
+        .wr-ed-right {
+          grid-column: 1;
+          grid-row: 2;
+          flex-direction: row;
         }
 
-        .wr-thumb-row {
+        .wr-ed-right-item {
+          aspect-ratio: 4 / 3;
+        }
+
+        /* Show only 2 of 3 stacked images on mobile */
+        .wr-ed-right-item:last-child {
           display: none;
         }
 
-        .wr-loc-badge {
-          left: 0;
-          font-size: 0.65rem;
-          padding: 0.42rem 0.85rem;
+        .wr-ed-bottom {
+          grid-column: 1;
+          grid-row: 3;
+          grid-template-columns: repeat(2, 1fr);
         }
 
-        .wr-ent-badge {
-          font-size: 0.63rem;
-          padding: 0.38rem 0.85rem;
-          left: 0.5rem;
+        /* Show only 2 of 3 bottom images on mobile */
+        .wr-ed-bottom-item:last-child {
+          display: none;
         }
 
         .wr-cta-group {
@@ -1101,15 +1354,10 @@
       <!-- ══════════════════════════════════════════════════════════
            KNUCKLES CONSERVATION HERO
            ══════════════════════════════════════════════════════════ -->
-      <section
-        class="projects-hero knuckles-hero"
-        aria-labelledby="ph-title"
-      >
+      <section class="projects-hero knuckles-hero" aria-labelledby="ph-title">
         <div class="projects-hero-inner">
-
           <!-- ── Left: content ─────────────────────────────────── -->
           <div class="ph-content">
-
             <p class="ph-eyebrow" data-reveal="up">
               <span class="ph-eyebrow-pulse" aria-hidden="true"></span>
               Featured Conservation Project
@@ -1190,11 +1438,7 @@
               </li>
             </ul>
 
-            <div
-              class="ph-cta"
-              data-reveal="up"
-              style="--reveal-delay: 0.34s"
-            >
+            <div class="ph-cta" data-reveal="up" style="--reveal-delay: 0.34s">
               <a class="button primary" href="#projects-list">
                 <span class="btn-text">Explore Projects</span>
                 <span class="btn-arrow" aria-hidden="true"
@@ -1205,12 +1449,11 @@
                 >View Community Impact &rarr;</a
               >
             </div>
-
-          </div><!-- /ph-content -->
+          </div>
+          <!-- /ph-content -->
 
           <!-- ── Right: visual stack ────────────────────────────── -->
           <div class="ph-visual" aria-hidden="true" id="ph-visual">
-
             <!-- Main image card — wrapper carries reveal, inner card carries parallax id -->
             <div data-reveal="up" style="--reveal-delay: 0.1s">
               <div class="ph-img-card" id="ph-card-main">
@@ -1241,32 +1484,183 @@
                 <div class="ph-img-overlay"></div>
               </div>
             </div>
-
-            <!-- Floating glass location badge -->
-            <div class="ph-float-badge" id="ph-float-badge">
-              <i class="fa-solid fa-mountain-sun" aria-hidden="true"></i>
-              Knuckles &bull; Udadumbara
-            </div>
-
-            <!-- Floating stat badge -->
-            <div class="ph-stat-badge" id="ph-stat-badge">
-              <span class="ph-stat-kicker">Project Type</span>
-              <span class="ph-stat-value">Environmental Restoration</span>
-            </div>
-
-          </div><!-- /ph-visual -->
-
-        </div><!-- /projects-hero-inner -->
+          </div>
+          <!-- /ph-visual -->
+        </div>
+        <!-- /projects-hero-inner -->
 
         <!-- Scroll cue -->
         <div class="ph-scroll-cue" aria-hidden="true">
           <i class="fa-solid fa-chevron-down"></i>
           <span>Scroll</span>
         </div>
-
       </section>
       <!-- ── End hero ──────────────────────────────────────────── -->
 
+      <!-- ══════════════════════════════════════════════════════════
+           HERITAGE PROJECT — BOOK LAUNCH & CDC DOCUMENTATION
+           ══════════════════════════════════════════════════════════ -->
+      <section
+        class="heritage-project content-section section-reveal"
+        id="heritage"
+        aria-labelledby="heritage-heading"
+      >
+        <div class="container heritage-project-inner">
+          <!-- Left: copy -->
+          <div class="heritage-project-copy">
+            <p class="heritage-eyebrow" data-reveal="up">
+              CDC Heritage &amp; Documentation
+            </p>
+
+            <h2
+              id="heritage-heading"
+              class="heritage-heading"
+              data-reveal="up"
+              style="--reveal-delay: 0.07s"
+            >
+              Ala Koratuwa: Preserving the story behind CDC&rsquo;s journey
+            </h2>
+
+            <p
+              class="heritage-desc"
+              data-reveal="up"
+              style="--reveal-delay: 0.13s"
+            >
+              The launch of <em>Ala Koratuwa</em> celebrated the people,
+              knowledge, and community spirit that helped shape CDC over the
+              years. Written by Mrs. Mallika Munasinghe and inspired by the life
+              and work of Mrs. Damayanthi Godamulla, the publication highlights
+              indigenous yam heritage, women&rsquo;s leadership, and grassroots
+              community development.
+            </p>
+
+            <div
+              class="heritage-supporting"
+              data-reveal="up"
+              style="--reveal-delay: 0.19s"
+            >
+              <p>
+                &ldquo;This project is not only about a publication. It is about
+                preserving the memory, leadership, and community spirit behind
+                CDC&rsquo;s work for future generations.&rdquo;
+              </p>
+            </div>
+
+            <ul
+              class="heritage-points"
+              data-reveal="up"
+              style="--reveal-delay: 0.25s"
+              aria-label="Key aspects of this project"
+            >
+              <li class="heritage-point">
+                <span class="heritage-point-icon" aria-hidden="true"
+                  ><i class="fa-solid fa-book-open"></i
+                ></span>
+                <span>Documenting CDC&rsquo;s roots and leadership</span>
+              </li>
+              <li class="heritage-point">
+                <span class="heritage-point-icon" aria-hidden="true"
+                  ><i class="fa-solid fa-seedling"></i
+                ></span>
+                <span>Honouring the &ldquo;Ala Koratuwa&rdquo; journey</span>
+              </li>
+              <li class="heritage-point">
+                <span class="heritage-point-icon" aria-hidden="true"
+                  ><i class="fa-solid fa-people-group"></i
+                ></span>
+                <span
+                  >Recognising women&rsquo;s contribution to community
+                  development</span
+                >
+              </li>
+              <li class="heritage-point">
+                <span class="heritage-point-icon" aria-hidden="true"
+                  ><i class="fa-solid fa-leaf"></i
+                ></span>
+                <span
+                  >Preserving indigenous food heritage and local knowledge</span
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- /heritage-project-copy -->
+
+          <!-- Right: image gallery — all 11_* images, largest first.
+               Each image is wrapped in a plain [data-reveal] div so
+               the reveal system's transition (opacity + transform) does
+               not conflict with .heritage-project-image's hover transition. -->
+          <div
+            class="heritage-project-gallery"
+            aria-label="Photographs from the Ala Koratuwa book launch"
+          >
+            <div class="heritage-gallery">
+              <!-- Featured — 11_2 (96 KB, dominant left portrait) -->
+              <div class="heritage-gallery-feature">
+                <div
+                  class="heritage-gallery-media"
+                  data-reveal="up"
+                  style="--reveal-delay: 0.06s"
+                >
+                  <img
+                    src="assets/img/project-images/11_2.jpg"
+                    alt="Book launch celebration — CDC Ala Koratuwa documentation"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+
+              <!-- Right aside: 11_1 and 11_4 stacked -->
+              <div class="heritage-gallery-aside">
+                <div
+                  class="heritage-gallery-media"
+                  data-reveal="up"
+                  style="--reveal-delay: 0.13s"
+                >
+                  <img
+                    src="assets/img/project-images/11_1.jpg"
+                    alt="Community leaders and contributors at the CDC book launch"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div
+                  class="heritage-gallery-media"
+                  data-reveal="up"
+                  style="--reveal-delay: 0.2s"
+                >
+                  <img
+                    src="assets/img/project-images/11_4.jpg"
+                    alt="The Ala Koratuwa publication and heritage materials"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+
+              <!-- Closing strip — 11_3, full-width cinematic -->
+              <div class="heritage-gallery-strip">
+                <div
+                  class="heritage-gallery-media"
+                  data-reveal="up"
+                  style="--reveal-delay: 0.27s"
+                >
+                  <img
+                    src="assets/img/project-images/11_3.jpg"
+                    alt="Community gathering at the Ala Koratuwa book launch event"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- /heritage-gallery -->
+          </div>
+          <!-- /heritage-project-gallery -->
+        </div>
+        <!-- /heritage-project-inner -->
+      </section>
+      <!-- ── End heritage project ──────────────────────────────── -->
 
       <!-- ══════════════════════════════════════════════════════════
            WILD ROOTS ENTERPRISE SECTION
@@ -1277,78 +1671,110 @@
         aria-labelledby="wr-heading"
       >
         <div class="container wr-inner">
-
-          <!-- ── Left: image collage ───────────────────────────── -->
-          <div class="wr-visual" data-reveal="left" aria-hidden="true">
-
-            <!-- Main large image -->
-            <div class="wr-main-card" id="wr-main">
-              <img
-                src="assets/img/project-images/14_7.jpg"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="wr-main-overlay"></div>
-            </div>
-
-            <!-- Secondary overlapping card (bottom-right) -->
-            <div class="wr-sec-card" id="wr-sec">
-              <img
-                src="assets/img/project-images/14_6.jpg"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-
-            <!-- Small accent chip (top-right) -->
-            <div class="wr-chip wr-chip--accent" id="wr-chip">
-              <img
-                src="assets/img/project-images/14_4.jpg"
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-
-            <!-- Thumbnail preview row -->
-            <div class="wr-thumb-row">
-              <div class="wr-thumb">
+          <!-- ── Left: editorial photo composition ────────────────── -->
+          <div class="wr-visual" aria-hidden="true">
+            <div class="wr-editorial">
+              <!-- Featured — 14_7 (517 KB, highest quality) -->
+              <div
+                class="wr-ed-featured"
+                id="wr-featured"
+                data-reveal="up"
+                style="--reveal-delay: 0.04s"
+              >
                 <img
-                  src="assets/img/project-images/14_2.jpg"
+                  src="assets/img/project-images/14_7.jpg"
                   alt=""
                   loading="lazy"
                   decoding="async"
                 />
               </div>
-              <div class="wr-thumb">
-                <img
-                  src="assets/img/project-images/14_5.jpg"
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                />
+
+              <!-- Right column: three supporting images stacked -->
+              <div class="wr-ed-right">
+                <div
+                  class="wr-ed-right-item"
+                  data-reveal="up"
+                  style="--reveal-delay: 0.1s"
+                >
+                  <img
+                    src="assets/img/project-images/14_4.jpg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div
+                  class="wr-ed-right-item"
+                  data-reveal="up"
+                  style="--reveal-delay: 0.16s"
+                >
+                  <img
+                    src="assets/img/project-images/14_6.jpg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div
+                  class="wr-ed-right-item"
+                  data-reveal="up"
+                  style="--reveal-delay: 0.22s"
+                >
+                  <img
+                    src="assets/img/project-images/14_1.jpg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+
+              <!-- Bottom strip: three accent images -->
+              <div class="wr-ed-bottom">
+                <div
+                  class="wr-ed-bottom-item"
+                  data-reveal="up"
+                  style="--reveal-delay: 0.17s"
+                >
+                  <img
+                    src="assets/img/project-images/14_5.jpg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div
+                  class="wr-ed-bottom-item"
+                  data-reveal="up"
+                  style="--reveal-delay: 0.23s"
+                >
+                  <img
+                    src="assets/img/project-images/14_2.jpg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div
+                  class="wr-ed-bottom-item"
+                  data-reveal="up"
+                  style="--reveal-delay: 0.29s"
+                >
+                  <img
+                    src="assets/img/project-images/14_3.jpg"
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
               </div>
             </div>
-
-            <!-- Floating location badge -->
-            <div class="wr-loc-badge">
-              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-              Wild Roots &bull; Ududumbara
-            </div>
-
-            <!-- Enterprise pill badge -->
-            <div class="wr-ent-badge">
-              <i class="fa-solid fa-star" aria-hidden="true"></i>
-              Community Enterprise
-            </div>
-
-          </div><!-- /wr-visual -->
+            <!-- /wr-editorial -->
+          </div>
+          <!-- /wr-visual -->
 
           <!-- ── Right: content ─────────────────────────────────── -->
           <div class="wr-content">
-
             <p class="wr-eyebrow" data-reveal="up">
               Women &amp; Community Enterprise
             </p>
@@ -1359,27 +1785,21 @@
               data-reveal="up"
               style="--reveal-delay: 0.08s"
             >
-              Wild Roots: women turning local knowledge into
-              opportunity
+              Wild Roots: women turning local knowledge into opportunity
             </h2>
 
-            <p
-              class="wr-desc"
-              data-reveal="up"
-              style="--reveal-delay: 0.14s"
-            >
-              After difficult moments faced by rural communities, CDC
-              supported women leaders and entrepreneurs to rebuild
-              confidence, strengthen skills, and develop
-              community-based products. Through this journey, the Wild
-              Roots initiative emerged from Ududumbara as a symbol of
-              resilience, enterprise, and local pride.
+            <p class="wr-desc" data-reveal="up" style="--reveal-delay: 0.14s">
+              After difficult moments faced by rural communities, CDC supported
+              women leaders and entrepreneurs to rebuild confidence, strengthen
+              skills, and develop community-based products. Through this
+              journey, the Wild Roots initiative emerged from Ududumbara as a
+              symbol of resilience, enterprise, and local pride.
             </p>
 
             <ul
               class="wr-points"
               data-reveal="up"
-              style="--reveal-delay: 0.20s"
+              style="--reveal-delay: 0.2s"
               aria-label="Key aspects of this project"
             >
               <li class="wr-point">
@@ -1411,18 +1831,11 @@
               </li>
             </ul>
 
-            <div
-              class="wr-note"
-              data-reveal="up"
-              style="--reveal-delay: 0.26s"
-            >
+            <div class="wr-note" data-reveal="up" style="--reveal-delay: 0.26s">
               <p>
-                <i
-                  class="fa-solid fa-quote-left"
-                  aria-hidden="true"
-                ></i>
-                Built through CDC guidance, community leadership, and
-                the dedication of emerging women entrepreneurs.
+                <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+                Built through CDC guidance, community leadership, and the
+                dedication of emerging women entrepreneurs.
               </p>
             </div>
 
@@ -1432,21 +1845,18 @@
               style="--reveal-delay: 0.32s"
             >
               <a class="button primary" href="stories.html">
-                <span class="btn-text"
-                  >Explore women&rsquo;s stories</span
-                >
+                <span class="btn-text">Explore women&rsquo;s stories</span>
                 <span class="btn-arrow" aria-hidden="true"
                   ><i class="fa-solid fa-arrow-right"></i
                 ></span>
               </a>
             </div>
-
-          </div><!-- /wr-content -->
-
-        </div><!-- /wr-inner -->
+          </div>
+          <!-- /wr-content -->
+        </div>
+        <!-- /wr-inner -->
       </section>
       <!-- ── End Wild Roots ────────────────────────────────────── -->
-
     </main>
 
     <footer class="site-footer" aria-label="Site footer">
@@ -1527,11 +1937,12 @@
     <script src="assets/js/main.js?v=20260506"></script>
     <script>
       (function () {
-        'use strict';
+        "use strict";
 
-        var reducedMotion =
-          window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        var hero = document.querySelector('.projects-hero');
+        var reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+        var hero = document.querySelector(".projects-hero");
         if (!hero || reducedMotion) return;
 
         /* ── Scroll: bg parallax scale + shift ──────────────────── */
@@ -1540,64 +1951,70 @@
         function updateBg() {
           var progress = Math.min(
             window.scrollY / (hero.offsetHeight || window.innerHeight),
-            1
+            1,
           );
           hero.style.setProperty(
-            '--ph-bg-scale',
-            (1 + progress * 0.08).toFixed(4)
+            "--ph-bg-scale",
+            (1 + progress * 0.08).toFixed(4),
           );
           hero.style.setProperty(
-            '--ph-bg-y',
-            (progress * -30).toFixed(1) + 'px'
+            "--ph-bg-y",
+            (progress * -30).toFixed(1) + "px",
           );
           bgTick = false;
         }
 
         window.addEventListener(
-          'scroll',
+          "scroll",
           function () {
             if (!bgTick) {
               requestAnimationFrame(updateBg);
               bgTick = true;
             }
           },
-          { passive: true }
+          { passive: true },
         );
 
         updateBg();
 
         /* ── Mouse: card parallax ───────────────────────────────── */
-        var cardMain = document.getElementById('ph-card-main');
-        var cardSec  = document.getElementById('ph-card-sec');
+        var cardMain = document.getElementById("ph-card-main");
+        var cardSec = document.getElementById("ph-card-sec");
         if (!cardMain) return;
 
-        var mx = 0, my = 0, mTick = false;
+        var mx = 0,
+          my = 0,
+          mTick = false;
 
         function applyMouseParallax() {
           var rect = hero.getBoundingClientRect();
-          var cx   = rect.left + rect.width  / 2;
-          var cy   = rect.top  + rect.height / 2;
+          var cx = rect.left + rect.width / 2;
+          var cy = rect.top + rect.height / 2;
           /* Normalise: -1 to 1 across viewport */
-          var dx = (mx - cx) / (window.innerWidth  / 2);
+          var dx = (mx - cx) / (window.innerWidth / 2);
           var dy = (my - cy) / (window.innerHeight / 2);
 
           if (cardMain) {
             cardMain.style.transform =
-              'translate(' +
-              (dx * 9).toFixed(2) + 'px,' +
-              (dy * 7).toFixed(2) + 'px)';
+              "translate(" +
+              (dx * 9).toFixed(2) +
+              "px," +
+              (dy * 7).toFixed(2) +
+              "px)";
           }
           if (cardSec) {
             cardSec.style.transform =
-              'translate(' +
-              (dx * 17).toFixed(2) + 'px,' +
-              (dy * 13).toFixed(2) + 'px)';
+              "translate(" +
+              (dx * 17).toFixed(2) +
+              "px," +
+              (dy * 13).toFixed(2) +
+              "px)";
           }
           mTick = false;
         }
 
         hero.addEventListener(
-          'mousemove',
+          "mousemove",
           function (e) {
             mx = e.clientX;
             my = e.clientY;
@@ -1606,80 +2023,68 @@
               mTick = true;
             }
           },
-          { passive: true }
+          { passive: true },
         );
 
-        hero.addEventListener('mouseleave', function () {
-          if (cardMain) cardMain.style.transform = '';
-          if (cardSec)  cardSec.style.transform  = '';
+        hero.addEventListener("mouseleave", function () {
+          if (cardMain) cardMain.style.transform = "";
+          if (cardSec) cardSec.style.transform = "";
         });
       })();
     </script>
 
-    <!-- Wild Roots: mouse parallax on image collage -->
+    <!-- Wild Roots: scroll-based parallax on featured image.
+         Uses the CSS `translate` property so it doesn't conflict with
+         the `scale` hover transition or the [data-reveal] transform. -->
     <script>
       (function () {
-        'use strict';
+        "use strict";
 
-        var reducedMotion =
-          window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        var section = document.querySelector('.wildroots-section');
+        var reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+        var section = document.querySelector(".wildroots-section");
         if (!section || reducedMotion) return;
 
-        var mainCard = document.getElementById('wr-main');
-        var secCard  = document.getElementById('wr-sec');
-        var chip     = document.getElementById('wr-chip');
-        if (!mainCard) return;
+        var featImg = document.querySelector("#wr-featured img");
+        if (!featImg) return;
 
-        var mx = 0, my = 0, tick = false;
+        var tick = false;
 
-        function applyParallax() {
+        function update() {
           var rect = section.getBoundingClientRect();
-          /* Only animate when section is in view */
-          if (rect.bottom < 0 || rect.top > window.innerHeight) {
+          var vp = window.innerHeight;
+
+          /* Only animate while section intersects the viewport */
+          if (rect.bottom < 0 || rect.top > vp) {
             tick = false;
             return;
           }
-          var cx = rect.left + rect.width  / 2;
-          var cy = rect.top  + rect.height / 2;
-          /* Normalised -1 → 1 across the viewport */
-          var dx = (mx - cx) / (window.innerWidth  / 2);
-          var dy = (my - cy) / (window.innerHeight / 2);
 
-          /* Each layer at a different depth */
-          if (mainCard)
-            mainCard.style.transform =
-              'translate(' + (dx * 6).toFixed(2) + 'px,' +
-              (dy * 5).toFixed(2) + 'px)';
-          if (secCard)
-            secCard.style.transform =
-              'translate(' + (dx * 15).toFixed(2) + 'px,' +
-              (dy * 12).toFixed(2) + 'px)';
-          if (chip)
-            chip.style.transform =
-              'translate(' + (dx * 10).toFixed(2) + 'px,' +
-              (dy * 8).toFixed(2) + 'px)';
+          /* progress: 0 = section bottom at viewport top,
+                       1 = section top at viewport bottom */
+          var progress = (vp - rect.top) / (vp + rect.height);
+          /* Map 0–1 → ±12 px vertical shift */
+          var shift = (Math.min(Math.max(progress, 0), 1) - 0.5) * 24;
+
+          /* CSS `translate` property — independent from `scale` hover
+             and from the `transform` used by the [data-reveal] system */
+          featImg.style.translate = "0 " + shift.toFixed(2) + "px";
           tick = false;
         }
 
-        section.addEventListener(
-          'mousemove',
-          function (e) {
-            mx = e.clientX;
-            my = e.clientY;
+        window.addEventListener(
+          "scroll",
+          function () {
             if (!tick) {
-              requestAnimationFrame(applyParallax);
+              requestAnimationFrame(update);
               tick = true;
             }
           },
-          { passive: true }
+          { passive: true },
         );
 
-        section.addEventListener('mouseleave', function () {
-          if (mainCard) mainCard.style.transform = '';
-          if (secCard)  secCard.style.transform  = '';
-          if (chip)     chip.style.transform     = '';
-        });
+        update();
       })();
     </script>
   </body>
