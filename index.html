@@ -91,11 +91,13 @@
       .stories-section.reveal-visible
         .stories-grid
         .story-card:hover
-        .story-card-image img,
+        .story-card-image
+        img,
       .stories-section.reveal-visible
         .stories-grid
         .story-card:focus-within
-        .story-card-image img {
+        .story-card-image
+        img {
         transform: scale(1.05);
       }
 
@@ -203,8 +205,12 @@
       }
 
       @keyframes kh-float {
-        from { transform: translateY(0) scale(1); }
-        to   { transform: translateY(-28px) scale(1.07); }
+        from {
+          transform: translateY(0) scale(1);
+        }
+        to {
+          transform: translateY(-28px) scale(1.07);
+        }
       }
 
       .kh-leaf {
@@ -310,7 +316,9 @@
         background: #f97316;
         border-color: #f97316;
         color: #fff;
-        transition: background 0.25s ease, transform 0.22s ease,
+        transition:
+          background 0.25s ease,
+          transform 0.22s ease,
           box-shadow 0.25s ease;
       }
       .knuckles-highlight .kh-btn-primary.button:hover,
@@ -327,7 +335,9 @@
         color: rgba(255, 255, 255, 0.72);
         text-decoration: none;
         letter-spacing: 0.02em;
-        transition: color 0.2s ease, border-color 0.2s ease;
+        transition:
+          color 0.2s ease,
+          border-color 0.2s ease;
         border-bottom: 1px solid rgba(255, 255, 255, 0.22);
         padding-bottom: 2px;
         white-space: nowrap;
@@ -370,8 +380,15 @@
       }
 
       @keyframes kh-pulse {
-        0%, 100% { opacity: 1; transform: scale(1); }
-        50%       { opacity: 0.4; transform: scale(1.45); }
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.4;
+          transform: scale(1.45);
+        }
       }
 
       .kh-parallax-wrap {
@@ -382,15 +399,18 @@
         position: relative;
         border-radius: 1.5rem;
         overflow: hidden;
-        box-shadow: 0 28px 70px rgba(0, 0, 0, 0.52),
+        box-shadow:
+          0 28px 70px rgba(0, 0, 0, 0.52),
           0 0 0 1px rgba(255, 255, 255, 0.06);
-        transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        transition:
+          transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
           box-shadow 0.45s ease;
         cursor: default;
       }
       .kh-image-card:hover {
         transform: scale(1.022) translateY(-5px);
-        box-shadow: 0 42px 92px rgba(0, 0, 0, 0.62),
+        box-shadow:
+          0 42px 92px rgba(0, 0, 0, 0.62),
           0 0 0 1px rgba(255, 255, 255, 0.1),
           0 0 52px rgba(34, 197, 94, 0.15);
       }
@@ -444,12 +464,25 @@
       }
 
       @media (prefers-reduced-motion: reduce) {
-        .kh-badge-dot { animation: none; opacity: 1; }
-        .kh-bg-glow--1 { animation: none; }
-        .kh-image-card { transition: none; }
-        .kh-image-card:hover { transform: none; }
-        .kh-image-card:hover .kh-image { transform: none; }
-        .knuckles-highlight .kh-btn-primary.button:hover { transform: none; }
+        .kh-badge-dot {
+          animation: none;
+          opacity: 1;
+        }
+        .kh-bg-glow--1 {
+          animation: none;
+        }
+        .kh-image-card {
+          transition: none;
+        }
+        .kh-image-card:hover {
+          transform: none;
+        }
+        .kh-image-card:hover .kh-image {
+          transform: none;
+        }
+        .knuckles-highlight .kh-btn-primary.button:hover {
+          transform: none;
+        }
       }
 
       @media (max-width: 799px) {
@@ -457,20 +490,33 @@
           grid-template-columns: 1fr;
           gap: 2.25rem;
         }
-        .kh-visual { order: 2; }
-        .kh-content { order: 1; }
+        .kh-visual {
+          order: 2;
+        }
+        .kh-content {
+          order: 1;
+        }
         .kh-cta-group {
           flex-direction: column;
           align-items: flex-start;
           gap: 1rem;
         }
-        .kh-heading { margin-bottom: 1rem; }
+        .kh-heading {
+          margin-bottom: 1rem;
+        }
       }
 
       @media (max-width: 479px) {
-        .kh-points { gap: 0.65rem; }
-        .kh-badge { font-size: 0.66rem; padding: 0.38rem 0.8rem; }
-        .kh-link-secondary { white-space: normal; }
+        .kh-points {
+          gap: 0.65rem;
+        }
+        .kh-badge {
+          font-size: 0.66rem;
+          padding: 0.38rem 0.8rem;
+        }
+        .kh-link-secondary {
+          white-space: normal;
+        }
       }
 
       /* ============================================================
@@ -495,13 +541,17 @@
         border-radius: 1.25rem;
         overflow: hidden;
         background: #fff;
-        box-shadow: 0 2px 18px rgba(15, 69, 32, 0.06),
+        box-shadow:
+          0 2px 18px rgba(15, 69, 32, 0.06),
           0 0 0 1px rgba(15, 69, 32, 0.04);
-        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
       }
       .feature-section.reveal-visible .feature-card:hover {
         transform: translateY(-7px);
-        box-shadow: 0 20px 50px rgba(15, 69, 32, 0.12),
+        box-shadow:
+          0 20px 50px rgba(15, 69, 32, 0.12),
           0 0 0 1px rgba(15, 69, 32, 0.07);
       }
       .feature-card-image {
@@ -516,7 +566,10 @@
         display: block;
         transition: transform 0.5s ease;
       }
-      .feature-section.reveal-visible .feature-card:hover .feature-card-image img {
+      .feature-section.reveal-visible
+        .feature-card:hover
+        .feature-card-image
+        img {
         transform: scale(1.06);
       }
 
@@ -556,13 +609,17 @@
         border-radius: 1.25rem;
         overflow: hidden;
         background: #f7faf8;
-        box-shadow: 0 2px 18px rgba(15, 69, 32, 0.05),
+        box-shadow:
+          0 2px 18px rgba(15, 69, 32, 0.05),
           0 0 0 1px rgba(15, 69, 32, 0.04);
-        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease;
       }
       .focus-section.reveal-visible .focus-card:hover {
         transform: translateY(-6px);
-        box-shadow: 0 18px 46px rgba(15, 69, 32, 0.11),
+        box-shadow:
+          0 18px 46px rgba(15, 69, 32, 0.11),
           0 0 0 1px rgba(15, 69, 32, 0.06);
       }
       .focus-card-image {
@@ -587,7 +644,8 @@
       .work-image {
         border-radius: 1.5rem;
         overflow: hidden;
-        box-shadow: 0 18px 52px rgba(0, 0, 0, 0.11),
+        box-shadow:
+          0 18px 52px rgba(0, 0, 0, 0.11),
           0 0 0 1px rgba(15, 69, 32, 0.06);
       }
       .work-image img {
@@ -650,13 +708,17 @@
       .cta-card {
         background: #ffffff;
         border-radius: 1.25rem;
-        box-shadow: 0 4px 22px rgba(15, 69, 32, 0.07),
+        box-shadow:
+          0 4px 22px rgba(15, 69, 32, 0.07),
           0 0 0 1px rgba(15, 69, 32, 0.05);
-        transition: transform 0.32s ease, box-shadow 0.32s ease;
+        transition:
+          transform 0.32s ease,
+          box-shadow 0.32s ease;
       }
       .cta-section.reveal-visible .cta-card:hover {
         transform: translateY(-6px);
-        box-shadow: 0 18px 48px rgba(15, 69, 32, 0.13),
+        box-shadow:
+          0 18px 48px rgba(15, 69, 32, 0.13),
           0 0 0 1px rgba(15, 69, 32, 0.07);
       }
 
@@ -667,7 +729,10 @@
         .cta-section.reveal-visible .cta-card:hover {
           transform: none;
         }
-        .feature-section.reveal-visible .feature-card:hover .feature-card-image img,
+        .feature-section.reveal-visible
+          .feature-card:hover
+          .feature-card-image
+          img,
         .focus-section.reveal-visible .focus-card:hover .focus-card-image img {
           transform: none;
         }
@@ -682,7 +747,8 @@
         display: inline-flex;
         align-items: center;
         gap: 0.55rem;
-        transition: transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        transition:
+          transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94),
           box-shadow 0.28s ease;
       }
       .hero-section .button.primary .btn-text {
@@ -702,7 +768,8 @@
       }
       .hero-section .button.primary:hover {
         transform: translateY(-2px);
-        box-shadow: 0 10px 32px rgba(0, 0, 0, 0.26),
+        box-shadow:
+          0 10px 32px rgba(0, 0, 0, 0.26),
           0 4px 12px rgba(0, 0, 0, 0.14);
       }
 
@@ -782,12 +849,22 @@
       }
 
       @keyframes impact-bob {
-        0%, 100% { transform: translateY(0); }
-        50%       { transform: translateY(-9px); }
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-9px);
+        }
       }
       @keyframes impact-float-front {
-        0%, 100% { transform: translateY(0); }
-        50%       { transform: translateY(-15px); }
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
       }
 
       /* ---- Focus card: image label + gradient + animated link ---- */
@@ -896,12 +973,331 @@
       }
 
       /* ============================================================
-         LEGACY SECTION — CDC long-term community journey
+         HOME: WILD ROOTS FEATURE SECTION
          ============================================================ */
+
+      .hwr-section {
+        background: linear-gradient(
+          155deg,
+          #f8faf9 0%,
+          #f2f8f5 60%,
+          #eef6f1 100%
+        );
+      }
+
+      .hwr-inner {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: clamp(3rem, 5.5vw, 5.5rem);
+        align-items: center;
+      }
+
+      /* ── Content ──────────────────────────────────────────── */
+
+      .hwr-content {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hwr-eyebrow {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: #f97316;
+        margin: 0 0 1.1rem;
+      }
+
+      .hwr-heading {
+        font-size: clamp(1.65rem, 2.8vw, 2.4rem);
+        line-height: 1.13;
+        color: #0b5e20;
+        font-weight: 800;
+        letter-spacing: -0.014em;
+        margin: 0 0 1.25rem;
+      }
+
+      .hwr-desc {
+        font-size: clamp(0.975rem, 1.1vw, 1.05rem);
+        line-height: 1.78;
+        color: #4a5a4e;
+        margin: 0 0 1.75rem;
+      }
+
+      .hwr-points {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.78rem;
+      }
+
+      .hwr-point {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.82rem;
+        font-size: 0.965rem;
+        color: #333333;
+        line-height: 1.5;
+      }
+
+      .hwr-point-icon {
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: rgba(22, 163, 74, 0.1);
+        border: 1px solid rgba(22, 163, 74, 0.22);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #16a34a;
+        font-size: 0.62rem;
+        margin-top: 2px;
+      }
+
+      /* Button: arrow slides right on hover */
+      .hwr-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        transition:
+          background 0.24s ease,
+          transform 0.22s ease,
+          box-shadow 0.24s ease;
+      }
+
+      .hwr-btn:hover,
+      .hwr-btn:focus-visible {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 28px rgba(17, 147, 41, 0.28);
+      }
+
+      .hwr-btn .btn-arrow {
+        display: inline-flex;
+        align-items: center;
+        transition: transform 0.26s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .hwr-btn:hover .btn-arrow {
+        transform: translateX(5px);
+      }
+
+      /* ── Images ────────────────────────────────────────────── */
+
+      .hwr-visual {
+        position: relative;
+        padding-top: 1.5rem;
+        padding-bottom: 3.5rem;
+        padding-right: 1.25rem;
+      }
+
+      /* Main image: transition on BASE covers reveal + hover */
+      .hwr-img-main {
+        position: relative;
+        border-radius: 1.5rem;
+        overflow: hidden;
+        box-shadow:
+          0 12px 40px rgba(0, 0, 0, 0.12),
+          0 0 0 1px rgba(0, 0, 0, 0.04);
+        transition:
+          opacity var(--reveal-duration, 0.75s)
+            var(--reveal-easing, cubic-bezier(0.22, 1, 0.36, 1))
+            var(--reveal-delay, 0s),
+          transform var(--reveal-duration, 0.75s)
+            var(--reveal-easing, cubic-bezier(0.22, 1, 0.36, 1))
+            var(--reveal-delay, 0s),
+          translate 0.36s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+          box-shadow 0.36s ease;
+      }
+
+      .hwr-img-main:hover {
+        translate: 0 -4px;
+        box-shadow:
+          0 22px 60px rgba(0, 0, 0, 0.16),
+          0 0 0 1px rgba(0, 0, 0, 0.05);
+      }
+
+      .hwr-img-main img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        object-position: center top;
+        transition: scale 0.5s ease;
+      }
+
+      .hwr-img-main:hover img {
+        scale: 1.03;
+      }
+
+      /* Secondary image: overlaps main bottom-right */
+      .hwr-img-secondary {
+        position: absolute;
+        bottom: 0;
+        right: -0.75rem;
+        width: 46%;
+        border-radius: 1.1rem;
+        overflow: hidden;
+        border: 4px solid #ffffff;
+        box-shadow:
+          0 8px 28px rgba(0, 0, 0, 0.13),
+          0 0 0 1px rgba(0, 0, 0, 0.04);
+        transition:
+          opacity var(--reveal-duration, 0.75s)
+            var(--reveal-easing, cubic-bezier(0.22, 1, 0.36, 1))
+            var(--reveal-delay, 0s),
+          transform var(--reveal-duration, 0.75s)
+            var(--reveal-easing, cubic-bezier(0.22, 1, 0.36, 1))
+            var(--reveal-delay, 0s),
+          translate 0.36s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+          box-shadow 0.36s ease;
+      }
+
+      .hwr-img-secondary:hover {
+        translate: 0 -4px;
+        box-shadow:
+          0 16px 44px rgba(0, 0, 0, 0.18),
+          0 0 0 1px rgba(0, 0, 0, 0.05);
+      }
+
+      .hwr-img-secondary img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        object-position: center top;
+        transition: scale 0.5s ease;
+      }
+
+      .hwr-img-secondary:hover img {
+        scale: 1.04;
+      }
+
+      /* Accent: top-left, counterbalances the secondary */
+      .hwr-img-accent {
+        position: absolute;
+        top: 0;
+        left: -1rem;
+        width: 34%;
+        border-radius: 1rem;
+        overflow: hidden;
+        border: 4px solid #ffffff;
+        box-shadow:
+          0 6px 22px rgba(0, 0, 0, 0.12),
+          0 0 0 1px rgba(0, 0, 0, 0.04);
+        transition:
+          opacity var(--reveal-duration, 0.75s)
+            var(--reveal-easing, cubic-bezier(0.22, 1, 0.36, 1))
+            var(--reveal-delay, 0s),
+          transform var(--reveal-duration, 0.75s)
+            var(--reveal-easing, cubic-bezier(0.22, 1, 0.36, 1))
+            var(--reveal-delay, 0s),
+          translate 0.36s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+          box-shadow 0.36s ease;
+      }
+
+      .hwr-img-accent:hover {
+        translate: 0 -4px;
+        box-shadow:
+          0 14px 40px rgba(0, 0, 0, 0.16),
+          0 0 0 1px rgba(0, 0, 0, 0.05);
+      }
+
+      .hwr-img-accent img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        object-position: center top;
+        transition: scale 0.5s ease;
+      }
+
+      .hwr-img-accent:hover img {
+        scale: 1.04;
+      }
+
+      /* ── Reduced motion ──────────────────────────────────── */
+      @media (prefers-reduced-motion: reduce) {
+        .hwr-img-main,
+        .hwr-img-secondary,
+        .hwr-img-accent {
+          transition: box-shadow 0s;
+        }
+        .hwr-img-main:hover,
+        .hwr-img-secondary:hover,
+        .hwr-img-accent:hover {
+          translate: none;
+        }
+        .hwr-img-main:hover img,
+        .hwr-img-secondary:hover img,
+        .hwr-img-accent:hover img {
+          scale: 1;
+        }
+        .hwr-btn {
+          transition: background 0.2s ease;
+        }
+        .hwr-btn:hover {
+          transform: none;
+          box-shadow: none;
+        }
+        .hwr-btn .btn-arrow {
+          transition: none;
+        }
+      }
+
+      /* ── Tablet (≤ 899px) ────────────────────────────────── */
+      @media (max-width: 899px) {
+        .hwr-inner {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
+
+        .hwr-visual {
+          padding-top: 1.25rem;
+          padding-bottom: 3rem;
+          padding-right: 0.75rem;
+        }
+
+        .hwr-img-secondary {
+          width: 40%;
+          right: -0.25rem;
+        }
+
+        .hwr-img-accent {
+          width: 30%;
+          left: -0.5rem;
+        }
+      }
+
+      /* ── Mobile (≤ 599px) ────────────────────────────────── */
+      @media (max-width: 599px) {
+        .hwr-visual {
+          padding-top: 1rem;
+          padding-right: 0;
+        }
+
+        .hwr-img-secondary {
+          width: 38%;
+          right: 0;
+        }
+
+        .hwr-img-accent {
+          display: none;
+        }
+      }
+
+      /* (legacy and feature section CSS removed — sections replaced) */
       .legacy-section {
         position: relative;
         overflow: hidden;
-        background: linear-gradient(155deg, #fdf9f4 0%, #faf5ed 55%, #f6f0e6 100%);
+        background: linear-gradient(
+          155deg,
+          #fdf9f4 0%,
+          #faf5ed 55%,
+          #f6f0e6 100%
+        );
         padding: clamp(4rem, 7vw, 6.5rem) 0;
       }
 
@@ -1056,10 +1452,18 @@
 
       /* ---- Reduced motion ---- */
       @media (prefers-reduced-motion: reduce) {
-        .legacy-section::after { display: none; }
-        .legacy-stat { transition: none; }
-        .legacy-stat::before { transition: none; }
-        .legacy-section.reveal-visible .legacy-stat:hover { background: transparent; }
+        .legacy-section::after {
+          display: none;
+        }
+        .legacy-stat {
+          transition: none;
+        }
+        .legacy-stat::before {
+          transition: none;
+        }
+        .legacy-section.reveal-visible .legacy-stat:hover {
+          background: transparent;
+        }
         .legacy-section.reveal-visible .legacy-stat:hover::before {
           transform: scaleX(0.36);
         }
@@ -1244,71 +1648,90 @@
       <section class="hero-section" aria-labelledby="hero-title">
         <div class="swiper hero-swiper">
           <div class="swiper-wrapper">
+            <!-- Slide 1: Knuckles Conservation (Projects 6 + 7) -->
             <article class="swiper-slide hero-slide slide-1">
               <div class="hero-overlay"></div>
               <div class="hero-copy container reveal-visible" data-reveal-group>
                 <span class="eyebrow" data-reveal="up"
-                  >SUSTAINABLE COMMUNITY IMPACT</span
+                  >CONSERVATION &amp; BIODIVERSITY</span
                 >
                 <h1
                   id="hero-title"
                   data-reveal="up"
                   style="--reveal-delay: 0.1s"
                 >
-                  Empowering communities for sustainable futures
+                  Protecting the Knuckles landscape for future generations
                 </h1>
                 <p data-reveal="up" style="--reveal-delay: 0.2s">
-                  Training, leadership, and local action for lasting change
+                  CDC works with communities in the Knuckles region to protect
+                  biodiversity, restore ecosystems, and prevent soil erosion
+                  through conservation and sustainable land management
+                  initiatives.
                 </p>
                 <a
                   class="button primary"
-                  href="#impact"
+                  href="projects.html"
                   data-reveal="up"
                   style="--reveal-delay: 0.3s"
-                  ><span class="btn-text">Explore Projects</span><span class="btn-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span></a
-                >
+                  ><span class="btn-text">Explore Conservation Work</span
+                  ><span class="btn-arrow" aria-hidden="true"
+                    ><i class="fa-solid fa-arrow-right"></i></span
+                ></a>
               </div>
             </article>
+
+            <!-- Slide 2: Wild Roots (Project 14) -->
             <article class="swiper-slide hero-slide slide-2">
               <div class="hero-overlay"></div>
               <div class="hero-copy container reveal-visible" data-reveal-group>
                 <span class="eyebrow" data-reveal="up"
-                  >AGRICULTURE & FOOD SECURITY</span
+                  >WOMEN &amp; COMMUNITY ENTERPRISE</span
                 >
                 <h1 data-reveal="up" style="--reveal-delay: 0.1s">
-                  Reviving traditional farming for a healthier future
+                  Turning local knowledge into sustainable livelihoods
                 </h1>
                 <p data-reveal="up" style="--reveal-delay: 0.2s">
-                  Supporting farmers with skills, seeds, and market access
+                  Through the Wild Roots initiative, women leaders and community
+                  entrepreneurs transform local knowledge and traditional
+                  products into new economic opportunities.
                 </p>
                 <a
                   class="button primary"
-                  href="#focus"
+                  href="projects.html#wild-roots"
                   data-reveal="up"
                   style="--reveal-delay: 0.3s"
-                  ><span class="btn-text">Visit Model Farms</span><span class="btn-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span></a
-                >
+                  ><span class="btn-text">Discover Wild Roots</span
+                  ><span class="btn-arrow" aria-hidden="true"
+                    ><i class="fa-solid fa-arrow-right"></i></span
+                ></a>
               </div>
             </article>
+
+            <!-- Slide 3: Coconut & Yam Distribution (Projects 4 + 5) -->
             <article class="swiper-slide hero-slide slide-3">
               <div class="hero-overlay"></div>
               <div class="hero-copy container reveal-visible" data-reveal-group>
                 <span class="eyebrow" data-reveal="up"
-                  >ENVIRONMENT & WOMEN EMPOWERMENT</span
+                  >AGRICULTURE &amp; FOOD SECURITY</span
                 >
                 <h1 data-reveal="up" style="--reveal-delay: 0.1s">
-                  Protecting nature while empowering women
+                  Strengthening rural livelihoods through sustainable
+                  agriculture
                 </h1>
                 <p data-reveal="up" style="--reveal-delay: 0.2s">
-                  Women driving change in conservation and livelihoods
+                  CDC supports farming families through the distribution of
+                  coconut seedlings, planting materials, and indigenous crop
+                  varieties that improve food security and community resilience.
                 </p>
                 <a
                   class="button primary"
-                  href="#work"
+                  href="projects.html"
                   data-reveal="up"
                   style="--reveal-delay: 0.3s"
-                  ><span class="btn-text">Get Involved</span><span class="btn-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span></a
-                >
+                  ><span class="btn-text">See Agricultural Programmes</span
+                  ><span class="btn-arrow" aria-hidden="true"
+                    ><i class="fa-solid fa-arrow-right"></i></span
+                ></a>
               </div>
             </article>
           </div>
@@ -1319,266 +1742,223 @@
         </div>
       </section>
 
+      <!-- ══ Our Journey ═══════════════════════════════════════════ -->
       <section
-        id="legacy"
-        class="legacy-section content-section section-reveal"
-        aria-labelledby="legacy-title"
+        id="journey"
+        class="journey-section content-section section-reveal"
+        aria-labelledby="journey-title"
       >
-        <div class="container legacy-inner">
-          <header class="legacy-header" data-reveal-group>
+        <div class="container journey-inner">
+          <!-- Left: image collage -->
+          <div class="journey-visual">
+            <div class="journey-collage" data-reveal="up">
+              <!-- Present-day: Wild Roots enterprise (highest quality) -->
+              <div class="jc-featured">
+                <img
+                  src="assets/img/project-images/14_2.jpg"
+                  alt="Community members presenting Wild Roots herbal products"
+                  loading="lazy"
+                  width="560"
+                  height="700"
+                />
+              </div>
+              <!-- Archival: early CDC work -->
+              <div class="jc-arch-top">
+                <img
+                  src="assets/img/jour_2.jpg"
+                  alt="Early CDC community gathering in the Ududumbara region"
+                  loading="lazy"
+                  width="320"
+                  height="220"
+                />
+              </div>
+              <div class="jc-arch-bottom">
+                <img
+                  src="assets/img/jour_1.jpg"
+                  alt="CDC's early grassroots activities with local communities"
+                  loading="lazy"
+                  width="320"
+                  height="200"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: text + timeline -->
+          <div class="journey-copy" data-reveal-group>
             <p class="eyebrow" data-reveal="up">OUR JOURNEY</p>
             <h2
-              id="legacy-title"
-              class="legacy-heading"
+              id="journey-title"
               data-reveal="up"
               style="--reveal-delay: 0.08s"
             >
-              Working alongside communities since 2002
+              Growing with communities for more than two decades
             </h2>
             <p
-              class="legacy-lead"
+              class="journey-intro"
               data-reveal="up"
               style="--reveal-delay: 0.16s"
             >
-              CDC's project records show community-based work beginning in the
-              early 2000s, with long-term efforts in conservation, livelihoods,
-              women's empowerment, water access, and rural development.
-            </p>
-          </header>
-
-          <div
-            class="legacy-timeline"
-            role="list"
-            aria-label="Key milestones and figures"
-          >
-            <div
-              class="legacy-stat"
-              role="listitem"
-              data-reveal="up"
-              style="--reveal-delay: 0.1s"
-            >
-              <strong class="legacy-stat-main">20+ years</strong>
-              <span class="legacy-stat-label">of grassroots community work</span>
-            </div>
-            <div
-              class="legacy-stat"
-              role="listitem"
-              data-reveal="up"
-              style="--reveal-delay: 0.2s"
-            >
-              <strong class="legacy-stat-main">53</strong>
-              <span class="legacy-stat-label">indigenous yam varieties conserved</span>
-            </div>
-            <div
-              class="legacy-stat"
-              role="listitem"
-              data-reveal="up"
-              style="--reveal-delay: 0.3s"
-            >
-              <strong class="legacy-stat-main">Since 1998</strong>
-              <span class="legacy-stat-label">roots in traditional yam conservation</span>
-            </div>
-            <div
-              class="legacy-stat"
-              role="listitem"
-              data-reveal="up"
-              style="--reveal-delay: 0.4s"
-            >
-              <strong class="legacy-stat-main">2001&ndash;2002</strong>
-              <span class="legacy-stat-label">first recorded project period</span>
-            </div>
-          </div>
-
-          <footer
-            class="legacy-footer"
-            data-reveal="up"
-            style="--reveal-delay: 0.32s"
-          >
-            <p class="legacy-note">
-              Rather than one-off activity, CDC&rsquo;s work has grown through
-              years of trust, practical support, and continued partnership with
-              rural communities.
-            </p>
-            <a class="button primary" href="projects.html">Explore projects</a>
-          </footer>
-        </div>
-      </section>
-
-      <section
-        id="features"
-        class="feature-section content-section section-reveal"
-        aria-labelledby="features-title"
-      >
-        <div class="container">
-          <div class="section-intro" data-reveal-group>
-            <p class="eyebrow" data-reveal="up">WHAT WE DO</p>
-            <h2
-              id="features-title"
-              data-reveal="up"
-              style="--reveal-delay: 0.08s"
-            >
-              Community-led programs with lasting impact
-            </h2>
-          </div>
-
-          <div class="feature-grid">
-            <article
-              class="feature-card"
-              data-reveal="up"
-              style="--reveal-delay: 0.05s"
-            >
-              <div class="feature-card-image">
-                <img src="assets/img/card-1-img-1.jpg" alt="Community center" />
-                <div class="feat-img-label" aria-hidden="true">
-                  <i class="fa-solid fa-people-roof" aria-hidden="true"></i>
-                  Community Centres
-                </div>
-              </div>
-              <div class="feature-card-body">
-                <h3>Community resource centres</h3>
-                <p>
-                  Bringing people together to share knowledge, discuss
-                  challenges, and learn from each other as a community
-                </p>
-                <a class="feature-link" href="#impact">Read more</a>
-              </div>
-            </article>
-
-            <article
-              class="feature-card"
-              data-reveal="up"
-              style="--reveal-delay: 0.12s"
-            >
-              <div class="feature-card-image">
-                <img
-                  src="assets/img/card-1-img-2.jpg"
-                  alt="Training programs"
-                />
-                <div class="feat-img-label" aria-hidden="true">
-                  <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
-                  Training Programs
-                </div>
-              </div>
-              <div class="feature-card-body">
-                <h3>Training & livelihood programs</h3>
-                <p>
-                  Hands-on programs where communities learn simple, practical
-                  solutions for everyday needs and livelihoods
-                </p>
-                <a class="feature-link" href="#focus">Read more</a>
-              </div>
-            </article>
-
-            <article
-              class="feature-card"
-              data-reveal="up"
-              style="--reveal-delay: 0.19s"
-            >
-              <div class="feature-card-image">
-                <img
-                  src="assets/img/card-1-img-3.jpg"
-                  alt="Responsible travel"
-                />
-                <div class="feat-img-label" aria-hidden="true">
-                  <i class="fa-solid fa-seedling" aria-hidden="true"></i>
-                  Nature Action
-                </div>
-              </div>
-              <div class="feature-card-body">
-                <h3>Nature & community action</h3>
-                <p>
-                  Working together to protect the environment through tree
-                  planting, conservation, and local initiatives
-                </p>
-                <a class="feature-link" href="#work">Read more</a>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="impact"
-        class="impact-section content-section section-reveal"
-        aria-labelledby="impact-title"
-      >
-        <div class="container impact-inner">
-          <div class="impact-content" data-reveal-group>
-            <p class="eyebrow eyebrow-alt" data-reveal="up">
-              COMMUNITY DEVELOPMENT
-            </p>
-            <h2
-              id="impact-title"
-              data-reveal="up"
-              style="--reveal-delay: 0.08s"
-            >
-              Growing stronger communities, one life at a time
-            </h2>
-            <p
-              class="impact-copy"
-              data-reveal="up"
-              style="--reveal-delay: 0.16s"
-            >
-              From small farms to village homes, we stand with people as they
-              build better futures—through skills, support, and a deep
-              connection to their land and community.
+              CDC's work has grown through years of trust, practical support,
+              and close partnership with rural communities. From early relief
+              assistance and women's leadership activities to today's
+              conservation, livelihood, and enterprise initiatives, the journey
+              has always been rooted in people and local knowledge.
             </p>
 
-            <ul class="arrow-list">
+            <ol class="journey-timeline">
               <li
-                class="arrow-item"
+                class="journey-item"
                 data-reveal="up"
                 style="--reveal-delay: 0.24s"
               >
-                <span class="arrow-mark">→</span>
-                Women building confidence, income, and new opportunities
+                <h3>Early community support</h3>
+                <p>
+                  Relief assistance, confidence building, and village-level
+                  organising helped strengthen families and community groups.
+                </p>
               </li>
               <li
-                class="arrow-item"
+                class="journey-item"
                 data-reveal="up"
                 style="--reveal-delay: 0.32s"
               >
-                <span class="arrow-mark">→</span>
-                Farmers growing healthy food and creating value-added products
+                <h3>Women's leadership</h3>
+                <p>
+                  CDC supported women to plan, lead, participate, and become
+                  active voices in community development.
+                </p>
               </li>
               <li
-                class="arrow-item"
+                class="journey-item"
                 data-reveal="up"
                 style="--reveal-delay: 0.4s"
               >
-                <span class="arrow-mark">→</span>
-                Communities protecting nature while strengthening local food
-                traditions
+                <h3>Livelihoods and enterprise</h3>
+                <p>
+                  Today, initiatives such as Wild Roots continue this journey by
+                  connecting local knowledge, food traditions, and sustainable
+                  income opportunities.
+                </p>
+              </li>
+            </ol>
+
+            <div data-reveal="up" style="--reveal-delay: 0.48s">
+              <a href="projects.html" class="button primary"
+                ><span class="btn-text">Explore CDC projects</span
+                ><span class="btn-arrow" aria-hidden="true"
+                  ><i class="fa-solid fa-arrow-right"></i></span
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ══ / Our Journey ══════════════════════════════════════════ -->
+
+      <!-- ══════════════════════════════════════════════════════════
+           HOME: WILD ROOTS FEATURE SECTION
+           ══════════════════════════════════════════════════════════ -->
+      <section
+        id="home-wild-roots"
+        class="hwr-section content-section section-reveal"
+        aria-labelledby="hwr-heading"
+      >
+        <div class="container hwr-inner">
+          <!-- Left: content -->
+          <div class="hwr-content">
+            <p class="hwr-eyebrow" data-reveal="up">Wild Roots</p>
+            <h2
+              id="hwr-heading"
+              class="hwr-heading"
+              data-reveal="up"
+              style="--reveal-delay: 0.07s"
+            >
+              GEF/SGP supported community enterprise initiative in Ududumbara
+            </h2>
+            <p class="hwr-desc" data-reveal="up" style="--reveal-delay: 0.13s">
+              Through CDC&rsquo;s guidance, women leaders and community
+              entrepreneurs in Ududumbara have turned local knowledge,
+              traditional foods, and shared effort into new livelihood
+              opportunities. Wild Roots reflects resilience, confidence, and the
+              strength of community-led enterprise.
+            </p>
+            <ul
+              class="hwr-points"
+              data-reveal="up"
+              style="--reveal-delay: 0.19s"
+              aria-label="Key aspects"
+            >
+              <li class="hwr-point">
+                <span class="hwr-point-icon" aria-hidden="true"
+                  ><i class="fa-solid fa-check"></i
+                ></span>
+                <span>Women-led enterprise development</span>
+              </li>
+              <li class="hwr-point">
+                <span class="hwr-point-icon" aria-hidden="true"
+                  ><i class="fa-solid fa-check"></i
+                ></span>
+                <span>Local food and value-added products</span>
+              </li>
+              <li class="hwr-point">
+                <span class="hwr-point-icon" aria-hidden="true"
+                  ><i class="fa-solid fa-check"></i
+                ></span>
+                <span>Skills, confidence, and livelihood support</span>
               </li>
             </ul>
-
-            <a
-              class="button primary impact-cta"
-              href="#focus"
-              data-reveal="up"
-              style="--reveal-delay: 0.48s"
-              >Explore our programs</a
-            >
+            <div data-reveal="up" style="--reveal-delay: 0.25s">
+              <a class="button primary hwr-btn" href="projects.html#wild-roots">
+                <span class="btn-text">Explore Wild Roots</span>
+                <span class="btn-arrow" aria-hidden="true"
+                  ><i class="fa-solid fa-arrow-right"></i
+                ></span>
+              </a>
+            </div>
           </div>
 
-          <div
-            class="impact-visual"
-            data-reveal="right"
-            style="--reveal-delay: 0.12s"
-          >
-            <div class="image-composition">
-              <div class="main-image">
-                <img
-                  src="assets/img/com-dev-bg.jpg"
-                  alt="Community agriculture training"
-                />
-              </div>
-              <div class="front-image">
-                <img
-                  src="assets/img/com-dev-small.jpg"
-                  alt="Women empowered through training"
-                />
-              </div>
+          <!-- Right: three images — accent top-left / main / secondary bottom-right -->
+          <div class="hwr-visual" aria-hidden="true">
+            <!-- Main large image -->
+            <div
+              class="hwr-img-main"
+              data-reveal="up"
+              style="--reveal-delay: 0.09s"
+            >
+              <img
+                src="assets/img/project-images/14_7.jpg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <!-- Accent — top-left -->
+            <div
+              class="hwr-img-accent"
+              data-reveal="up"
+              style="--reveal-delay: 0.16s"
+            >
+              <img
+                src="assets/img/project-images/14_4.jpg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <!-- Secondary — bottom-right -->
+            <div
+              class="hwr-img-secondary"
+              data-reveal="up"
+              style="--reveal-delay: 0.24s"
+            >
+              <img
+                src="assets/img/project-images/14_6.jpg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
             </div>
           </div>
         </div>
@@ -1612,8 +1992,9 @@
             >
               <div class="focus-card-image">
                 <img
-                  src="assets/img/card-2-img-1.jpg"
-                  alt="Women leading sustainable farming"
+                  src="assets/img/project-images/14_4.jpg"
+                  alt="Women presenting Wild Roots products at a community enterprise event"
+                  loading="lazy"
                 />
                 <div class="focus-img-label" aria-hidden="true">
                   <i class="fa-solid fa-person-dress" aria-hidden="true"></i>
@@ -1643,8 +2024,9 @@
             >
               <div class="focus-card-image">
                 <img
-                  src="assets/img/card-2-img-2.jpg"
-                  alt="Community agriculture training"
+                  src="assets/img/project-images/5_3.jpg"
+                  alt="Farmer working in a community agriculture programme"
+                  loading="lazy"
                 />
                 <div class="focus-img-label" aria-hidden="true">
                   <i class="fa-solid fa-wheat-awn" aria-hidden="true"></i>
@@ -1674,8 +2056,9 @@
             >
               <div class="focus-card-image">
                 <img
-                  src="assets/img/card-2-img-3.jpg"
-                  alt="Indigenous yam conservation"
+                  src="assets/img/project-images/3_2.jpg"
+                  alt="Traditional food varieties displayed at the Foods We Do Not Know exhibition"
+                  loading="lazy"
                 />
                 <div class="focus-img-label" aria-hidden="true">
                   <i class="fa-solid fa-leaf" aria-hidden="true"></i>
@@ -1762,8 +2145,13 @@
               </li>
             </ul>
 
-            <div data-reveal="up" style="--reveal-delay: 0.48s; margin-top: 1.75rem">
-              <a class="button primary" href="products.html">See our products</a>
+            <div
+              data-reveal="up"
+              style="--reveal-delay: 0.48s; margin-top: 1.75rem"
+            >
+              <a class="button primary" href="products.html"
+                >See our products</a
+              >
             </div>
           </div>
         </div>
@@ -1880,11 +2268,7 @@
             >
               Protecting the Knuckles landscape with community action
             </h2>
-            <p
-              class="kh-intro"
-              data-reveal="up"
-              style="--reveal-delay: 0.2s"
-            >
+            <p class="kh-intro" data-reveal="up" style="--reveal-delay: 0.2s">
               In Ududumbara and the Knuckles environmental zone, CDC works with
               local communities to protect biodiversity, restore nature, and
               strengthen sustainable livelihoods.
@@ -1928,9 +2312,7 @@
               data-reveal="up"
               style="--reveal-delay: 0.56s"
             >
-              <a
-                class="button primary kh-btn-primary"
-                href="projects.html"
+              <a class="button primary kh-btn-primary" href="projects.html"
                 >Explore Projects</a
               >
               <a class="kh-link-secondary" href="eco-tourism.html"
@@ -1960,10 +2342,7 @@
                 />
                 <div class="kh-image-overlay" aria-hidden="true"></div>
                 <div class="kh-image-label" aria-hidden="true">
-                  <i
-                    class="fa-solid fa-mountain-sun"
-                    aria-hidden="true"
-                  ></i>
+                  <i class="fa-solid fa-mountain-sun" aria-hidden="true"></i>
                   Knuckles Conservation Zone
                 </div>
               </div>
@@ -1999,7 +2378,6 @@
           </div>
 
           <div class="stories-grid">
-
             <article class="story-card stagger-card" style="--stagger: 0">
               <div class="story-card-image"></div>
               <div class="story-card-body">
@@ -2015,13 +2393,11 @@
                   After the Dittawa storm damaged her home and disrupted her
                   livelihood, R.M. Ranjani Ratnayake began again with CDC's
                   support. Today, through food production and community
-                  enterprise, she is rebuilding her family's future with
-                  courage and confidence.
+                  enterprise, she is rebuilding her family's future with courage
+                  and confidence.
                 </p>
                 <footer class="story-person-info">
-                  <span class="story-person-name"
-                    >R.M. Ranjani Ratnayake</span
-                  >
+                  <span class="story-person-name">R.M. Ranjani Ratnayake</span>
                   <span class="story-person-location"
                     >Munamalapelessa, Ududumbara</span
                   >
@@ -2043,8 +2419,8 @@
                 <p>
                   Dhammika Kumari once faced many barriers in growing her
                   self-employment work. With CDC&rsquo;s guidance and
-                  encouragement, she gained confidence, strengthened her
-                  skills, and now continues her journey as a proud community
+                  encouragement, she gained confidence, strengthened her skills,
+                  and now continues her journey as a proud community
                   entrepreneur.
                 </p>
                 <footer class="story-person-info">
@@ -2053,7 +2429,6 @@
                 </footer>
               </div>
             </article>
-
           </div>
 
           <div
@@ -2066,6 +2441,151 @@
         </div>
       </section>
 
+      <!-- ══ Latest Updates ══════════════════════════════════════ -->
+      <section
+        id="latest-updates"
+        class="lu-section content-section section-reveal"
+        aria-labelledby="lu-title"
+      >
+        <div class="container">
+          <div class="section-intro" data-reveal-group>
+            <p class="eyebrow" data-reveal="up">LATEST UPDATES</p>
+            <h2 id="lu-title" data-reveal="up" style="--reveal-delay: 0.08s">
+              Stories, Events &amp; Community Updates
+            </h2>
+          </div>
+
+          <div class="lu-grid">
+            <!-- Card 1: Foods We Do Not Know exhibition -->
+            <article
+              class="lu-card"
+              data-reveal="up"
+              style="--reveal-delay: 0.04s"
+            >
+              <a
+                href="projects.html"
+                class="lu-card-media-link"
+                tabindex="-1"
+                aria-hidden="true"
+              >
+                <div class="lu-card-media">
+                  <img
+                    src="assets/img/project-images/3_1.jpg"
+                    alt="CDC representatives at The Foods We Do Not Know exhibition"
+                    loading="lazy"
+                    width="640"
+                    height="440"
+                  />
+                  <span class="lu-label">EVENT</span>
+                </div>
+              </a>
+              <div class="lu-card-body">
+                <h3 class="lu-card-title">
+                  <a href="projects.html"
+                    >CDC joins &#8220;The Foods We Do Not Know&#8221;
+                    exhibition</a
+                  >
+                </h3>
+                <a
+                  href="projects.html"
+                  class="lu-read-more"
+                  aria-label="Read more about the Foods We Do Not Know exhibition"
+                  >Read More
+                  <span class="lu-arrow" aria-hidden="true">&#8594;</span></a
+                >
+              </div>
+            </article>
+
+            <!-- Card 2: Wild Roots community enterprise -->
+            <article
+              class="lu-card"
+              data-reveal="up"
+              style="--reveal-delay: 0.12s"
+            >
+              <a
+                href="projects.html#wild-roots"
+                class="lu-card-media-link"
+                tabindex="-1"
+                aria-hidden="true"
+              >
+                <div class="lu-card-media">
+                  <img
+                    src="assets/img/project-images/14_2.jpg"
+                    alt="Wild Roots herbal products displayed at a community enterprise event"
+                    loading="lazy"
+                    width="640"
+                    height="440"
+                  />
+                  <span class="lu-label">COMMUNITY UPDATE</span>
+                </div>
+              </a>
+              <div class="lu-card-body">
+                <h3 class="lu-card-title">
+                  <a href="projects.html#wild-roots"
+                    >Wild Roots products introduced through community
+                    enterprise</a
+                  >
+                </h3>
+                <a
+                  href="projects.html#wild-roots"
+                  class="lu-read-more"
+                  aria-label="Read more about Wild Roots community enterprise"
+                  >Read More
+                  <span class="lu-arrow" aria-hidden="true">&#8594;</span></a
+                >
+              </div>
+            </article>
+
+            <!-- Card 3: Athahitha 2025 — date known -->
+            <article
+              class="lu-card"
+              data-reveal="up"
+              style="--reveal-delay: 0.2s"
+            >
+              <a
+                href="projects.html"
+                class="lu-card-media-link"
+                tabindex="-1"
+                aria-hidden="true"
+              >
+                <div class="lu-card-media">
+                  <img
+                    src="assets/img/project-images/9_1.jpg"
+                    alt="Children participating in the Athahitha 2025 programme in Munamalapelessa"
+                    loading="lazy"
+                    width="640"
+                    height="440"
+                  />
+                  <div class="lu-date-box" aria-hidden="true">
+                    <span class="lu-date-day">23</span>
+                    <span class="lu-date-month">AUG</span>
+                    <span class="lu-date-year">2025</span>
+                  </div>
+                </div>
+              </a>
+              <div class="lu-card-body">
+                <p class="lu-card-date">
+                  <time datetime="2025-08-23">August 23, 2025</time>
+                </p>
+                <h3 class="lu-card-title">
+                  <a href="projects.html"
+                    >Athahitha 2025 supports children in Munamalapelessa</a
+                  >
+                </h3>
+                <a
+                  href="projects.html"
+                  class="lu-read-more"
+                  aria-label="Read more about Athahitha 2025"
+                  >Read More
+                  <span class="lu-arrow" aria-hidden="true">&#8594;</span></a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- ══ / Latest Updates ═════════════════════════════════════ -->
+
       <section
         id="get-involved"
         class="cta-section content-section section-reveal"
@@ -2074,21 +2594,13 @@
         <div class="container">
           <div class="cta-heading section-intro" data-reveal-group>
             <p class="eyebrow" data-reveal="up">GET INVOLVED</p>
-            <h2
-              id="cta-title"
-              data-reveal="up"
-              style="--reveal-delay: 0.08s"
-            >
+            <h2 id="cta-title" data-reveal="up" style="--reveal-delay: 0.08s">
               Be part of the change in your own way
             </h2>
-            <p
-              class="cta-intro"
-              data-reveal="up"
-              style="--reveal-delay: 0.16s"
-            >
-              Whether you want to support, volunteer, or collaborate, the
-              first step is a conversation. Every connection helps CDC
-              continue working with communities.
+            <p class="cta-intro" data-reveal="up" style="--reveal-delay: 0.16s">
+              Whether you want to support, volunteer, or collaborate, the first
+              step is a conversation. Every connection helps CDC continue
+              working with communities.
             </p>
           </div>
 
@@ -2099,8 +2611,8 @@
             >
               <h3 class="cta-card-title">Support the work</h3>
               <p class="cta-card-body">
-                Help strengthen training, farming, conservation, and
-                livelihood programs across Ududumbara and beyond.
+                Help strengthen training, farming, conservation, and livelihood
+                programs across Ududumbara and beyond.
               </p>
               <a class="button primary cta-btn" href="contact.html"
                 >Contact CDC</a
@@ -2113,8 +2625,8 @@
             >
               <h3 class="cta-card-title">Share your time or skills</h3>
               <p class="cta-card-body">
-                Bring your knowledge, energy, or experience to
-                community-based work. There is space for people who care.
+                Bring your knowledge, energy, or experience to community-based
+                work. There is space for people who care.
               </p>
               <a class="button primary cta-btn" href="contact.html"
                 >Get in touch</a
@@ -2127,44 +2639,14 @@
             >
               <h3 class="cta-card-title">Collaborate with CDC</h3>
               <p class="cta-card-body">
-                Partner with us on programs that support people, land, and
-                local livelihoods in Sri Lanka.
+                Partner with us on programs that support people, land, and local
+                livelihoods in Sri Lanka.
               </p>
               <a class="button primary cta-btn" href="contact.html"
                 >Start a conversation</a
               >
             </article>
           </div>
-        </div>
-      </section>
-
-      <section
-        id="impact-banner"
-        class="banner-section"
-        aria-labelledby="banner-title"
-      >
-        <div class="banner-overlay"></div>
-        <div class="container banner-inner" data-reveal-group>
-          <p class="eyebrow eyebrow-light" data-reveal="up">OUR COMMITMENT</p>
-          <h2
-            id="banner-title"
-            class="banner-title"
-            data-reveal="up"
-            style="--reveal-delay: 0.1s"
-          >
-            From small beginnings, lasting change grows
-          </h2>
-          <p class="banner-copy" data-reveal="up" style="--reveal-delay: 0.2s">
-            A woman gaining confidence. A farmer growing better crops. A village
-            protecting its future—together, these moments become lasting change.
-          </p>
-          <a
-            class="button primary"
-            href="contact.html"
-            data-reveal="up"
-            style="--reveal-delay: 0.3s"
-            ><span class="btn-text">Get involved</span><span class="btn-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span></a
-          >
         </div>
       </section>
     </main>
@@ -2233,7 +2715,11 @@
       <div class="footer-bottom">
         <div class="container footer-bottom-inner">
           <p class="footer-copy">
-            &copy; 2026 <a href="https://darkroom.lk/" class="darkroom" target="_blank">Darkroom</a> (Pvt) Ltd. All rights reserved.
+            &copy; 2026
+            <a href="https://darkroom.lk/" class="darkroom" target="_blank"
+              >Darkroom</a
+            >
+            (Pvt) Ltd. All rights reserved.
           </p>
           <ul class="footer-legal">
             <li><a href="#">Privacy Policy</a></li>
@@ -2251,7 +2737,8 @@
       (function () {
         var wrap = document.querySelector(".kh-parallax-wrap");
         if (!wrap) return;
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+          return;
 
         var ticking = false;
 
@@ -2272,7 +2759,7 @@
               ticking = true;
             }
           },
-          { passive: true }
+          { passive: true },
         );
 
         updateParallax();

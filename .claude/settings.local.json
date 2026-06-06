@@ -3,7 +3,9 @@
     "allow": [
       "Bash(git restore *)",
       "Bash(sed -n '4756,4762p' assets/css/styles.css)",
-      "Bash(sed -n '5199,5205p' assets/css/styles.css)"
+      "Bash(sed -n '5199,5205p' assets/css/styles.css)",
+      "Bash(Select-String \"^3_|^14_1|^14_2|^9_1\")",
+      "Bash(Sort-Object)"
     ]
   }
 }
