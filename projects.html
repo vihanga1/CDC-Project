@@ -1206,6 +1206,463 @@
           gap: 1rem;
         }
       }
+
+      /* ============================================================
+         PROJECT ARCHIVE SECTION
+         ============================================================ */
+
+      .project-archive {
+        background: #f6f3ec;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Ambient depth: two soft radial blooms */
+      .project-archive::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 80% 55% at 15% 0%,
+            rgba(22, 163, 74, 0.045) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse 55% 60% at 85% 100%,
+            rgba(249, 115, 22, 0.035) 0%,
+            transparent 55%
+          );
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .project-archive > .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* ── Header ──────────────────────────────────────────────── */
+
+      .project-archive-header {
+        max-width: 800px;
+        margin-inline: auto;
+        text-align: center;
+        margin-bottom: 3.5rem;
+      }
+
+      .pa-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.155em;
+        text-transform: uppercase;
+        color: #a06832;
+        margin: 0 0 1.25rem;
+      }
+
+      .pa-heading {
+        font-size: clamp(1.65rem, 2.9vw, 2.45rem);
+        line-height: 1.11;
+        color: #0b5e20;
+        font-weight: 800;
+        letter-spacing: -0.015em;
+        margin: 0 0 1.1rem;
+      }
+
+      .pa-intro {
+        font-size: clamp(0.975rem, 1.1vw, 1.05rem);
+        line-height: 1.78;
+        color: #4a5a4e;
+        margin: 0 0 2rem;
+      }
+
+      /* ── Filter pills ─────────────────────────────────────────── */
+
+      .pa-filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .pa-filter-btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.44rem 1.1rem;
+        border-radius: 100px;
+        border: 1.5px solid #ccd9cc;
+        background: rgba(255, 255, 255, 0.85);
+        color: #4a5a4e;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        cursor: pointer;
+        transition:
+          background 0.22s ease,
+          border-color 0.22s ease,
+          color 0.22s ease,
+          box-shadow 0.22s ease;
+      }
+
+      .pa-filter-btn:hover,
+      .pa-filter-btn:focus-visible {
+        background: #f0faf2;
+        border-color: #22c55e;
+        color: #0b5e20;
+        outline: none;
+      }
+
+      .pa-filter-btn.active {
+        background: #1a4d2a;
+        border-color: #1a4d2a;
+        color: #ffffff;
+        box-shadow: 0 4px 14px rgba(11, 94, 32, 0.18);
+      }
+
+      /* ── Archive panel ────────────────────────────────────────── */
+
+      .pa-list-wrap {
+        max-width: 1080px;
+        margin-inline: auto;
+      }
+
+      .project-archive-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        border-radius: 1.35rem;
+        /* overflow:hidden intentionally omitted — items animate freely */
+        border: 1px solid rgba(0, 100, 0, 0.09);
+        box-shadow:
+          0 2px 8px rgba(0, 0, 0, 0.04),
+          0 8px 40px rgba(0, 0, 0, 0.07);
+      }
+
+      /* ── Individual item ──────────────────────────────────────── */
+
+      .project-archive-item {
+        border-bottom: 1px solid rgba(0, 100, 0, 0.07);
+        border-left: 3px solid transparent;
+        transition:
+          background 0.26s ease,
+          border-left-color 0.26s ease,
+          box-shadow 0.26s ease;
+      }
+
+      .project-archive-item:last-child {
+        border-bottom: none;
+      }
+
+      /* Corner rounding replaces overflow:hidden on parent */
+      .project-archive-item:first-child {
+        border-radius: 1.35rem 1.35rem 0 0;
+      }
+
+      .project-archive-item:last-child {
+        border-radius: 0 0 1.35rem 1.35rem;
+      }
+
+      .project-archive-item:only-child {
+        border-radius: 1.35rem;
+      }
+
+      /* Alternating row warmth */
+      .project-archive-item:nth-child(odd) {
+        background: #ffffff;
+      }
+
+      .project-archive-item:nth-child(even) {
+        background: #fafaf7;
+      }
+
+      /* Featured: warm tinted background + muted amber left accent */
+      .project-archive-item.pa-featured {
+        background: linear-gradient(
+          to right,
+          #faf5ee 0%,
+          #ffffff 58%
+        ) !important;
+        border-left-color: #c49060;
+      }
+
+      .project-archive-item.pa-featured:nth-child(even) {
+        background: linear-gradient(
+          to right,
+          #f8f2e8 0%,
+          #fafaf7 58%
+        ) !important;
+      }
+
+      /* Hover state */
+      .project-archive-item:hover {
+        background: #f0faf4 !important;
+        border-left-color: #22c55e;
+        box-shadow: 0 2px 18px rgba(34, 197, 94, 0.08);
+      }
+
+      /* ── Item link ─────────────────────────────────────────────── */
+
+      .pa-item-link {
+        display: flex;
+        align-items: center;
+        gap: clamp(0.9rem, 2vw, 1.65rem);
+        padding: clamp(1.1rem, 1.75vw, 1.5rem) clamp(1.35rem, 2.8vw, 2rem);
+        text-decoration: none;
+        color: inherit;
+        outline: none;
+        transition: transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .project-archive-item:hover .pa-item-link {
+        transform: translateX(3px);
+      }
+
+      .pa-item-link:focus-visible {
+        outline: 2px solid #22c55e;
+        outline-offset: -2px;
+        border-radius: 4px;
+      }
+
+      /* ── Number badge ─────────────────────────────────────────── */
+
+      .project-archive-number {
+        flex-shrink: 0;
+        width: 2.65rem;
+        height: 2.65rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #f8f2ea 0%, #ecddc8 100%);
+        border: 1.5px solid #d9c4a4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.72rem;
+        font-weight: 800;
+        color: #8a5e28;
+        letter-spacing: 0.02em;
+        font-variant-numeric: tabular-nums;
+        transition:
+          background 0.26s ease,
+          border-color 0.26s ease,
+          color 0.26s ease;
+      }
+
+      .project-archive-item:hover .project-archive-number {
+        background: linear-gradient(135deg, #0b5e20 0%, #16a34a 100%);
+        border-color: #16a34a;
+        color: #ffffff;
+      }
+
+      /* ── Meta block ───────────────────────────────────────────── */
+
+      .project-archive-meta {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      .pa-title {
+        font-size: clamp(0.95rem, 1.1vw, 1.035rem);
+        font-weight: 700;
+        color: #192b1b;
+        line-height: 1.4;
+        transition: color 0.22s ease;
+      }
+
+      .project-archive-item:hover .pa-title {
+        color: #0b5e20;
+      }
+
+      /* Category + location row */
+      .pa-tags {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0;
+      }
+
+      .pa-category {
+        font-size: 0.775rem;
+        font-weight: 600;
+        color: #8a6030;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+
+      /* Dot separator — purely decorative, via CSS */
+      .pa-location::before {
+        content: "·";
+        margin: 0 0.55rem;
+        color: #b9cabb;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      .pa-location {
+        font-size: 0.775rem;
+        color: #6b7e6e;
+        display: inline-flex;
+        align-items: center;
+        font-style: normal;
+      }
+
+      .pa-location i {
+        font-size: 0.65rem;
+        color: #a3bda6;
+        margin-right: 0.3rem;
+      }
+
+      /* One-line description on featured rows */
+      .pa-desc {
+        font-size: 0.815rem;
+        line-height: 1.56;
+        color: #7a8e7c;
+        font-style: italic;
+        margin-top: 0.1rem;
+      }
+
+      /* ── Arrow badge ──────────────────────────────────────────── */
+
+      .project-archive-arrow {
+        flex-shrink: 0;
+        width: 2.2rem;
+        height: 2.2rem;
+        border-radius: 50%;
+        background: #f0f4f0;
+        border: 1px solid #d4e4d4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #7a917d;
+        font-size: 0.72rem;
+        transition:
+          background 0.26s ease,
+          border-color 0.26s ease,
+          color 0.26s ease,
+          transform 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .project-archive-item:hover .project-archive-arrow {
+        background: #0b5e20;
+        border-color: #0b5e20;
+        color: #ffffff;
+        transform: translateX(5px);
+      }
+
+      /* ── Hidden / no-results ──────────────────────────────────── */
+
+      .project-archive-item.pa-hidden {
+        display: none;
+      }
+
+      .pa-no-results {
+        display: none;
+        text-align: center;
+        padding: 3rem 1rem;
+        color: #7a917d;
+        font-size: 0.92rem;
+        font-style: italic;
+      }
+
+      .pa-no-results.visible {
+        display: block;
+      }
+
+      /* ── Reduced motion ──────────────────────────────────────── */
+
+      @media (prefers-reduced-motion: reduce) {
+        .pa-filter-btn,
+        .project-archive-item,
+        .project-archive-number,
+        .pa-title,
+        .pa-item-link,
+        .project-archive-arrow {
+          transition: none;
+        }
+
+        .project-archive-item:hover .project-archive-arrow,
+        .project-archive-item:hover .pa-item-link {
+          transform: none;
+        }
+      }
+
+      /* ── Tablet (≤ 899px) ────────────────────────────────────── */
+
+      @media (max-width: 899px) {
+        .pa-item-link {
+          gap: 0.9rem;
+        }
+      }
+
+      /* ── Mobile (≤ 599px) ────────────────────────────────────── */
+
+      @media (max-width: 599px) {
+        .project-archive-header {
+          margin-bottom: 2.25rem;
+        }
+
+        .pa-filters {
+          gap: 0.4rem;
+        }
+
+        .pa-filter-btn {
+          font-size: 0.73rem;
+          padding: 0.37rem 0.85rem;
+        }
+
+        .project-archive-list {
+          border-radius: 1rem;
+        }
+
+        .project-archive-item:first-child {
+          border-radius: 1rem 1rem 0 0;
+        }
+
+        .project-archive-item:last-child {
+          border-radius: 0 0 1rem 1rem;
+        }
+
+        .pa-item-link {
+          padding: 1.05rem 1rem;
+          gap: 0.75rem;
+          align-items: flex-start;
+        }
+
+        /* No translateX shift on mobile — too cramped */
+        .project-archive-item:hover .pa-item-link {
+          transform: none;
+        }
+
+        .project-archive-number {
+          width: 2.2rem;
+          height: 2.2rem;
+          font-size: 0.67rem;
+          flex-shrink: 0;
+          margin-top: 0.1rem;
+        }
+
+        .project-archive-arrow {
+          width: 1.9rem;
+          height: 1.9rem;
+          font-size: 0.65rem;
+          flex-shrink: 0;
+          margin-top: 0.1rem;
+        }
+
+        .pa-location::before {
+          margin: 0 0.4rem;
+        }
+
+        .pa-desc {
+          font-size: 0.77rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -1857,6 +2314,606 @@
         <!-- /wr-inner -->
       </section>
       <!-- ── End Wild Roots ────────────────────────────────────── -->
+
+      <!-- ══════════════════════════════════════════════════════════
+           PROJECT ARCHIVE — MORE PROJECTS DIRECTORY
+           ══════════════════════════════════════════════════════════ -->
+      <section
+        id="project-archive"
+        class="project-archive content-section section-reveal"
+        aria-labelledby="pa-heading"
+      >
+        <div class="container">
+          <!-- ── Header ──────────────────────────────────────────── -->
+          <div class="project-archive-header">
+            <p class="pa-eyebrow" data-reveal="up">MORE PROJECTS</p>
+
+            <h2
+              id="pa-heading"
+              class="pa-heading"
+              data-reveal="up"
+              style="--reveal-delay: 0.07s"
+            >
+              More community projects CDC has carried out
+            </h2>
+
+            <p class="pa-intro" data-reveal="up" style="--reveal-delay: 0.13s">
+              Beyond the featured stories above, CDC has worked with communities
+              across Sri Lanka on conservation, livelihoods, food security,
+              recovery, water access, education, and local enterprise.
+            </p>
+
+            <!-- Filter pills -->
+            <div
+              class="pa-filters"
+              data-reveal="up"
+              style="--reveal-delay: 0.19s"
+              role="group"
+              aria-label="Filter projects by category"
+            >
+              <button
+                class="pa-filter-btn active"
+                data-filter="all"
+                type="button"
+              >
+                All
+              </button>
+              <button
+                class="pa-filter-btn"
+                data-filter="environment"
+                type="button"
+              >
+                Environment
+              </button>
+              <button
+                class="pa-filter-btn"
+                data-filter="food-security"
+                type="button"
+              >
+                Food Security
+              </button>
+              <button
+                class="pa-filter-btn"
+                data-filter="recovery"
+                type="button"
+              >
+                Recovery
+              </button>
+              <button
+                class="pa-filter-btn"
+                data-filter="women-enterprise"
+                type="button"
+              >
+                Women &amp; Enterprise
+              </button>
+              <button class="pa-filter-btn" data-filter="water" type="button">
+                Water
+              </button>
+              <button
+                class="pa-filter-btn"
+                data-filter="education"
+                type="button"
+              >
+                Education
+              </button>
+            </div>
+          </div>
+          <!-- /project-archive-header -->
+
+          <!-- ── Project list ────────────────────────────────────── -->
+          <div class="pa-list-wrap">
+            <ol class="project-archive-list" aria-label="More CDC projects">
+              <!-- 01 -->
+              <li
+                class="project-archive-item"
+                data-category="environment"
+                data-reveal="up"
+                style="--reveal-delay: 0.04s"
+              >
+                <a href="project-environment-day.html" class="pa-item-link">
+                  <span class="project-archive-number" aria-hidden="true"
+                    >01</span
+                  >
+                  <span class="project-archive-meta">
+                    <span class="pa-title"
+                      >Environment Day Programme at Popham&rsquo;s
+                      Arboretum</span
+                    >
+                    <span class="pa-tags">
+                      <span class="pa-category"
+                        >Environment &amp; Awareness</span
+                      >
+                      <span class="pa-location">
+                        <i
+                          class="fa-solid fa-location-dot"
+                          aria-hidden="true"
+                        ></i
+                        >Dambulla
+                      </span>
+                    </span>
+                  </span>
+                  <span class="project-archive-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+
+              <!-- 02 -->
+              <li
+                class="project-archive-item"
+                data-category="food-security"
+                data-reveal="up"
+                style="--reveal-delay: 0.07s"
+              >
+                <a
+                  href="project-ayurvedic-food-promotion.html"
+                  class="pa-item-link"
+                >
+                  <span class="project-archive-number" aria-hidden="true"
+                    >02</span
+                  >
+                  <span class="project-archive-meta">
+                    <span class="pa-title"
+                      >Ayurvedic Exhibition and Local Food Promotion
+                      Workshop</span
+                    >
+                    <span class="pa-tags">
+                      <span class="pa-category"
+                        >Food, Health &amp; Local Knowledge</span
+                      >
+                      <span class="pa-location">
+                        <i
+                          class="fa-solid fa-location-dot"
+                          aria-hidden="true"
+                        ></i
+                        >Kegalle
+                      </span>
+                    </span>
+                  </span>
+                  <span class="project-archive-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+
+              <!-- 03 -->
+              <li
+                class="project-archive-item"
+                data-category="food-security"
+                data-reveal="up"
+                style="--reveal-delay: 0.1s"
+              >
+                <a
+                  href="project-foods-we-do-not-know.html"
+                  class="pa-item-link"
+                >
+                  <span class="project-archive-number" aria-hidden="true"
+                    >03</span
+                  >
+                  <span class="project-archive-meta">
+                    <span class="pa-title"
+                      >&ldquo;The Foods We Do Not Know&rdquo; Exhibition</span
+                    >
+                    <span class="pa-tags">
+                      <span class="pa-category"
+                        >Traditional Foods &amp; Awareness</span
+                      >
+                      <span class="pa-location">
+                        <i
+                          class="fa-solid fa-location-dot"
+                          aria-hidden="true"
+                        ></i
+                        >BMICH
+                      </span>
+                    </span>
+                  </span>
+                  <span class="project-archive-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+
+              <!-- 04 -->
+              <li
+                class="project-archive-item"
+                data-category="food-security"
+                data-reveal="up"
+                style="--reveal-delay: 0.13s"
+              >
+                <a href="project-coconut-seedlings.html" class="pa-item-link">
+                  <span class="project-archive-number" aria-hidden="true"
+                    >04</span
+                  >
+                  <span class="project-archive-meta">
+                    <span class="pa-title">Coconut Seedling Distribution</span>
+                    <span class="pa-tags">
+                      <span class="pa-category"
+                        >Agriculture &amp; Livelihoods</span
+                      >
+                      <span class="pa-location">
+                        <i
+                          class="fa-solid fa-location-dot"
+                          aria-hidden="true"
+                        ></i
+                        >Ududumbara
+                      </span>
+                    </span>
+                  </span>
+                  <span class="project-archive-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+
+              <!-- 05 -->
+              <li
+                class="project-archive-item"
+                data-category="food-security"
+                data-reveal="up"
+                style="--reveal-delay: 0.16s"
+              >
+                <a href="project-yam-seedlings.html" class="pa-item-link">
+                  <span class="project-archive-number" aria-hidden="true"
+                    >05</span
+                  >
+                  <span class="project-archive-meta">
+                    <span class="pa-title"
+                      >Yam Varieties and Seedling Distribution</span
+                    >
+                    <span class="pa-tags">
+                      <span class="pa-category">Indigenous Crops</span>
+                      <span class="pa-location">
+                        <i
+                          class="fa-solid fa-location-dot"
+                          aria-hidden="true"
+                        ></i
+                        >Community Farming Areas
+                      </span>
+                    </span>
+                  </span>
+                  <span class="project-archive-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+
+              <!-- 06 -->
+              <li
+                class="project-archive-item"
+                data-category="environment"
+                data-reveal="up"
+                style="--reveal-delay: 0.19s"
+              >
+                <a
+                  href="project-knuckles-soil-protection.html"
+                  class="pa-item-link"
+                >
+                  <span class="project-archive-number" aria-hidden="true"
+                    >06</span
+                  >
+                  <span class="project-archive-meta">
+                    <span class="pa-title"
+                      >Knuckles Soil Conservation Bunds</span
+                    >
+                    <span class="pa-tags">
+                      <span class="pa-category"
+                        >Environment &amp; Land Protection</span
+                      >
+                      <span class="pa-location">
+                        <i
+                          class="fa-solid fa-location-dot"
+                          aria-hidden="true"
+                        ></i
+                        >Knuckles Region
+                      </span>
+                    </span>
+                  </span>
+                  <span class="project-archive-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+
+              <!-- 07 -->
+              <li
+                class="project-archive-item"
+                data-category="food-security"
+                data-reveal="up"
+                style="--reveal-delay: 0.22s"
+              >
+                <a
+                  href="project-home-gardening-awareness.html"
+                  class="pa-item-link"
+                >
+                  <span class="project-archive-number" aria-hidden="true"
+                    >07</span
+                  >
+                  <span class="project-archive-meta">
+                    <span class="pa-title"
+                      >Home Gardening and Local Food Awareness</span
+                    >
+                    <span class="pa-tags">
+                      <span class="pa-category"
+                        >Food Security &amp; Farming</span
+                      >
+                      <span class="pa-location">
+                        <i
+                          class="fa-solid fa-location-dot"
+                          aria-hidden="true"
+                        ></i
+                        >Narangammana
+                      </span>
+                    </span>
+                  </span>
+                  <span class="project-archive-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+
+              <!-- 08 -->
+              <li
+                class="project-archive-item"
+                data-category="education"
+                data-reveal="up"
+                style="--reveal-delay: 0.25s"
+              >
+                <a href="project-athahitha-2025.html" class="pa-item-link">
+                  <span class="project-archive-number" aria-hidden="true"
+                    >08</span
+                  >
+                  <span class="project-archive-meta">
+                    <span class="pa-title"
+                      >Athahitha 2025 Children&rsquo;s Support Programme</span
+                    >
+                    <span class="pa-tags">
+                      <span class="pa-category"
+                        >Education &amp; Community Support</span
+                      >
+                      <span class="pa-location">
+                        <i
+                          class="fa-solid fa-location-dot"
+                          aria-hidden="true"
+                        ></i
+                        >Munamalapelessa
+                      </span>
+                    </span>
+                  </span>
+                  <span class="project-archive-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+
+              <!-- 09 — featured -->
+              <li
+                class="project-archive-item pa-featured"
+                data-category="recovery"
+                data-reveal="up"
+                style="--reveal-delay: 0.28s"
+              >
+                <a href="project-dittawa-recovery.html" class="pa-item-link">
+                  <span class="project-archive-number" aria-hidden="true"
+                    >09</span
+                  >
+                  <span class="project-archive-meta">
+                    <span class="pa-title"
+                      >Dittawa Cyclone Recovery and Farmland
+                      Rehabilitation</span
+                    >
+                    <span class="pa-tags">
+                      <span class="pa-category">Recovery &amp; Resilience</span>
+                      <span class="pa-location">
+                        <i
+                          class="fa-solid fa-location-dot"
+                          aria-hidden="true"
+                        ></i
+                        >Ududumbara
+                      </span>
+                    </span>
+                    <span class="pa-desc"
+                      >A rapid-response programme supporting flood-affected
+                      families to restore crops and rehabilitate their
+                      land.</span
+                    >
+                  </span>
+                  <span class="project-archive-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+
+              <!-- 10 — featured -->
+              <li
+                class="project-archive-item pa-featured"
+                data-category="education"
+                data-reveal="up"
+                style="--reveal-delay: 0.31s"
+              >
+                <a href="project-ala-koratuwa.html" class="pa-item-link">
+                  <span class="project-archive-number" aria-hidden="true"
+                    >10</span
+                  >
+                  <span class="project-archive-meta">
+                    <span class="pa-title"
+                      >Ala Koratuwa Book Launch and CDC Heritage
+                      Documentation</span
+                    >
+                    <span class="pa-tags">
+                      <span class="pa-category"
+                        >Heritage &amp; Documentation</span
+                      >
+                      <span class="pa-location">
+                        <i
+                          class="fa-solid fa-location-dot"
+                          aria-hidden="true"
+                        ></i
+                        >CDC Community Network
+                      </span>
+                    </span>
+                    <span class="pa-desc"
+                      >A landmark publication celebrating CDC&rsquo;s founding
+                      heritage, indigenous yam knowledge, and women&rsquo;s
+                      leadership.</span
+                    >
+                  </span>
+                  <span class="project-archive-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+
+              <!-- 11 -->
+              <li
+                class="project-archive-item"
+                data-category="education"
+                data-reveal="up"
+                style="--reveal-delay: 0.34s"
+              >
+                <a href="project-community-health.html" class="pa-item-link">
+                  <span class="project-archive-number" aria-hidden="true"
+                    >11</span
+                  >
+                  <span class="project-archive-meta">
+                    <span class="pa-title"
+                      >Aranayaka Community Health Programme</span
+                    >
+                    <span class="pa-tags">
+                      <span class="pa-category"
+                        >Health &amp; Community Awareness</span
+                      >
+                      <span class="pa-location">
+                        <i
+                          class="fa-solid fa-location-dot"
+                          aria-hidden="true"
+                        ></i
+                        >Narangammana Ambadeniya Estate
+                      </span>
+                    </span>
+                  </span>
+                  <span class="project-archive-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+
+              <!-- 12 -->
+              <li
+                class="project-archive-item"
+                data-category="water"
+                data-reveal="up"
+                style="--reveal-delay: 0.37s"
+              >
+                <a href="project-bogawatta-well.html" class="pa-item-link">
+                  <span class="project-archive-number" aria-hidden="true"
+                    >12</span
+                  >
+                  <span class="project-archive-meta">
+                    <span class="pa-title"
+                      >Bogawatta Yaya Well Restoration</span
+                    >
+                    <span class="pa-tags">
+                      <span class="pa-category"
+                        >Water &amp; Community Infrastructure</span
+                      >
+                      <span class="pa-location">
+                        <i
+                          class="fa-solid fa-location-dot"
+                          aria-hidden="true"
+                        ></i
+                        >Bootalanda, Pallewela
+                      </span>
+                    </span>
+                  </span>
+                  <span class="project-archive-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+
+              <!-- 13 — featured -->
+              <li
+                class="project-archive-item pa-featured"
+                data-category="water"
+                data-reveal="up"
+                style="--reveal-delay: 0.4s"
+              >
+                <a href="project-hing-patuna-water.html" class="pa-item-link">
+                  <span class="project-archive-number" aria-hidden="true"
+                    >13</span
+                  >
+                  <span class="project-archive-meta">
+                    <span class="pa-title"
+                      >Hing Patuna Phase 2 Water Supply Project</span
+                    >
+                    <span class="pa-tags">
+                      <span class="pa-category">Water Access</span>
+                      <span class="pa-location">
+                        <i
+                          class="fa-solid fa-location-dot"
+                          aria-hidden="true"
+                        ></i
+                        >Geradigala and Munamalapelessa
+                      </span>
+                    </span>
+                    <span class="pa-desc"
+                      >Extending clean water access to remote highland
+                      communities through a multi-year infrastructure
+                      effort.</span
+                    >
+                  </span>
+                  <span class="project-archive-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+
+              <!-- 14 -->
+              <li
+                class="project-archive-item"
+                data-category="recovery"
+                data-reveal="up"
+                style="--reveal-delay: 0.43s"
+              >
+                <a
+                  href="project-paddy-land-restoration.html"
+                  class="pa-item-link"
+                >
+                  <span class="project-archive-number" aria-hidden="true"
+                    >14</span
+                  >
+                  <span class="project-archive-meta">
+                    <span class="pa-title"
+                      >Paddy Land Restoration and Bamboo Distribution</span
+                    >
+                    <span class="pa-tags">
+                      <span class="pa-category">Agriculture Recovery</span>
+                      <span class="pa-location">
+                        <i
+                          class="fa-solid fa-location-dot"
+                          aria-hidden="true"
+                        ></i
+                        >Ududumbara Villages
+                      </span>
+                    </span>
+                  </span>
+                  <span class="project-archive-arrow" aria-hidden="true">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </span>
+                </a>
+              </li>
+            </ol>
+            <!-- /project-archive-list -->
+
+            <p class="pa-no-results" aria-live="polite">
+              No projects match this filter.
+            </p>
+          </div>
+          <!-- /pa-list-wrap -->
+        </div>
+        <!-- /container -->
+      </section>
+      <!-- ── End project archive ──────────────────────────────── -->
     </main>
 
     <footer class="site-footer" aria-label="Site footer">
@@ -2085,6 +3142,47 @@
         );
 
         update();
+      })();
+    </script>
+    <!-- Project archive: category filter ───────────────────── -->
+    <script>
+      (function () {
+        "use strict";
+
+        var filterBtns = document.querySelectorAll(".pa-filter-btn");
+        var archiveItems = document.querySelectorAll(".project-archive-item");
+        var noResults = document.querySelector(".pa-no-results");
+        if (!filterBtns.length || !archiveItems.length) return;
+
+        filterBtns.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            var filter = btn.getAttribute("data-filter");
+
+            filterBtns.forEach(function (b) {
+              b.classList.remove("active");
+              b.removeAttribute("aria-pressed");
+            });
+            btn.classList.add("active");
+            btn.setAttribute("aria-pressed", "true");
+
+            var visibleCount = 0;
+            archiveItems.forEach(function (item) {
+              var match =
+                filter === "all" ||
+                item.getAttribute("data-category") === filter;
+              if (match) {
+                item.classList.remove("pa-hidden");
+                visibleCount++;
+              } else {
+                item.classList.add("pa-hidden");
+              }
+            });
+
+            if (noResults) {
+              noResults.classList.toggle("visible", visibleCount === 0);
+            }
+          });
+        });
       })();
     </script>
   </body>
