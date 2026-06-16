@@ -1,0 +1,913 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CDC | Ayurvedic Exhibition and Local Food Promotion</title>
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260506" />
+    <link rel="icon" href="assets/img/favicon.png" />
+    <script src="https://kit.fontawesome.com/2a6b3c3f27.js" crossorigin="anonymous"></script>
+    <style>
+      /* ============================================================
+         PROJECT DETAIL PAGE — SHARED SCOPED STYLES
+         ============================================================ */
+
+      /* ── Hero ──────────────────────────────────────────────────── */
+
+      .project-detail-hero {
+        position: relative;
+        min-height: 100dvh;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        isolation: isolate;
+      }
+
+      .project-detail-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: var(--hero-bg-image);
+        background-size: cover;
+        background-position: center;
+        z-index: -2;
+      }
+
+      .project-detail-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(3,14,6,0.55) 0%, rgba(3,14,6,0.82) 100%);
+        z-index: -1;
+      }
+
+      .pdh-inner {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: var(--container-max, 1100px);
+        margin-inline: auto;
+        padding-inline: clamp(1rem, 2vw, 1.5rem);
+        padding-bottom: clamp(3.5rem, 7vw, 5.5rem);
+        padding-top: calc(var(--header-offset, 96px) + 2rem);
+        box-sizing: border-box;
+      }
+
+      .pdh-back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.75);
+        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        border-radius: 100px;
+        padding: 0.4rem 1rem 0.4rem 0.8rem;
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+        background: rgba(255, 255, 255, 0.07);
+        margin-bottom: 2rem;
+        letter-spacing: 0.02em;
+        transition: background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+      }
+
+      .pdh-back-link:hover,
+      .pdh-back-link:focus-visible {
+        background: rgba(255, 255, 255, 0.14);
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.45);
+        outline: none;
+      }
+
+      .pdh-eyebrow {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #a06832;
+        margin: 0 0 1rem;
+      }
+
+      .pdh-heading {
+        font-size: clamp(1.9rem, 4vw, 3.1rem);
+        line-height: 1.1;
+        color: #ffffff;
+        font-weight: 800;
+        letter-spacing: -0.015em;
+        margin: 0 0 1.2rem;
+        max-width: 22ch;
+      }
+
+      .pdh-intro {
+        font-size: clamp(1rem, 1.3vw, 1.1rem);
+        line-height: 1.75;
+        color: rgba(255, 255, 255, 0.72);
+        margin: 0 0 1.75rem;
+        max-width: 60ch;
+      }
+
+      .pdh-location-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.09);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 100px;
+        padding: 0.45rem 1.1rem;
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.88);
+        letter-spacing: 0.04em;
+      }
+
+      .pdh-location-chip i {
+        color: #86efac;
+        font-size: 0.75rem;
+      }
+
+      /* ── Overview ──────────────────────────────────────────────── */
+
+      .project-detail-overview {
+        background: #f8f6f2;
+      }
+
+      .pdo-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(2.5rem, 5vw, 5rem);
+        align-items: start;
+      }
+
+      .pdo-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .pdo-section-label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #a06832;
+        margin: 0 0 1rem;
+      }
+
+      .pdo-heading {
+        font-size: clamp(1.5rem, 2.4vw, 2rem);
+        line-height: 1.18;
+        color: #0b5e20;
+        font-weight: 800;
+        letter-spacing: -0.014em;
+        margin: 0 0 1.25rem;
+      }
+
+      .pdo-body {
+        font-size: clamp(0.975rem, 1.1vw, 1.065rem);
+        line-height: 1.8;
+        color: #4a5a4e;
+        margin: 0;
+      }
+
+      /* ── Detail cards ──────────────────────────────────────────── */
+
+      .project-detail-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .pdc-card {
+        background: #ffffff;
+        border-radius: 0.875rem;
+        border-left: 3px solid #22c55e;
+        padding: 1.1rem 1.35rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .pdc-card-icon {
+        flex-shrink: 0;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(22, 163, 74, 0.1);
+        border: 1px solid rgba(22, 163, 74, 0.22);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #16a34a;
+        font-size: 0.78rem;
+        margin-top: 1px;
+      }
+
+      .pdc-card-content {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .pdc-card-label {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #7a8e7c;
+        margin: 0 0 0.3rem;
+      }
+
+      .pdc-card-value {
+        font-size: 0.925rem;
+        font-weight: 600;
+        color: #192b1b;
+        line-height: 1.5;
+        margin: 0;
+      }
+
+      /* ── Gallery ───────────────────────────────────────────────── */
+
+      .project-detail-gallery {
+        background: #f2f8f4;
+      }
+
+      .pdg-header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+      }
+
+      .pdg-eyebrow {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #a06832;
+        margin: 0 0 0.75rem;
+      }
+
+      .pdg-heading {
+        font-size: clamp(1.45rem, 2.3vw, 1.95rem);
+        line-height: 1.18;
+        color: #0b5e20;
+        font-weight: 800;
+        letter-spacing: -0.013em;
+        margin: 0;
+      }
+
+      /* 2-image layout */
+      .pdg-grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+
+      /* 3-image layout */
+      .pdg-grid-3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 1rem;
+      }
+
+      .pdg-grid-3 .pdg-img-wrap:first-child {
+        grid-column: 1 / 3;
+      }
+
+      .pdg-img-wrap {
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0,0,0,0.04);
+        cursor: default;
+      }
+
+      .pdg-img-wrap img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      .pdg-grid-2 .pdg-img-wrap img {
+        aspect-ratio: 4 / 3;
+      }
+
+      .pdg-grid-3 .pdg-img-wrap:first-child img {
+        aspect-ratio: 16 / 9;
+      }
+
+      .pdg-grid-3 .pdg-img-wrap:not(:first-child) img {
+        aspect-ratio: 4 / 3;
+      }
+
+      .pdg-img-wrap:hover img {
+        transform: scale(1.02);
+        box-shadow: 0 14px 44px rgba(0,0,0,0.15);
+      }
+
+      /* ── Impact / Why It Matters ───────────────────────────────── */
+
+      .project-detail-impact {
+        background: #ffffff;
+      }
+
+      .pdi-inner {
+        max-width: 780px;
+        margin-inline: auto;
+      }
+
+      .pdi-eyebrow {
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #a06832;
+        margin: 0 0 0.85rem;
+      }
+
+      .pdi-heading {
+        font-size: clamp(1.5rem, 2.4vw, 2.05rem);
+        line-height: 1.15;
+        color: #0b5e20;
+        font-weight: 800;
+        letter-spacing: -0.013em;
+        margin: 0 0 1.25rem;
+      }
+
+      .pdi-body {
+        font-size: clamp(0.975rem, 1.1vw, 1.065rem);
+        line-height: 1.8;
+        color: #4a5a4e;
+        margin: 0 0 1.75rem;
+      }
+
+      .pdi-points {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+      }
+
+      .pdi-point {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.85rem;
+        font-size: 0.975rem;
+        color: #333333;
+        line-height: 1.55;
+      }
+
+      .pdi-point-icon {
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: rgba(22, 163, 74, 0.1);
+        border: 1px solid rgba(22, 163, 74, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #16a34a;
+        font-size: 0.58rem;
+        margin-top: 2px;
+      }
+
+      /* ── Project Nav ───────────────────────────────────────────── */
+
+      .project-detail-nav {
+        background: #f8f6f2;
+      }
+
+      .pdnav-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+      }
+
+      .pdnav-heading {
+        font-size: clamp(1.3rem, 2vw, 1.65rem);
+        line-height: 1.2;
+        color: #0b5e20;
+        font-weight: 800;
+        letter-spacing: -0.012em;
+        margin: 0 0 0.5rem;
+      }
+
+      .pdnav-sub {
+        font-size: 0.935rem;
+        line-height: 1.65;
+        color: #6b7e6e;
+        margin: 0;
+        max-width: 46ch;
+      }
+
+      .pdnav-back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: #0b5e20;
+        color: #ffffff;
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-decoration: none;
+        border-radius: 100px;
+        padding: 0.85rem 1.75rem;
+        letter-spacing: 0.02em;
+        transition: background 0.24s ease, transform 0.22s ease, box-shadow 0.24s ease;
+      }
+
+      .pdnav-back-btn:hover,
+      .pdnav-back-btn:focus-visible {
+        background: #16a34a;
+        transform: translateY(-2px);
+        box-shadow: 0 10px 28px rgba(11, 94, 32, 0.28);
+        outline: none;
+      }
+
+      .pdnav-back-btn .btn-arrow {
+        display: inline-flex;
+        align-items: center;
+        transition: transform 0.26s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .pdnav-back-btn:hover .btn-arrow {
+        transform: translateX(4px);
+      }
+
+      .pdnav-links {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        max-width: 720px;
+      }
+
+      .pdnav-card {
+        flex: 1;
+        min-width: 220px;
+        max-width: 340px;
+        background: #ffffff;
+        border-radius: 1rem;
+        border: 1px solid rgba(0, 100, 0, 0.1);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        padding: 1.25rem 1.5rem;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+        transition: box-shadow 0.26s ease, transform 0.26s ease, border-color 0.26s ease;
+      }
+
+      .pdnav-card:hover,
+      .pdnav-card:focus-visible {
+        box-shadow: 0 8px 28px rgba(11, 94, 32, 0.12);
+        transform: translateY(-3px);
+        border-color: #22c55e;
+        outline: none;
+      }
+
+      .pdnav-card-dir {
+        font-size: 0.68rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #7a8e7c;
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+
+      .pdnav-card-title {
+        font-size: 0.925rem;
+        font-weight: 700;
+        color: #0b5e20;
+        line-height: 1.4;
+      }
+
+      .pdnav-card-arrow {
+        font-size: 0.72rem;
+        color: #22c55e;
+        margin-top: 0.15rem;
+        transition: transform 0.24s ease;
+      }
+
+      .pdnav-card:hover .pdnav-card-arrow {
+        transform: translateX(4px);
+      }
+
+      .pdnav-card.pdnav-prev .pdnav-card-arrow {
+        transform: none;
+      }
+
+      .pdnav-card.pdnav-prev:hover .pdnav-card-arrow {
+        transform: translateX(-4px);
+      }
+
+      /* ── Reduced motion ────────────────────────────────────────── */
+
+      @media (prefers-reduced-motion: reduce) {
+        .pdh-back-link,
+        .pdg-img-wrap img,
+        .pdnav-back-btn,
+        .pdnav-card,
+        .pdnav-card-arrow {
+          transition: none;
+        }
+        .pdnav-back-btn:hover {
+          transform: none;
+          box-shadow: none;
+        }
+        .pdnav-back-btn .btn-arrow {
+          transition: none;
+        }
+        .pdg-img-wrap:hover img {
+          transform: none;
+        }
+        .pdnav-card:hover {
+          transform: none;
+        }
+        .pdnav-card:hover .pdnav-card-arrow,
+        .pdnav-card.pdnav-prev:hover .pdnav-card-arrow {
+          transform: none;
+        }
+      }
+
+      /* ── Tablet (≤ 899px) ──────────────────────────────────────── */
+
+      @media (max-width: 899px) {
+        .pdo-inner {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
+      }
+
+      /* ── Mobile (≤ 599px) ──────────────────────────────────────── */
+
+      @media (max-width: 599px) {
+        .pdh-heading {
+          max-width: unset;
+        }
+
+        .pdh-intro {
+          max-width: unset;
+        }
+
+        .pdg-grid-2,
+        .pdg-grid-3 {
+          grid-template-columns: 1fr;
+        }
+
+        .pdg-grid-3 .pdg-img-wrap:first-child {
+          grid-column: 1;
+        }
+
+        .pdg-grid-2 .pdg-img-wrap img,
+        .pdg-grid-3 .pdg-img-wrap:first-child img,
+        .pdg-grid-3 .pdg-img-wrap:not(:first-child) img {
+          aspect-ratio: 4 / 3;
+        }
+
+        .pdnav-links {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .pdnav-card {
+          max-width: 100%;
+          min-width: unset;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body class="project-detail-page">
+
+    <div id="page-loader" role="progressbar" aria-label="Loading page content" aria-valuemin="0" aria-valuemax="100">
+      <div class="loader-inner">
+        <div class="loader-spinner"></div>
+        <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+        <p class="loader-label">Loading...</p>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="index.html" class="brand"><span class="brand-mark"><img src="assets/img/logo.png" alt="CDC logo" class="brand-logo" /></span></a>
+        <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation menu">
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <nav id="site-navigation" class="site-nav" role="navigation" aria-label="Main navigation">
+          <div class="nav-drawer-header">
+            <a href="index.html" class="nav-drawer-logo"><img src="assets/img/logo.png" alt="CDC logo" class="brand-logo" /></a>
+            <button class="nav-drawer-close" type="button" aria-label="Close navigation menu"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+          </div>
+          <div class="nav-drawer-body">
+            <ul class="nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="projects.html" class="nav-link" aria-current="page">Projects</a></li>
+              <li class="nav-item-dropdown">
+                <button class="nav-link nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">What We Do <i class="fa-solid fa-chevron-down nav-caret" aria-hidden="true"></i></button>
+                <ul class="nav-dropdown">
+                  <li><a href="services.html" class="nav-dropdown-link">Services</a></li>
+                  <li><a href="products.html" class="nav-dropdown-link">Products</a></li>
+                  <li><a href="training.html" class="nav-dropdown-link">Training</a></li>
+                  <li><a href="eco-tourism.html" class="nav-dropdown-link">Eco Tourism</a></li>
+                </ul>
+              </li>
+              <li class="nav-item-dropdown">
+                <button class="nav-link nav-dropdown-trigger" type="button" aria-expanded="false" aria-haspopup="true">Resources <i class="fa-solid fa-chevron-down nav-caret" aria-hidden="true"></i></button>
+                <ul class="nav-dropdown">
+                  <li><a href="model-farm.html" class="nav-dropdown-link">Model Farm</a></li>
+                  <li><a href="production-unit.html" class="nav-dropdown-link">Production Unit</a></li>
+                  <li><a href="training-center.html" class="nav-dropdown-link">Training Center</a></li>
+                </ul>
+              </li>
+              <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+              <li><a href="stories.html" class="nav-link">Stories</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+    <div id="swipe-open-zone" aria-hidden="true"></div>
+
+    <main>
+
+      <!-- ══════════════════════════════════════════════════════════
+           HERO
+           ══════════════════════════════════════════════════════════ -->
+      <section
+        class="project-detail-hero"
+        aria-labelledby="pdh-title"
+        style="--hero-bg-image: url('assets/img/project-images/2_1.jpg');"
+      >
+        <div class="pdh-inner">
+          <a href="projects.html" class="pdh-back-link" data-reveal="up">
+            <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+            Back to Projects
+          </a>
+
+          <p class="pdh-eyebrow" data-reveal="up" style="--reveal-delay: 0.07s">
+            Food, Health &amp; Local Knowledge
+          </p>
+
+          <h1 id="pdh-title" class="pdh-heading" data-reveal="up" style="--reveal-delay: 0.14s">
+            Ayurvedic Exhibition and Local Food Promotion Workshop
+          </h1>
+
+          <p class="pdh-intro" data-reveal="up" style="--reveal-delay: 0.21s">
+            CDC participated in an Ayurvedic exhibition and local food promotion workshop in Kegalle under the theme &ldquo;For a Nourished and Healthy Nation,&rdquo; highlighting the value of traditional foods, local ingredients, and community-based nutrition.
+          </p>
+
+          <span class="pdh-location-chip" data-reveal="up" style="--reveal-delay: 0.28s" aria-label="Location: Kegalle">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            Kegalle
+          </span>
+        </div>
+      </section>
+      <!-- ── End hero ─────────────────────────────────────────────── -->
+
+      <!-- ══════════════════════════════════════════════════════════
+           OVERVIEW
+           ══════════════════════════════════════════════════════════ -->
+      <section class="project-detail-overview content-section section-reveal" aria-labelledby="pdo-heading">
+        <div class="container pdo-inner">
+
+          <!-- Left: overview text -->
+          <div class="pdo-text">
+            <p class="pdo-section-label" data-reveal="up">About this project</p>
+            <h2 id="pdo-heading" class="pdo-heading" data-reveal="up" style="--reveal-delay: 0.07s">
+              Food, health, and the wisdom of local ingredients
+            </h2>
+            <p class="pdo-body" data-reveal="up" style="--reveal-delay: 0.14s">
+              This event connected food, health, and local knowledge. CDC&rsquo;s work with indigenous crops, traditional food products, and community-based food systems fits naturally into the wider conversation around nourishment, wellbeing, and sustainable food culture. The programme helped promote healthier food choices rooted in Sri Lankan traditions.
+            </p>
+          </div>
+
+          <!-- Right: detail cards -->
+          <div class="project-detail-cards" data-reveal="up" style="--reveal-delay: 0.1s">
+
+            <div class="pdc-card">
+              <span class="pdc-card-icon" aria-hidden="true"><i class="fa-solid fa-seedling"></i></span>
+              <div class="pdc-card-content">
+                <p class="pdc-card-label">Focus Area</p>
+                <p class="pdc-card-value">Traditional food, nutrition, and Ayurvedic wellbeing</p>
+              </div>
+            </div>
+
+            <div class="pdc-card">
+              <span class="pdc-card-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></span>
+              <div class="pdc-card-content">
+                <p class="pdc-card-label">Location</p>
+                <p class="pdc-card-value">Kegalle</p>
+              </div>
+            </div>
+
+            <div class="pdc-card">
+              <span class="pdc-card-icon" aria-hidden="true"><i class="fa-solid fa-people-group"></i></span>
+              <div class="pdc-card-content">
+                <p class="pdc-card-label">Community Purpose</p>
+                <p class="pdc-card-value">To promote local food knowledge, healthier eating, and the value of traditional ingredients in everyday community life.</p>
+              </div>
+            </div>
+
+          </div>
+          <!-- /project-detail-cards -->
+
+        </div>
+      </section>
+      <!-- ── End overview ─────────────────────────────────────────── -->
+
+      <!-- ══════════════════════════════════════════════════════════
+           GALLERY
+           ══════════════════════════════════════════════════════════ -->
+      <section class="project-detail-gallery content-section section-reveal" aria-label="Project photographs">
+        <div class="container">
+
+          <div class="pdg-header" data-reveal="up">
+            <p class="pdg-eyebrow">Project Gallery</p>
+            <h2 class="pdg-heading">Photographs from the workshop</h2>
+          </div>
+
+          <div class="pdg-grid-3" data-reveal="up" style="--reveal-delay: 0.1s">
+
+            <div class="pdg-img-wrap">
+              <img
+                src="assets/img/project-images/2_1.jpg"
+                alt="Ayurvedic and traditional food products on display at the Kegalle workshop"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <div class="pdg-img-wrap">
+              <img
+                src="assets/img/project-images/2_2.jpg"
+                alt="Local food promotion and community engagement at the Ayurvedic exhibition"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <div class="pdg-img-wrap">
+              <img
+                src="assets/img/project-images/2_3.jpg"
+                alt="Traditional Sri Lankan food products and participants at the workshop in Kegalle"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+      <!-- ── End gallery ──────────────────────────────────────────── -->
+
+      <!-- ══════════════════════════════════════════════════════════
+           WHY IT MATTERS
+           ══════════════════════════════════════════════════════════ -->
+      <section class="project-detail-impact content-section section-reveal" aria-labelledby="pdi-heading">
+        <div class="container">
+          <div class="pdi-inner">
+
+            <p class="pdi-eyebrow" data-reveal="up">Why It Matters</p>
+            <h2 id="pdi-heading" class="pdi-heading" data-reveal="up" style="--reveal-delay: 0.07s">
+              Traditional Foods Carry More Than Flavour
+            </h2>
+            <p class="pdi-body" data-reveal="up" style="--reveal-delay: 0.14s">
+              Traditional foods are not only part of culture; they are also linked to nutrition, biodiversity, and local livelihoods. Promoting these foods helps protect community knowledge while encouraging healthier and more sustainable food habits.
+            </p>
+
+            <ul class="pdi-points" data-reveal="up" style="--reveal-delay: 0.21s" aria-label="Key outcomes and impacts">
+              <li class="pdi-point">
+                <span class="pdi-point-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                <span>Promotion of local and traditional foods</span>
+              </li>
+              <li class="pdi-point">
+                <span class="pdi-point-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                <span>Connection between Ayurveda, nutrition, and community wellbeing</span>
+              </li>
+              <li class="pdi-point">
+                <span class="pdi-point-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                <span>Support for indigenous crop awareness</span>
+              </li>
+              <li class="pdi-point">
+                <span class="pdi-point-icon" aria-hidden="true"><i class="fa-solid fa-check"></i></span>
+                <span>Public engagement around healthy food choices</span>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </section>
+      <!-- ── End impact ───────────────────────────────────────────── -->
+
+      <!-- ══════════════════════════════════════════════════════════
+           PROJECT NAV
+           ══════════════════════════════════════════════════════════ -->
+      <section class="project-detail-nav content-section section-reveal" aria-label="Navigate between projects">
+        <div class="container">
+          <div class="pdnav-inner">
+
+            <div data-reveal="up">
+              <h2 class="pdnav-heading">Explore more CDC projects</h2>
+              <p class="pdnav-sub">Discover the breadth of CDC&rsquo;s work across conservation, livelihoods, food, and community development.</p>
+            </div>
+
+            <a href="projects.html" class="pdnav-back-btn" data-reveal="up" style="--reveal-delay: 0.07s">
+              <span>Back to all projects</span>
+              <span class="btn-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+            <div class="pdnav-links" data-reveal="up" style="--reveal-delay: 0.14s">
+
+              <a href="project-environment-day.html" class="pdnav-card pdnav-prev">
+                <span class="pdnav-card-dir">
+                  <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+                  Previous project
+                </span>
+                <span class="pdnav-card-title">Environment Day Programme at Popham&rsquo;s Arboretum</span>
+                <span class="pdnav-card-arrow" aria-hidden="true"><i class="fa-solid fa-chevron-left"></i></span>
+              </a>
+
+              <a href="project-foods-we-do-not-know.html" class="pdnav-card pdnav-next">
+                <span class="pdnav-card-dir">
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                  Next project
+                </span>
+                <span class="pdnav-card-title">&ldquo;The Foods We Do Not Know&rdquo; Exhibition</span>
+                <span class="pdnav-card-arrow" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></span>
+              </a>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <!-- ── End project nav ──────────────────────────────────────── -->
+
+    </main>
+
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link"><img src="assets/img/logo.png" alt="CDC logo" class="brand-logo footer-logo" /></a>
+          <p class="footer-tagline">Building resilient communities through sustainable agriculture, training, and eco tourism.</p>
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="Follow us on Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" aria-label="Follow us on Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" aria-label="Follow us on X"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+            <a href="#" class="social-link" aria-label="Connect on LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <nav class="footer-col" aria-label="Explore navigation">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="services.html">What We Do</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="footer-col">
+          <h3 class="footer-col-title">Get Involved</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Donate</a></li>
+            <li><a href="contact.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+        <address class="footer-col footer-contact">
+          <h3 class="footer-col-title">Contact</h3>
+          <ul class="footer-links">
+            <li>Haylesewatte, Attapitiya</li>
+            <li>Ussapitiya, Sri Lanka</li>
+            <li><a href="mailto:info@heleala.org">info@heleala.org</a></li>
+            <li><a href="tel:+94718110710">+94 71 811 0710</a></li>
+          </ul>
+        </address>
+      </div>
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p class="footer-copy">&copy; 2026 <a href="https://darkroom.lk/" class="darkroom" target="_blank">Darkroom</a> (Pvt) Ltd. All rights reserved.</p>
+          <ul class="footer-legal"><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Use</a></li></ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+    <script src="assets/js/main.js?v=20260506"></script>
+  </body>
+</html>
