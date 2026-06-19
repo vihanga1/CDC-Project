@@ -1501,6 +1501,289 @@
           font-size: 1.45rem;
         }
       }
+
+      /* ============================================================
+         AWARDS & RECOGNITION
+         ============================================================ */
+
+      .awards-recognition {
+        position: relative;
+        overflow: hidden;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(4, 28, 13, 0.92) 0%,
+            rgba(4, 28, 13, 0.84) 42%,
+            rgba(4, 28, 13, 0.64) 72%,
+            rgba(4, 28, 13, 0.48) 100%
+          ),
+          url("assets/img/awards/all_awards.jpg") center 30% / cover no-repeat;
+        padding: clamp(5rem, 9vw, 8rem) 0;
+      }
+
+      .awards-inner {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr 0.5fr;
+        gap: clamp(3rem, 5.5vw, 5rem);
+        align-items: center;
+      }
+
+      /* ── Copy (left) ─────────────────────────────────────── */
+
+      .awards-copy {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .awards-eyebrow {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #fb923c;
+        margin: 0 0 1.1rem;
+      }
+
+      .awards-heading {
+        font-size: clamp(1.65rem, 2.8vw, 2.4rem);
+        font-weight: 700;
+        line-height: 1.15;
+        color: #ffffff;
+        margin: 0 0 1.15rem;
+      }
+
+      .awards-intro {
+        font-size: clamp(0.94rem, 1.1vw, 1rem);
+        line-height: 1.76;
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0 0 1.75rem;
+      }
+
+      /* ── Award list ──────────────────────────────────────── */
+
+      .awards-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2.25rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+      }
+
+      .awards-list-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.22rem;
+        padding: 0.95rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .awards-list-title {
+        font-size: 0.975rem;
+        font-weight: 600;
+        color: #ffffff;
+        line-height: 1.38;
+      }
+
+      .awards-list-sub {
+        font-size: 0.8rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.5);
+        font-weight: 400;
+        letter-spacing: 0.015em;
+      }
+
+      /* ── CTA button ──────────────────────────────────────── */
+
+      .awards-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        background: transparent;
+        border: 1.5px solid rgba(255, 255, 255, 0.45);
+        color: #ffffff;
+        padding: 0.7rem 1.5rem;
+        border-radius: 100px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-decoration: none;
+        letter-spacing: 0.01em;
+        transition:
+          background 0.22s ease,
+          border-color 0.22s ease,
+          transform 0.2s ease;
+      }
+
+      .awards-btn:hover,
+      .awards-btn:focus-visible {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.72);
+        transform: translateY(-2px);
+      }
+
+      .awards-btn .btn-arrow {
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.78em;
+        transition: transform 0.24s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .awards-btn:hover .btn-arrow {
+        transform: translateX(4px);
+      }
+
+      /* ── Image collage (right) ───────────────────────────── */
+
+      /* Mobile-first: simple flex stack */
+      .awards-images {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+      }
+
+      .awards-mini-image {
+        border-radius: 1rem;
+        overflow: hidden;
+        /* parallax JS drives transform on this element; isolate compositing */
+        will-change: transform;
+        box-shadow:
+          0 10px 30px rgba(0, 0, 0, 0.38),
+          0 0 0 1px rgba(255, 255, 255, 0.06);
+        /* only shadow transitions on hover — no transform clash with parallax */
+        transition: box-shadow 0.4s ease;
+      }
+
+      .awards-mini-image:hover {
+        box-shadow:
+          0 20px 48px rgba(0, 0, 0, 0.54),
+          0 0 0 1px rgba(255, 255, 255, 0.11);
+      }
+
+      /* Zoom lives on the inner img so it never fights parallax transform */
+      .awards-mini-image img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        object-position: center;
+        transform-origin: center;
+        transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .awards-mini-image:hover img {
+        transform: scale(1.09);
+      }
+
+      /* ── Desktop collage (≥ 900px) ───────────────────────── */
+
+      @media (min-width: 900px) {
+        .awards-images {
+          display: block;
+          position: relative;
+          /* height is the collage canvas — scales with viewport */
+          height: clamp(390px, 50vw, 580px);
+        }
+
+        .awards-mini-image {
+          position: absolute;
+        }
+
+        /* img height follows aspect-ratio so don't lock height */
+        .awards-mini-image img {
+          aspect-ratio: 4 / 3;
+          height: auto;
+        }
+
+        /* Image 1 — main, top-right */
+        .awards-mini-image:nth-child(1) {
+          top: 0;
+          right: 0;
+          width: 84%;
+          z-index: 2;
+        }
+
+        /* Image 2 — mid-left, overlapping Image 1 bottom */
+        .awards-mini-image:nth-child(2) {
+          top: 27%;
+          left: 0;
+          width: 65%;
+          z-index: 3;
+          border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Image 3 — lower-right, behind Image 2, slight recession */
+        .awards-mini-image:nth-child(3) {
+          top: 56%;
+          right: 0;
+          width: 50%;
+          z-index: 1;
+          opacity: 0.86;
+        }
+      }
+
+      /* ── Reduced motion ──────────────────────────────────── */
+
+      @media (prefers-reduced-motion: reduce) {
+        .awards-btn {
+          transition: background 0.2s ease, border-color 0.2s ease;
+        }
+        .awards-btn:hover {
+          transform: none;
+        }
+        .awards-btn .btn-arrow {
+          transition: none;
+          transform: none;
+        }
+        .awards-mini-image {
+          will-change: auto;
+          transition: box-shadow 0.3s ease;
+        }
+        .awards-mini-image img {
+          transition: none;
+        }
+        .awards-mini-image:hover img {
+          transform: none;
+        }
+      }
+
+      /* ── Tablet (≤ 899px) ────────────────────────────────── */
+
+      @media (max-width: 899px) {
+        .awards-recognition {
+          background:
+            linear-gradient(rgba(4, 28, 13, 0.91), rgba(4, 28, 13, 0.91)),
+            url("assets/img/awards/all_awards.jpg") center 30% / cover no-repeat;
+        }
+        .awards-inner {
+          grid-template-columns: 1fr;
+          gap: 2.25rem;
+        }
+        .awards-copy {
+          order: 1;
+        }
+        .awards-images {
+          order: 2;
+          flex-direction: row;
+          max-width: 480px;
+        }
+        .awards-images .awards-mini-image {
+          flex: 1;
+        }
+      }
+
+      /* ── Mobile (≤ 599px) ────────────────────────────────── */
+
+      @media (max-width: 599px) {
+        .awards-images {
+          flex-direction: column;
+          max-width: 100%;
+        }
+        .awards-btn {
+          width: 100%;
+          justify-content: center;
+        }
+      }
     </style>
   </head>
   <body id="top">
@@ -1854,6 +2137,119 @@
         </div>
       </section>
       <!-- ══ / Our Journey ══════════════════════════════════════════ -->
+
+      <!-- ══ Awards & Recognition ════════════════════════════════════ -->
+      <section
+        id="awards-recognition"
+        class="awards-recognition content-section section-reveal"
+        aria-labelledby="awards-heading"
+      >
+        <div class="container awards-inner">
+          <!-- Left: content -->
+          <div class="awards-copy" data-reveal-group>
+            <p class="awards-eyebrow" data-reveal="up">RECOGNITION</p>
+            <h2
+              id="awards-heading"
+              class="awards-heading"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Recognised for service, food security, and community impact
+            </h2>
+            <p
+              class="awards-intro"
+              data-reveal="up"
+              style="--reveal-delay: 0.15s"
+            >
+              CDC&rsquo;s work and the leadership of Ms.&nbsp;Damayanthi
+              Godamulla have been recognised through national platforms
+              celebrating women, social service, food security, and community
+              development.
+            </p>
+
+            <ul
+              class="awards-list"
+              data-reveal="up"
+              style="--reveal-delay: 0.23s"
+              aria-label="Awards and recognition"
+            >
+              <li class="awards-list-item">
+                <span class="awards-list-title"
+                  >The Innovative Food Security Advocate of the Year</span
+                >
+                <span class="awards-list-sub"
+                  >Community Development &middot; Lak Vanitha Abhimani
+                  2025</span
+                >
+              </li>
+              <li class="awards-list-item">
+                <span class="awards-list-title"
+                  >National Champion in Social Service</span
+                >
+                <span class="awards-list-sub"
+                  >Sri Lanka Vanitha Abhimani Awards</span
+                >
+              </li>
+              <li class="awards-list-item">
+                <span class="awards-list-title"
+                  >Lesser-Known Foods Recognition</span
+                >
+                <span class="awards-list-sub"
+                  >For contribution to protecting plant biodiversity and
+                  promoting nutrition through &ldquo;Lesser-Known Foods of Sri
+                  Lanka&rdquo;</span
+                >
+              </li>
+            </ul>
+
+            <div data-reveal="up" style="--reveal-delay: 0.36s">
+              <a class="awards-btn" href="awards.html">
+                View awards
+                <span class="btn-arrow" aria-hidden="true"
+                  ><i class="fa-solid fa-arrow-right"></i
+                ></span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: image collage -->
+          <div
+            class="awards-images"
+            aria-hidden="true"
+            data-reveal="right"
+            style="--reveal-delay: 0.14s"
+          >
+            <!-- Image 1: main, top-right -->
+            <div class="awards-mini-image">
+              <img
+                src="assets/img/awards/lesser_foods_2.jpg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <!-- Image 2: mid-left, overlapping -->
+            <div class="awards-mini-image">
+              <img
+                src="assets/img/awards/lesser_foods_1.jpg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <!-- Image 3: lower-right, award ceremony depth -->
+            <div class="awards-mini-image">
+              <img
+                src="assets/img/awards/wanitha_2.jpg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ══ / Awards & Recognition ═══════════════════════════════════ -->
 
       <!-- ══════════════════════════════════════════════════════════
            HOME: WILD ROOTS FEATURE SECTION
@@ -2773,6 +3169,57 @@
         );
 
         updateParallax();
+      })();
+    </script>
+    <script>
+      /* Awards collage — depth parallax on scroll (desktop only) */
+      (function () {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+          return;
+        if (window.innerWidth < 900) return;
+
+        var section = document.querySelector(".awards-recognition");
+        if (!section) return;
+
+        var imgs = section.querySelectorAll(".awards-mini-image");
+        if (!imgs.length) return;
+
+        /*
+         * Speeds per image layer (fraction of normalised scroll offset).
+         * Positive = drifts down as you scroll down (feels farther).
+         * Negative = drifts up as you scroll down (feels closer / floating).
+         * Vary the sign and magnitude to create convincing z-depth.
+         */
+        var speeds = [0.04, -0.032, 0.065];
+
+        var ticking = false;
+
+        function updateAwardsParallax() {
+          var rect = section.getBoundingClientRect();
+          var vh = window.innerHeight;
+          var centerOffset = vh * 0.5 - (rect.top + rect.height * 0.5);
+
+          imgs.forEach(function (el, i) {
+            var speed = typeof speeds[i] !== "undefined" ? speeds[i] : 0.04;
+            var shift = centerOffset * speed;
+            el.style.transform = "translateY(" + shift + "px)";
+          });
+
+          ticking = false;
+        }
+
+        window.addEventListener(
+          "scroll",
+          function () {
+            if (!ticking) {
+              requestAnimationFrame(updateAwardsParallax);
+              ticking = true;
+            }
+          },
+          { passive: true },
+        );
+
+        updateAwardsParallax();
       })();
     </script>
   </body>
