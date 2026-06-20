@@ -1,0 +1,1134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CDC | Awards &amp; Recognition</title>
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260506" />
+    <link rel="icon" href="assets/img/favicon.png" />
+    <script
+      src="https://kit.fontawesome.com/2a6b3c3f27.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* ============================================================
+         AWARDS PAGE — page-specific styles
+         ============================================================ */
+
+      /* ── Hero ───────────────────────────────────────────────────── */
+      .awards-hero {
+        position: relative;
+        min-height: 100dvh;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        isolation: isolate;
+        padding-bottom: clamp(4rem, 8vw, 7rem);
+      }
+
+      .awards-hero::before {
+        content: "";
+        position: absolute;
+        inset: -8%;
+        background-image: url("assets/img/awards/all_awards.jpg");
+        background-size: cover;
+        background-position: center 30%;
+        transform: scale(var(--ah-scale, 1)) translateY(var(--ah-y, 0px));
+        will-change: transform;
+        z-index: -2;
+      }
+
+      .awards-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          128deg,
+          rgba(3, 18, 8, 0.94) 0%,
+          rgba(4, 22, 10, 0.80) 36%,
+          rgba(5, 28, 14, 0.50) 65%,
+          rgba(4, 22, 10, 0.18) 100%
+        );
+        z-index: -1;
+      }
+
+      .awards-hero-inner {
+        position: relative;
+        z-index: 1;
+        max-width: 680px;
+      }
+
+      .awards-hero-eyebrow {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #fb923c;
+        margin: 0 0 1.1rem;
+      }
+
+      .awards-hero-heading {
+        font-size: clamp(2.1rem, 5vw, 3.75rem);
+        font-weight: 800;
+        line-height: 1.08;
+        color: #ffffff;
+        margin: 0 0 1.25rem;
+      }
+
+      .awards-hero-sub {
+        font-size: clamp(1rem, 1.4vw, 1.125rem);
+        line-height: 1.72;
+        color: rgba(255, 255, 255, 0.74);
+        margin: 0 0 2.25rem;
+        max-width: 540px;
+      }
+
+      .awards-hero-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        background: transparent;
+        border: 1.5px solid rgba(255, 255, 255, 0.5);
+        color: #ffffff;
+        padding: 0.82rem 1.8rem;
+        border-radius: 100px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        letter-spacing: 0.015em;
+        transition: background 0.22s ease, border-color 0.22s ease, transform 0.2s ease;
+      }
+
+      .awards-hero-btn:hover,
+      .awards-hero-btn:focus-visible {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.8);
+        transform: translateY(-2px);
+      }
+
+      .awards-hero-btn .btn-arrow {
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.8em;
+        transition: transform 0.24s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .awards-hero-btn:hover .btn-arrow { transform: translateY(4px); }
+
+      /* ── Intro / Legacy ─────────────────────────────────────────── */
+      .awards-intro-section {
+        background: #faf7f2;
+      }
+
+      .awards-intro-inner {
+        display: grid;
+        grid-template-columns: 1fr 0.88fr;
+        gap: clamp(2.5rem, 5vw, 5rem);
+        align-items: center;
+      }
+
+      .awards-intro-eyebrow {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--secondary-color);
+        margin: 0 0 1rem;
+      }
+
+      .awards-intro-heading {
+        font-size: clamp(1.65rem, 2.8vw, 2.4rem);
+        font-weight: 700;
+        line-height: 1.2;
+        color: var(--dark-green);
+        margin: 0 0 1.25rem;
+      }
+
+      .awards-intro-body {
+        font-size: clamp(0.95rem, 1.1vw, 1.025rem);
+        line-height: 1.8;
+        color: var(--neutral-dark);
+        margin: 0 0 1.1rem;
+      }
+
+      .awards-intro-image-wrap {
+        border-radius: 1.25rem;
+        overflow: hidden;
+        box-shadow: 0 20px 52px rgba(11, 94, 32, 0.12);
+      }
+
+      .awards-intro-image-wrap img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        object-position: center 35%;
+      }
+
+      @media (max-width: 799px) {
+        .awards-intro-inner { grid-template-columns: 1fr; }
+        .awards-intro-image-wrap { order: -1; }
+        .awards-intro-image-wrap img { aspect-ratio: 16/9; }
+      }
+
+      /* ── Recognition List ───────────────────────────────────────── */
+      .recognition-list-section {
+        background: var(--white);
+      }
+
+      .section-header-center {
+        text-align: center;
+        max-width: 620px;
+        margin: 0 auto clamp(2.5rem, 4vw, 3.5rem);
+      }
+
+      .section-header-center .section-eyebrow {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--secondary-color);
+        margin: 0 0 0.9rem;
+      }
+
+      .section-header-center .section-heading {
+        font-size: clamp(1.65rem, 2.8vw, 2.4rem);
+        font-weight: 700;
+        line-height: 1.2;
+        color: var(--dark-green);
+        margin: 0;
+      }
+
+      .recognition-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(1.25rem, 2.5vw, 2rem);
+      }
+
+      .recognition-card {
+        border-radius: 1.1rem;
+        background: var(--neutral-light);
+        border: 1px solid rgba(17, 147, 41, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .recognition-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 22px 50px rgba(17, 147, 41, 0.12);
+      }
+
+      .recognition-card-image {
+        overflow: hidden;
+      }
+
+      .recognition-card-image img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 16/9;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .recognition-card:hover .recognition-card-image img {
+        transform: scale(1.08);
+      }
+
+      .recognition-card-body {
+        padding: 1.5rem 1.65rem 1.85rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
+      .recognition-card-tag {
+        font-size: 0.73rem;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--secondary-color);
+        margin: 0 0 0.6rem;
+      }
+
+      .recognition-card-title {
+        font-size: clamp(1rem, 1.3vw, 1.175rem);
+        font-weight: 700;
+        line-height: 1.3;
+        color: var(--dark-green);
+        margin: 0 0 0.45rem;
+      }
+
+      .recognition-card-platform {
+        font-size: 0.82rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        margin: 0 0 0.85rem;
+      }
+
+      .recognition-card-note {
+        font-size: 0.875rem;
+        line-height: 1.66;
+        color: rgba(51, 51, 51, 0.72);
+        margin: 0;
+        flex: 1;
+      }
+
+      @media (max-width: 899px) {
+        .recognition-cards { grid-template-columns: 1fr 1fr; }
+      }
+
+      @media (max-width: 579px) {
+        .recognition-cards { grid-template-columns: 1fr; }
+      }
+
+      /* ── Lesser-Known Foods Feature ─────────────────────────────── */
+      .lesser-foods-feature {
+        background: var(--light-green);
+      }
+
+      .lesser-foods-inner {
+        display: grid;
+        grid-template-columns: 1fr 0.85fr;
+        gap: clamp(2.5rem, 5vw, 5rem);
+        align-items: center;
+      }
+
+      .lesser-foods-eyebrow {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--secondary-color);
+        margin: 0 0 1rem;
+      }
+
+      .lesser-foods-heading {
+        font-size: clamp(1.65rem, 2.8vw, 2.4rem);
+        font-weight: 700;
+        line-height: 1.2;
+        color: var(--dark-green);
+        margin: 0 0 1.25rem;
+      }
+
+      .lesser-foods-body {
+        font-size: clamp(0.95rem, 1.1vw, 1.025rem);
+        line-height: 1.8;
+        color: var(--neutral-dark);
+        margin: 0 0 1.75rem;
+      }
+
+      .lesser-foods-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        background: var(--primary-color);
+        color: #ffffff;
+        padding: 0.82rem 1.8rem;
+        border-radius: 100px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        letter-spacing: 0.015em;
+        align-self: flex-start;
+        transition: background 0.22s ease, transform 0.2s ease;
+      }
+
+      .lesser-foods-btn:hover,
+      .lesser-foods-btn:focus-visible {
+        background: var(--dark-green);
+        transform: translateY(-2px);
+      }
+
+      .lesser-foods-btn .btn-arrow {
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.8em;
+        transition: transform 0.24s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .lesser-foods-btn:hover .btn-arrow { transform: translateX(4px); }
+
+      .lesser-foods-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 0.85rem;
+      }
+
+      .lf-img-wrap {
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 12px 32px rgba(11, 94, 32, 0.1);
+      }
+
+      .lf-img-wrap:first-child { grid-row: span 2; }
+
+      .lf-img-wrap img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .lf-img-wrap:first-child img { aspect-ratio: 3/4; }
+      .lf-img-wrap:not(:first-child) img { aspect-ratio: 4/3; }
+
+      .lf-img-wrap:hover img { transform: scale(1.07); }
+
+      @media (max-width: 799px) {
+        .lesser-foods-inner { grid-template-columns: 1fr; }
+        .lesser-foods-images { order: -1; }
+        .lf-img-wrap:first-child { grid-row: span 1; }
+        .lf-img-wrap img,
+        .lf-img-wrap:first-child img { aspect-ratio: 4/3; }
+      }
+
+      /* ── Gallery ────────────────────────────────────────────────── */
+      .awards-gallery-section {
+        background: var(--white);
+      }
+
+      .awards-gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+      }
+
+      .awards-gallery-grid .gallery-item:nth-child(1) { grid-column: span 3; }
+      .awards-gallery-grid .gallery-item:nth-child(2) { grid-column: span 2; }
+      .awards-gallery-grid .gallery-item:nth-child(7) { grid-column: span 3; }
+
+      .gallery-item {
+        border-radius: 0.85rem;
+        overflow: hidden;
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.07);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .gallery-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 18px 42px rgba(0, 0, 0, 0.13);
+      }
+
+      .gallery-item img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .gallery-item:nth-child(1) img { aspect-ratio: 21/9; object-position: center 30%; }
+      .gallery-item:nth-child(2) img { aspect-ratio: 16/9; }
+      .gallery-item:nth-child(3) img { aspect-ratio: 4/3; }
+      .gallery-item:nth-child(4) img { aspect-ratio: 4/3; }
+      .gallery-item:nth-child(5) img { aspect-ratio: 4/3; }
+      .gallery-item:nth-child(6) img { aspect-ratio: 4/3; }
+      .gallery-item:nth-child(7) img { aspect-ratio: 21/9; object-position: center 40%; }
+
+      .gallery-item:hover img { transform: scale(1.06); }
+
+      @media (max-width: 799px) {
+        .awards-gallery-grid { grid-template-columns: 1fr 1fr; }
+        .awards-gallery-grid .gallery-item:nth-child(1) { grid-column: span 2; }
+        .awards-gallery-grid .gallery-item:nth-child(2) { grid-column: span 1; }
+        .awards-gallery-grid .gallery-item:nth-child(7) { grid-column: span 2; }
+        .gallery-item:nth-child(1) img { aspect-ratio: 16/9; }
+        .gallery-item:nth-child(7) img { aspect-ratio: 16/9; }
+      }
+
+      @media (max-width: 499px) {
+        .awards-gallery-grid { grid-template-columns: 1fr; }
+        .awards-gallery-grid .gallery-item:nth-child(1),
+        .awards-gallery-grid .gallery-item:nth-child(2),
+        .awards-gallery-grid .gallery-item:nth-child(7) { grid-column: span 1; }
+      }
+
+      /* ── CTA ────────────────────────────────────────────────────── */
+      .awards-cta-section {
+        background:
+          linear-gradient(rgba(4, 28, 13, 0.86), rgba(4, 28, 13, 0.86)),
+          url("assets/img/awards/all_awards.jpg") center 60% / cover no-repeat;
+        padding-block: clamp(4.5rem, 9vw, 7.5rem);
+        text-align: center;
+      }
+
+      .awards-cta-eyebrow {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #fb923c;
+        margin: 0 0 1rem;
+      }
+
+      .awards-cta-heading {
+        font-size: clamp(1.7rem, 3vw, 2.65rem);
+        font-weight: 700;
+        line-height: 1.18;
+        color: #ffffff;
+        margin: 0 0 1rem;
+      }
+
+      .awards-cta-sub {
+        font-size: clamp(0.95rem, 1.15vw, 1.05rem);
+        line-height: 1.72;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 500px;
+        margin: 0 auto 2.25rem;
+      }
+
+      .awards-cta-btns {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .cta-btn-solid {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        background: var(--primary-color);
+        color: #ffffff;
+        padding: 0.85rem 1.9rem;
+        border-radius: 100px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        letter-spacing: 0.015em;
+        transition: background 0.22s ease, transform 0.2s ease;
+      }
+
+      .cta-btn-solid:hover,
+      .cta-btn-solid:focus-visible {
+        background: var(--dark-green);
+        transform: translateY(-2px);
+      }
+
+      .cta-btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        background: transparent;
+        border: 1.5px solid rgba(255, 255, 255, 0.45);
+        color: #ffffff;
+        padding: 0.85rem 1.9rem;
+        border-radius: 100px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        letter-spacing: 0.015em;
+        transition: background 0.22s ease, border-color 0.22s ease, transform 0.2s ease;
+      }
+
+      .cta-btn-ghost:hover,
+      .cta-btn-ghost:focus-visible {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.75);
+        transform: translateY(-2px);
+      }
+
+      /* ── Reduced motion ─────────────────────────────────────────── */
+      @media (prefers-reduced-motion: reduce) {
+        .awards-hero::before { will-change: auto; }
+        .recognition-card,
+        .gallery-item { transition: none; }
+        .recognition-card:hover,
+        .gallery-item:hover { transform: none; box-shadow: none; }
+        .recognition-card:hover .recognition-card-image img,
+        .gallery-item:hover img,
+        .lf-img-wrap:hover img { transform: none; }
+        .awards-hero-btn,
+        .lesser-foods-btn,
+        .cta-btn-solid,
+        .cta-btn-ghost { transition: none; }
+        .awards-hero-btn:hover,
+        .lesser-foods-btn:hover,
+        .cta-btn-solid:hover,
+        .cta-btn-ghost:hover { transform: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header transparent">
+      <div class="container header-inner">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">
+            <img src="assets/img/logo.png" alt="NGO Logo" class="brand-logo" />
+          </span>
+        </a>
+        <button
+          class="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-controls="site-navigation"
+          aria-label="Open navigation menu"
+        >
+          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <nav
+          id="site-navigation"
+          class="site-nav"
+          role="navigation"
+          aria-label="Main navigation"
+        >
+          <div class="nav-drawer-header">
+            <a href="index.html" class="nav-drawer-logo">
+              <img
+                src="assets/img/logo.png"
+                alt="NGO Logo"
+                class="brand-logo"
+              />
+            </a>
+            <button
+              class="nav-drawer-close"
+              type="button"
+              aria-label="Close navigation menu"
+            >
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="nav-drawer-body">
+            <ul class="nav-list">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="projects.html" class="nav-link">Projects</a></li>
+              <li class="nav-item-dropdown">
+                <button
+                  class="nav-link nav-dropdown-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  What We Do
+                  <i
+                    class="fa-solid fa-chevron-down nav-caret"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="services.html" class="nav-dropdown-link">Services</a>
+                  </li>
+                  <li>
+                    <a href="products.html" class="nav-dropdown-link">Products</a>
+                  </li>
+                  <li>
+                    <a href="training.html" class="nav-dropdown-link">Training</a>
+                  </li>
+                  <li>
+                    <a href="eco-tourism.html" class="nav-dropdown-link">Eco Tourism</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item-dropdown">
+                <button
+                  class="nav-link nav-dropdown-trigger"
+                  type="button"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  Resources
+                  <i
+                    class="fa-solid fa-chevron-down nav-caret"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <ul class="nav-dropdown">
+                  <li>
+                    <a href="model-farm.html" class="nav-dropdown-link">Model Farm</a>
+                  </li>
+                  <li>
+                    <a href="production-unit.html" class="nav-dropdown-link">Production Unit</a>
+                  </li>
+                  <li>
+                    <a href="training-center.html" class="nav-dropdown-link">Training Center</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+              <li><a href="stories.html" class="nav-link">Stories</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+    <div id="swipe-open-zone" aria-hidden="true"></div>
+
+    <main>
+
+      <!-- ══ Hero ═══════════════════════════════════════════════════ -->
+      <section class="awards-hero" aria-labelledby="awards-page-heading">
+        <div class="container awards-hero-inner" data-reveal-group>
+          <span class="awards-hero-eyebrow" data-reveal="up">RECOGNITION</span>
+          <h1
+            id="awards-page-heading"
+            class="awards-hero-heading"
+            data-reveal="up"
+            style="--reveal-delay: 0.07s"
+          >
+            Awards &amp;<br />Recognition
+          </h1>
+          <p
+            class="awards-hero-sub"
+            data-reveal="up"
+            style="--reveal-delay: 0.14s"
+          >
+            CDC and Ms.&nbsp;Damayanthi Godamulla have been honoured by leading national bodies for outstanding contributions to food security, social service, and community development in Sri Lanka.
+          </p>
+          <a
+            class="awards-hero-btn"
+            href="#recognition-list"
+            data-reveal="up"
+            style="--reveal-delay: 0.22s"
+          >
+            View awards
+            <span class="btn-arrow" aria-hidden="true">
+              <i class="fa-solid fa-arrow-down"></i>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ══ Intro / Legacy ═════════════════════════════════════════ -->
+      <section
+        class="awards-intro-section content-section section-reveal"
+        aria-labelledby="awards-intro-heading"
+      >
+        <div class="container awards-intro-inner">
+          <div data-reveal-group>
+            <span class="awards-intro-eyebrow" data-reveal="up">OUR LEGACY</span>
+            <h2
+              id="awards-intro-heading"
+              class="awards-intro-heading"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              A legacy built on community dedication
+            </h2>
+            <p
+              class="awards-intro-body"
+              data-reveal="up"
+              style="--reveal-delay: 0.15s"
+            >
+              For over two decades, CDC has worked in the hills of Ussapitiya, building food security systems, training farmers, and preserving plant biodiversity. This sustained dedication has been recognised by leading national institutions celebrating women who drive meaningful change across Sri Lanka.
+            </p>
+            <p
+              class="awards-intro-body"
+              data-reveal="up"
+              style="--reveal-delay: 0.21s"
+            >
+              From food security advocacy to social service leadership, each award affirms what CDC has always believed &mdash; that grassroots, community-driven development creates lasting impact.
+            </p>
+          </div>
+          <div
+            class="awards-intro-image-wrap"
+            data-reveal="right"
+            style="--reveal-delay: 0.1s"
+          >
+            <img
+              src="assets/img/awards/2020_award.jpg"
+              alt="CDC recognition ceremony"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ Recognition List ═══════════════════════════════════════ -->
+      <section
+        id="recognition-list"
+        class="recognition-list-section content-section section-reveal"
+        aria-labelledby="recognition-list-heading"
+      >
+        <div class="container">
+          <div class="section-header-center" data-reveal-group>
+            <span class="section-eyebrow" data-reveal="up">AWARDS</span>
+            <h2
+              id="recognition-list-heading"
+              class="section-heading"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              National recognition
+            </h2>
+          </div>
+
+          <div class="recognition-cards" data-reveal-group>
+            <article
+              class="recognition-card"
+              data-reveal="up"
+              style="--reveal-delay: 0s"
+            >
+              <div class="recognition-card-image">
+                <img
+                  src="assets/img/awards/wanitha_2.jpg"
+                  alt="Innovative Food Security Advocate of the Year award ceremony"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="recognition-card-body">
+                <p class="recognition-card-tag">2025</p>
+                <h3 class="recognition-card-title">
+                  Innovative Food Security Advocate of the Year
+                </h3>
+                <p class="recognition-card-platform">
+                  Lak Vanitha Abhimani Awards 2025
+                </p>
+                <p class="recognition-card-note">
+                  Awarded for pioneering community-driven food security initiatives and outstanding development work across the Ussapitiya region.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="recognition-card"
+              data-reveal="up"
+              style="--reveal-delay: 0.1s"
+            >
+              <div class="recognition-card-image">
+                <img
+                  src="assets/img/awards/wanitha_3.jpg"
+                  alt="National Champion in Social Service award"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="recognition-card-body">
+                <p class="recognition-card-tag">National Award</p>
+                <h3 class="recognition-card-title">
+                  National Champion in Social Service
+                </h3>
+                <p class="recognition-card-platform">
+                  Sri Lanka Vanitha Abhimani Awards
+                </p>
+                <p class="recognition-card-note">
+                  Recognising exceptional contributions to social welfare and the empowerment of rural women and farming communities across Sri Lanka.
+                </p>
+              </div>
+            </article>
+
+            <article
+              class="recognition-card"
+              data-reveal="up"
+              style="--reveal-delay: 0.2s"
+            >
+              <div class="recognition-card-image">
+                <img
+                  src="assets/img/awards/lesser_foods_2.jpg"
+                  alt="Lesser-Known Foods of Sri Lanka recognition"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="recognition-card-body">
+                <p class="recognition-card-tag">Food Security</p>
+                <h3 class="recognition-card-title">
+                  Lesser-Known Foods Recognition
+                </h3>
+                <p class="recognition-card-platform">
+                  National Food Security &amp; Biodiversity Programme
+                </p>
+                <p class="recognition-card-note">
+                  Celebrating the &ldquo;Lesser-Known Foods of Sri Lanka&rdquo; publication and its contribution to protecting native plant biodiversity and nutritional resilience.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ Lesser-Known Foods Feature ════════════════════════════ -->
+      <section
+        class="lesser-foods-feature content-section section-reveal"
+        aria-labelledby="lesser-foods-heading"
+      >
+        <div class="container lesser-foods-inner">
+          <div class="lesser-foods-copy" data-reveal-group>
+            <span class="lesser-foods-eyebrow" data-reveal="up">FEATURED INITIATIVE</span>
+            <h2
+              id="lesser-foods-heading"
+              class="lesser-foods-heading"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Protecting Sri Lanka&rsquo;s food biodiversity
+            </h2>
+            <p
+              class="lesser-foods-body"
+              data-reveal="up"
+              style="--reveal-delay: 0.15s"
+            >
+              CDC&rsquo;s &ldquo;Lesser-Known Foods of Sri Lanka&rdquo; initiative documents and promotes nutritious native plant foods disappearing from modern diets. By training communities in their cultivation, preservation, and preparation, CDC is restoring both biodiversity and nutritional resilience across the hill country.
+            </p>
+            <a
+              class="lesser-foods-btn"
+              href="products.html"
+              data-reveal="up"
+              style="--reveal-delay: 0.22s"
+            >
+              Explore our products
+              <span class="btn-arrow" aria-hidden="true">
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </a>
+          </div>
+          <div
+            class="lesser-foods-images"
+            data-reveal="right"
+            style="--reveal-delay: 0.1s"
+            aria-hidden="true"
+          >
+            <div class="lf-img-wrap">
+              <img
+                src="assets/img/awards/lesser_foods_2.jpg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="lf-img-wrap">
+              <img
+                src="assets/img/awards/lesser_foods_1.jpg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ Gallery ════════════════════════════════════════════════ -->
+      <section
+        class="awards-gallery-section content-section section-reveal"
+        aria-labelledby="awards-gallery-heading"
+      >
+        <div class="container">
+          <div class="section-header-center" data-reveal-group>
+            <span class="section-eyebrow" data-reveal="up">GALLERY</span>
+            <h2
+              id="awards-gallery-heading"
+              class="section-heading"
+              data-reveal="up"
+              style="--reveal-delay: 0.08s"
+            >
+              Moments of recognition
+            </h2>
+          </div>
+          <div
+            class="awards-gallery-grid"
+            data-reveal="up"
+            style="--reveal-delay: 0.12s"
+          >
+            <div class="gallery-item">
+              <img
+                src="assets/img/awards/all_awards.jpg"
+                alt="All CDC awards and recognition certificates"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="assets/img/awards/lesser_foods_2.jpg"
+                alt="Lesser-Known Foods of Sri Lanka initiative"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="assets/img/awards/wanitha_2.jpg"
+                alt="Lak Vanitha Abhimani award ceremony 2025"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="assets/img/awards/wanitha_3.jpg"
+                alt="National Champion in Social Service recognition"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="assets/img/awards/wanitha_1.jpg"
+                alt="Vanitha Abhimani awards event"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="assets/img/awards/lesser_foods_1.jpg"
+                alt="Lesser-known foods of Sri Lanka"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="gallery-item">
+              <img
+                src="assets/img/awards/2020_award.jpg"
+                alt="CDC 2020 recognition ceremony"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ CTA ════════════════════════════════════════════════════ -->
+      <section
+        class="awards-cta-section section-reveal"
+        aria-labelledby="awards-cta-heading"
+      >
+        <div class="container" data-reveal-group>
+          <span class="awards-cta-eyebrow" data-reveal="up">GET INVOLVED</span>
+          <h2
+            id="awards-cta-heading"
+            class="awards-cta-heading"
+            data-reveal="up"
+            style="--reveal-delay: 0.08s"
+          >
+            Support the work that makes a difference
+          </h2>
+          <p
+            class="awards-cta-sub"
+            data-reveal="up"
+            style="--reveal-delay: 0.15s"
+          >
+            CDC&rsquo;s recognition is a reflection of community effort. Explore our projects or get in touch to learn how you can be part of the story.
+          </p>
+          <div
+            class="awards-cta-btns"
+            data-reveal="up"
+            style="--reveal-delay: 0.22s"
+          >
+            <a class="cta-btn-solid" href="projects.html">Explore projects</a>
+            <a class="cta-btn-ghost" href="contact.html">Contact CDC</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer" aria-label="Site footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo-link">
+            <img
+              src="assets/img/logo.png"
+              alt="NGO Name logo"
+              class="brand-logo footer-logo"
+            />
+          </a>
+          <p class="footer-tagline">
+            Building resilient communities through sustainable agriculture,
+            training, and eco tourism.
+          </p>
+          <div class="footer-socials" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="Follow us on Facebook"
+              ><i class="fa-brands fa-facebook-f" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Follow us on Instagram"
+              ><i class="fa-brands fa-instagram" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Follow us on X"
+              ><i class="fa-brands fa-x-twitter" aria-hidden="true"></i
+            ></a>
+            <a href="#" class="social-link" aria-label="Connect on LinkedIn"
+              ><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+
+        <nav class="footer-col" aria-label="Explore navigation">
+          <h3 class="footer-col-title">Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="services.html">What We Do</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h3 class="footer-col-title">Get Involved</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html">Donate</a></li>
+            <li><a href="contact.html">Volunteer</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+          </ul>
+        </div>
+
+        <address class="footer-col footer-contact">
+          <h3 class="footer-col-title">Contact</h3>
+          <ul class="footer-links">
+            <li>Haylesewatte, Attapitiya</li>
+            <li>Ussapitiya, Sri Lanka</li>
+            <li><a href="mailto:info@heleala.org">info@heleala.org</a></li>
+            <li><a href="tel:+94718110710">+9471 811 0710</a></li>
+          </ul>
+        </address>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container footer-bottom-inner">
+          <p class="footer-copy">
+            &copy; 2026
+            <a href="https://darkroom.lk/" class="darkroom" target="_blank"
+              >Darkroom</a
+            >
+            (Pvt) Ltd. All rights reserved.
+          </p>
+          <ul class="footer-legal">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+    <script src="assets/js/main.js?v=20260428"></script>
+    <script>
+      /* Awards hero — subtle scroll parallax */
+      (function () {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        var hero = document.querySelector(".awards-hero");
+        if (!hero) return;
+        var ticking = false;
+        function update() {
+          var scrolled = window.scrollY;
+          if (scrolled > hero.offsetHeight) { ticking = false; return; }
+          var progress = scrolled / (hero.offsetHeight || window.innerHeight);
+          hero.style.setProperty("--ah-scale", 1 + progress * 0.07);
+          hero.style.setProperty("--ah-y", (scrolled * 0.22) + "px");
+          ticking = false;
+        }
+        window.addEventListener("scroll", function () {
+          if (!ticking) { requestAnimationFrame(update); ticking = true; }
+        }, { passive: true });
+        update();
+      })();
+    </script>
+  </body>
+</html>
