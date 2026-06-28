@@ -3,13 +3,368 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CDC | Stories of Change</title>
-    <link rel="stylesheet" href="assets/css/styles.css?v=20260428" />
+    <title>CDC | Community Stories</title>
+    <link rel="stylesheet" href="assets/css/styles.css?v=20260506" />
     <link rel="icon" href="assets/img/favicon.png" />
     <script
       src="https://kit.fontawesome.com/2a6b3c3f27.js"
       crossorigin="anonymous"
     ></script>
+    <style>
+      /* ============================================================
+         STORIES PAGE — page-specific styles
+         ============================================================ */
+
+      /* ── Hero ───────────────────────────────────────────────────── */
+      .stories-hero {
+        position: relative;
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        isolation: isolate;
+        padding-block: clamp(6rem, 12vw, 10rem);
+      }
+
+      .stories-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("assets/img/home-slide-2.jpg");
+        background-size: cover;
+        background-position: center 40%;
+        z-index: -2;
+      }
+
+      .stories-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(3, 18, 8, 0.92) 0%,
+          rgba(4, 28, 13, 0.78) 48%,
+          rgba(5, 30, 15, 0.52) 100%
+        );
+        z-index: -1;
+      }
+
+      .stories-hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 660px;
+      }
+
+      .stories-hero-eyebrow {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #fb923c;
+        margin: 0 0 1.1rem;
+      }
+
+      .stories-hero-heading {
+        font-size: clamp(2rem, 4.5vw, 3.5rem);
+        font-weight: 800;
+        line-height: 1.1;
+        color: #ffffff;
+        margin: 0 0 1.25rem;
+      }
+
+      .stories-hero-intro {
+        font-size: clamp(1rem, 1.4vw, 1.1rem);
+        line-height: 1.72;
+        color: rgba(255, 255, 255, 0.74);
+        margin: 0 0 2.25rem;
+        max-width: 520px;
+      }
+
+      .stories-hero-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+        background: transparent;
+        border: 1.5px solid rgba(255, 255, 255, 0.5);
+        color: #ffffff;
+        padding: 0.82rem 1.8rem;
+        border-radius: 100px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        letter-spacing: 0.015em;
+        transition:
+          background 0.22s ease,
+          border-color 0.22s ease,
+          transform 0.2s ease;
+      }
+
+      .stories-hero-btn:hover,
+      .stories-hero-btn:focus-visible {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.8);
+        transform: translateY(-2px);
+      }
+
+      .stories-hero-btn .btn-arrow {
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.8em;
+        transition: transform 0.24s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      .stories-hero-btn:hover .btn-arrow {
+        transform: translateY(4px);
+      }
+
+      /* ── Community Stories section ──────────────────────────────── */
+      .community-stories {
+        background: #faf7f2;
+      }
+
+      .stories-section-header {
+        text-align: center;
+        max-width: 540px;
+        margin: 0 auto clamp(2.5rem, 4vw, 3.5rem);
+      }
+
+      .stories-section-eyebrow {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--secondary-color);
+        margin: 0 0 0.85rem;
+      }
+
+      .stories-section-heading {
+        font-size: clamp(1.55rem, 2.5vw, 2.2rem);
+        font-weight: 700;
+        line-height: 1.22;
+        color: var(--dark-green);
+        margin: 0;
+      }
+
+      /* 2-column profile card grid */
+      .story-profile-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(1.5rem, 3vw, 2.5rem);
+        max-width: 920px;
+        margin: 0 auto;
+      }
+
+      .story-profile-card {
+        background: #ffffff;
+        border-radius: 1.5rem;
+        padding: clamp(2rem, 3vw, 2.75rem) clamp(1.75rem, 2.5vw, 2.5rem)
+          clamp(1.75rem, 2.5vw, 2.25rem);
+        box-shadow:
+          0 4px 18px rgba(11, 94, 32, 0.07),
+          0 1px 4px rgba(0, 0, 0, 0.04);
+        display: flex;
+        flex-direction: column;
+        transition:
+          transform 0.32s ease,
+          box-shadow 0.32s ease;
+      }
+
+      .story-profile-card:hover {
+        transform: translateY(-7px);
+        box-shadow:
+          0 22px 54px rgba(11, 94, 32, 0.13),
+          0 4px 12px rgba(0, 0, 0, 0.06);
+      }
+
+      /* Portrait circle */
+      .story-portrait {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 0 1.6rem;
+        border: 3px solid rgba(17, 147, 41, 0.18);
+        flex-shrink: 0;
+        transition:
+          transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+          border-color 0.32s ease;
+      }
+
+      .story-profile-card:hover .story-portrait {
+        transform: scale(1.05);
+        border-color: rgba(17, 147, 41, 0.38);
+      }
+
+      .story-portrait img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      /* Card body */
+      .story-content {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
+      .story-category {
+        font-size: 0.71rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #fb923c;
+        margin: 0 0 0.6rem;
+      }
+
+      .story-heading {
+        font-size: clamp(1.05rem, 1.5vw, 1.2rem);
+        font-weight: 700;
+        line-height: 1.3;
+        color: var(--dark-green);
+        margin: 0 0 1rem;
+      }
+
+      .story-body {
+        font-size: clamp(0.875rem, 1vw, 0.95rem);
+        line-height: 1.78;
+        color: rgba(51, 51, 51, 0.78);
+        margin: 0 0 1.6rem;
+        flex: 1;
+      }
+
+      .story-byline {
+        border-top: 1px solid rgba(17, 147, 41, 0.12);
+        padding-top: 1rem;
+        margin-top: auto;
+      }
+
+      .story-name {
+        font-size: 0.875rem;
+        font-weight: 700;
+        color: var(--dark-green);
+        margin: 0 0 0.25rem;
+      }
+
+      .story-location {
+        font-size: 0.79rem;
+        color: rgba(51, 51, 51, 0.52);
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        margin: 0;
+      }
+
+      .story-location i {
+        font-size: 0.72rem;
+        color: var(--primary-color);
+        flex-shrink: 0;
+      }
+
+      /* ── Reflection section ─────────────────────────────────────── */
+      .stories-reflection {
+        background: #ffffff;
+        text-align: center;
+      }
+
+      .stories-reflection-inner {
+        max-width: 560px;
+        margin: 0 auto;
+      }
+
+      .stories-reflection-eyebrow {
+        display: block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--secondary-color);
+        margin: 0 0 1rem;
+      }
+
+      .stories-reflection-heading {
+        font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+        font-weight: 700;
+        line-height: 1.22;
+        color: var(--dark-green);
+        margin: 0 0 1.1rem;
+      }
+
+      .stories-reflection-body {
+        font-size: clamp(0.95rem, 1.1vw, 1.02rem);
+        line-height: 1.8;
+        color: var(--neutral-dark);
+        margin: 0 0 2.1rem;
+      }
+
+      .stories-reflection-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--primary-color);
+        color: #ffffff;
+        padding: 0.82rem 1.85rem;
+        border-radius: 100px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        letter-spacing: 0.015em;
+        transition:
+          background 0.22s ease,
+          transform 0.2s ease;
+      }
+
+      .stories-reflection-btn:hover,
+      .stories-reflection-btn:focus-visible {
+        background: var(--dark-green);
+        transform: translateY(-2px);
+      }
+
+      /* ── Responsive ─────────────────────────────────────────────── */
+      @media (max-width: 699px) {
+        .story-profile-grid {
+          grid-template-columns: 1fr;
+          max-width: 480px;
+        }
+        .story-portrait {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      /* ── Reduced motion ─────────────────────────────────────────── */
+      @media (prefers-reduced-motion: reduce) {
+        .stories-hero-btn,
+        .story-profile-card,
+        .story-portrait,
+        .stories-reflection-btn {
+          transition: none;
+        }
+        .stories-hero-btn:hover {
+          transform: none;
+        }
+        .stories-hero-btn:hover .btn-arrow {
+          transform: none;
+        }
+        .story-profile-card:hover {
+          transform: none;
+          box-shadow:
+            0 4px 18px rgba(11, 94, 32, 0.07),
+            0 1px 4px rgba(0, 0, 0, 0.04);
+        }
+        .story-profile-card:hover .story-portrait {
+          transform: none;
+          border-color: rgba(17, 147, 41, 0.18);
+        }
+        .stories-reflection-btn:hover {
+          transform: none;
+        }
+      }
+    </style>
   </head>
   <body>
     <div
@@ -26,7 +381,7 @@
       </div>
     </div>
 
-    <header class="site-header">
+    <header class="site-header transparent">
       <div class="container header-inner">
         <a href="index.html" class="brand">
           <span class="brand-mark">
@@ -136,7 +491,15 @@
                 </ul>
               </li>
               <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-              <li><a href="stories.html" class="nav-link" aria-current="page">Stories</a></li>
+              <li>
+                <a
+                  href="stories.html"
+                  class="nav-link"
+                  aria-current="page"
+                  >Stories</a
+                >
+              </li>
+              <li><a href="awards.html" class="nav-link">Awards</a></li>
               <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
           </div>
@@ -147,181 +510,183 @@
     <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
     <div id="swipe-open-zone" aria-hidden="true"></div>
 
-    <main>
-      <!-- Page Hero -->
-      <section class="page-hero" aria-labelledby="stories-heading">
-        <div class="container">
-          <div class="page-hero-inner section-reveal">
-            <p class="eyebrow">Featured impact</p>
-            <h1 id="stories-heading">Stories of Change</h1>
-            <p class="page-hero-intro">
-              Behind every programme is a person, a family, a turning point.
-              These are stories of how lives begin to change when opportunity
-              meets support.
-            </p>
-          </div>
+    <main class="stories-page">
+      <!-- ══ Hero ═══════════════════════════════════════════════════ -->
+      <section class="stories-hero" aria-labelledby="stories-page-heading">
+        <div class="container stories-hero-content" data-reveal-group>
+          <span class="stories-hero-eyebrow" data-reveal="up"
+            >COMMUNITY STORIES</span
+          >
+          <h1
+            id="stories-page-heading"
+            class="stories-hero-heading"
+            data-reveal="up"
+            style="--reveal-delay: 0.07s"
+          >
+            Stories of strength,<br />hope, and new beginnings
+          </h1>
+          <p
+            class="stories-hero-intro"
+            data-reveal="up"
+            style="--reveal-delay: 0.14s"
+          >
+            Behind every programme is a person, a family, and a turning point.
+            These stories show how courage, guidance, and community support can
+            help lives begin again.
+          </p>
+          <a
+            class="stories-hero-btn"
+            href="#community-stories"
+            data-reveal="up"
+            style="--reveal-delay: 0.21s"
+          >
+            Read the stories
+            <span class="btn-arrow" aria-hidden="true">
+              <i class="fa-solid fa-arrow-down"></i>
+            </span>
+          </a>
         </div>
       </section>
 
-      <!-- Stories List -->
+      <!-- ══ Community Stories ══════════════════════════════════════ -->
       <section
-        class="stories-section content-section section-reveal"
-        aria-labelledby="stories-list-label"
+        id="community-stories"
+        class="community-stories content-section section-reveal"
+        aria-labelledby="stories-section-heading"
       >
         <div class="container">
-          <h2 id="stories-list-label" class="sr-only">All stories</h2>
-
-          <div class="stories-list">
-
-            <article class="story-card stagger-card" style="--stagger: 0">
-              <div class="story-card-image">
-                <img
-                  src="assets/img/training_w.jpg"
-                  alt="Women participating in a skills training workshop"
-                />
-              </div>
-              <div class="story-card-body">
-                <p class="eyebrow story-tag">Women&rsquo;s livelihood</p>
-                <h3>From learning a skill to leading others</h3>
-                <p>
-                  After joining our training programme, she started with a
-                  small idea. Today she earns her own income and helps other
-                  women in her village do the same. What began as a single
-                  workshop has grown into a network of confidence and
-                  self-reliance.
-                </p>
-              </div>
-            </article>
-
-            <article class="story-card stagger-card" style="--stagger: 1">
-              <div class="story-card-image">
-                <img
-                  src="assets/img/gallery/image_9.jpg"
-                  alt="Sustainable farming and organic agriculture"
-                />
-              </div>
-              <div class="story-card-body">
-                <p class="eyebrow story-tag">Sustainable agriculture</p>
-                <h3>A family farm, transformed by knowledge</h3>
-                <p>
-                  A smallholder family adopted organic practices through
-                  CDC&rsquo;s model farm programme. Their yield improved and
-                  their soil recovered. Now they share what they learned with
-                  neighbouring farmers in the same valley.
-                </p>
-              </div>
-            </article>
-
-            <article class="story-card stagger-card" style="--stagger: 2">
-              <div class="story-card-image">
-                <img
-                  src="assets/img/eco-tour-family.jpg"
-                  alt="A local family hosting eco tourism visitors in Sri Lanka"
-                />
-              </div>
-              <div class="story-card-body">
-                <p class="eyebrow story-tag">Eco tourism</p>
-                <h3>Opening their home, building an income</h3>
-                <p>
-                  When CDC introduced community-based eco tourism to their
-                  village, one family decided to open their home to visitors.
-                  The connections they&rsquo;ve made since have brought both
-                  income and a renewed pride in their land and culture.
-                </p>
-              </div>
-            </article>
-
-            <article class="story-card stagger-card" style="--stagger: 3">
-              <div class="story-card-image">
-                <img
-                  src="assets/img/gallery/image_6.jpg"
-                  alt="Community gathering in a rural Sri Lankan village"
-                />
-              </div>
-              <div class="story-card-body">
-                <p class="eyebrow story-tag">Community development</p>
-                <h3>When a village decides to act together</h3>
-                <p>
-                  It started with a community meeting and a shared concern
-                  about water access. With CDC&rsquo;s support, the village
-                  mapped their resources, formed a committee, and built a
-                  solution they now maintain themselves.
-                </p>
-              </div>
-            </article>
-
-            <article class="story-card stagger-card" style="--stagger: 4">
-              <div class="story-card-image">
-                <img
-                  src="assets/img/food-and-bav.jpg"
-                  alt="Traditional Sri Lankan food and community-made products"
-                />
-              </div>
-              <div class="story-card-body">
-                <p class="eyebrow story-tag">Local enterprise</p>
-                <h3>Tradition on a table, turned into a livelihood</h3>
-                <p>
-                  A group of women began preserving traditional recipes as
-                  part of CDC&rsquo;s food production training. Their products
-                  now reach markets across the region, keeping local flavours
-                  alive while building genuine economic independence.
-                </p>
-              </div>
-            </article>
-
-            <article class="story-card stagger-card" style="--stagger: 5">
-              <div class="story-card-image">
-                <img
-                  src="assets/img/into-forest.jpg"
-                  alt="Forest conservation and biodiversity work in Sri Lanka"
-                />
-              </div>
-              <div class="story-card-body">
-                <p class="eyebrow story-tag">Conservation</p>
-                <h3>Protecting the forest, protecting the future</h3>
-                <p>
-                  A community that once cleared land to survive is now one of
-                  the most active stewards of their forest. Through CDC&rsquo;s
-                  conservation programme, they found that protecting nature
-                  and building livelihoods are not opposing goals.
-                </p>
-              </div>
-            </article>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA -->
-      <section
-        class="eco-cta-section content-section section-reveal"
-        aria-labelledby="stories-cta-title"
-      >
-        <div class="container">
-          <div class="eco-cta-inner" data-reveal-group>
-            <p class="eco-cta-eyebrow" data-reveal="up">Be part of the story</p>
+          <div class="stories-section-header" data-reveal-group>
+            <span class="stories-section-eyebrow" data-reveal="up"
+              >REAL VOICES</span
+            >
             <h2
-              id="stories-cta-title"
+              id="stories-section-heading"
+              class="stories-section-heading"
               data-reveal="up"
               style="--reveal-delay: 0.08s"
             >
-              Every contribution writes a new chapter
+              Real journeys. Real change.
             </h2>
-            <p data-reveal="up" style="--reveal-delay: 0.16s">
-              Whether you give, volunteer, or partner with us &mdash; your
-              involvement helps communities grow stronger and more resilient.
-            </p>
-            <div
-              class="eco-cta-actions"
-              data-reveal="up"
-              style="--reveal-delay: 0.24s"
-            >
-              <a href="contact.html" class="button primary">Get Involved</a>
-              <a href="projects.html" class="button eco-cta-ghost"
-                >See Our Projects</a
-              >
-            </div>
           </div>
+
+          <div class="story-profile-grid" data-reveal-group>
+            <!-- Story 1: Ranjani -->
+            <article
+              class="story-profile-card"
+              data-reveal="up"
+              style="--reveal-delay: 0s"
+            >
+              <div class="story-portrait">
+                <img
+                  src="assets/img/ranjani.jpeg"
+                  alt="R.M. Ranjani Ratnayake, community member from Munamalapelessa"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="story-content">
+                <p class="story-category">Women&rsquo;s Livelihood</p>
+                <h3 class="story-heading">
+                  Rebuilding after loss, rising with strength
+                </h3>
+                <p class="story-body">
+                  Ranjani was building her livelihood through food production
+                  and small enterprise when the Dittawa storm damaged her home
+                  and disrupted her life. With CDC&rsquo;s guidance and
+                  support, she found the strength to begin again. Today, she
+                  continues rebuilding her family&rsquo;s future through
+                  courage, work, and community enterprise.
+                </p>
+                <div class="story-byline">
+                  <p class="story-name">R.M. Ranjani Ratnayake</p>
+                  <p class="story-location">
+                    <i
+                      class="fa-solid fa-location-dot"
+                      aria-hidden="true"
+                    ></i>
+                    Munamalapelessa, Ududumbara
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- Story 2: Dhammika -->
+            <article
+              class="story-profile-card"
+              data-reveal="up"
+              style="--reveal-delay: 0.1s"
+            >
+              <div class="story-portrait">
+                <img
+                  src="assets/img/dhammika.jpeg"
+                  alt="Dhammika Kumari, community entrepreneur from Ududumbara"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="story-content">
+                <p class="story-category">Community Enterprise</p>
+                <h3 class="story-heading">
+                  Finding confidence through self-employment
+                </h3>
+                <p class="story-body">
+                  Dhammika once faced many barriers in growing her
+                  self-employment work. When CDC came to her village, she found
+                  encouragement, guidance, and practical support. Step by step,
+                  she strengthened her skills, gained confidence, and continued
+                  her journey as a proud community entrepreneur.
+                </p>
+                <div class="story-byline">
+                  <p class="story-name">Dhammika Kumari</p>
+                  <p class="story-location">
+                    <i
+                      class="fa-solid fa-location-dot"
+                      aria-hidden="true"
+                    ></i>
+                    Ududumbara
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ Reflection ═════════════════════════════════════════════ -->
+      <section
+        class="stories-reflection content-section section-reveal"
+        aria-labelledby="reflection-heading"
+      >
+        <div class="container stories-reflection-inner" data-reveal-group>
+          <span class="stories-reflection-eyebrow" data-reveal="up"
+            >COMMUNITY FIRST</span
+          >
+          <h2
+            id="reflection-heading"
+            class="stories-reflection-heading"
+            data-reveal="up"
+            style="--reveal-delay: 0.08s"
+          >
+            Every story begins with support
+          </h2>
+          <p
+            class="stories-reflection-body"
+            data-reveal="up"
+            style="--reveal-delay: 0.15s"
+          >
+            CDC&rsquo;s work continues through training, food security,
+            conservation, and livelihood support &mdash; helping more families
+            find confidence, stability, and opportunity.
+          </p>
+          <a
+            class="stories-reflection-btn"
+            href="projects.html"
+            data-reveal="up"
+            style="--reveal-delay: 0.22s"
+          >
+            Explore our projects
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
         </div>
       </section>
     </main>
@@ -355,6 +720,7 @@
             ></a>
           </div>
         </div>
+
         <nav class="footer-col" aria-label="Explore navigation">
           <h3 class="footer-col-title">Explore</h3>
           <ul class="footer-links">
@@ -362,9 +728,11 @@
             <li><a href="projects.html">Projects</a></li>
             <li><a href="services.html">What We Do</a></li>
             <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="awards.html">Awards</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
+
         <div class="footer-col">
           <h3 class="footer-col-title">Get Involved</h3>
           <ul class="footer-links">
@@ -373,6 +741,7 @@
             <li><a href="contact.html">Partner with us</a></li>
           </ul>
         </div>
+
         <address class="footer-col footer-contact">
           <h3 class="footer-col-title">Contact</h3>
           <ul class="footer-links">
@@ -383,10 +752,15 @@
           </ul>
         </address>
       </div>
+
       <div class="footer-bottom">
         <div class="container footer-bottom-inner">
           <p class="footer-copy">
-            &copy; 2026 <a href="https://darkroom.lk/" class="darkroom" target="_blank">Darkroom</a> (Pvt) Ltd. All rights reserved.
+            &copy; 2026
+            <a href="https://darkroom.lk/" class="darkroom" target="_blank"
+              >Darkroom</a
+            >
+            (Pvt) Ltd. All rights reserved.
           </p>
           <ul class="footer-legal">
             <li><a href="#">Privacy Policy</a></li>
