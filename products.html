@@ -11,6 +11,28 @@
       src="https://kit.fontawesome.com/2a6b3c3f27.js"
       crossorigin="anonymous"
     ></script>
+  <style>
+    /* ── Products page — category card images ── */
+    .product-category-image {
+      border-radius: 0.65rem;
+      overflow: hidden;
+      margin: 0 0 1.25rem;
+    }
+    .product-category-image img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .product-category-card:hover .product-category-image img {
+      transform: scale(1.05);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .product-category-image img { transition: none; }
+      .product-category-card:hover .product-category-image img { transform: none; }
+    }
+  </style>
   </head>
   <body>
     <div
@@ -196,8 +218,8 @@
               </article>
               <article class="hero-image-card hero-image-card--small">
                 <img
-                  src="assets/img/card-2-img-3.jpg"
-                  alt="Indigenous yam conservation work connected to local farming"
+                  src="assets/img/card-2-img-2.jpg"
+                  alt="Community-based food production and local enterprise"
                 />
               </article>
               <div class="hero-note hero-note--top">
@@ -266,6 +288,14 @@
               data-reveal="up"
               style="--reveal-delay: 0.04s"
             >
+              <div class="product-category-image">
+                <img
+                  src="assets/img/yam model farm.jpg"
+                  alt="Indigenous yam cultivation at the CDC model farm"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
               <div class="product-category-icon" aria-hidden="true">
                 <i class="fa-solid fa-seedling"></i>
               </div>
@@ -288,6 +318,14 @@
               data-reveal="up"
               style="--reveal-delay: 0.1s"
             >
+              <div class="product-category-image">
+                <img
+                  src="assets/img/awards/lesser_foods_2.jpg"
+                  alt="Traditional lesser-known foods and indigenous plant foods of Sri Lanka"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
               <div class="product-category-icon" aria-hidden="true">
                 <i class="fa-solid fa-bowl-food"></i>
               </div>
@@ -313,6 +351,14 @@
               data-reveal="up"
               style="--reveal-delay: 0.16s"
             >
+              <div class="product-category-image">
+                <img
+                  src="assets/img/medical and herbs.jpg"
+                  alt="Medicinal herbs, spices, and natural ingredients from local cultivation"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
               <div class="product-category-icon" aria-hidden="true">
                 <i class="fa-solid fa-mortar-pestle"></i>
               </div>
@@ -338,6 +384,14 @@
               data-reveal="up"
               style="--reveal-delay: 0.22s"
             >
+              <div class="product-category-image">
+                <img
+                  src="assets/img/card-1-img-2.jpg"
+                  alt="Community farming and seedling cultivation supported by CDC"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
               <div class="product-category-icon" aria-hidden="true">
                 <i class="fa-solid fa-leaf"></i>
               </div>
@@ -363,6 +417,14 @@
               data-reveal="up"
               style="--reveal-delay: 0.28s"
             >
+              <div class="product-category-image">
+                <img
+                  src="assets/img/awards/lesser_foods_1.jpg"
+                  alt="Natural herbal ingredients and lesser-known medicinal plants"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
               <div class="product-category-icon" aria-hidden="true">
                 <i class="fa-solid fa-hand-holding-heart"></i>
               </div>
@@ -394,8 +456,8 @@
           <div class="products-process-visual" data-reveal="left">
             <div class="products-process-frame">
               <img
-                src="assets/img/com-dev-bg.jpg"
-                alt="Community farming and product preparation connected to CDC programs"
+                src="assets/img/pro-unit-sec-1.jpg"
+                alt="CDC production unit supporting community food processing and value addition"
               />
             </div>
           </div>
